@@ -44,7 +44,7 @@ h1 {
     padding-top: 1.23em;
     font-size: 0.45em;
     float: right;
-    color: rgb(125,125,125);
+    color: rgb(125, 125, 125);
 }
 
 
@@ -56,7 +56,7 @@ h2 {
 }
 
 h2 hr {
-    color: rgb(150,150,150);
+    color: rgb(150, 150, 150);
 }
 
 h3 {
@@ -94,17 +94,17 @@ li {
 }
 
 footer {
-    color: rgb(125,125,125);
+    color: rgb(125, 125, 125);
     font-size: 0.85em;
 }
 
-footer a{
-    color: rgb(125,125,125);
+footer a {
+    color: rgb(125, 125, 125);
     border-bottom: 0;
 }
 
 a.anchor {
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.7);
     opacity: 0;
     border-bottom: 0px;
     position: absolute;
@@ -113,29 +113,32 @@ a.anchor {
     background: none;
 }
 
-a.anchor:hover,h2:hover a.anchor {
+a.anchor:hover,
+h2:hover a.anchor {
     opacity: 1;
     background: none;
     font-size: 125%;
 }
 
 a.anchor:hover {
-    color: rgba(255, 255, 255,1);
+    color: rgba(255, 255, 255, 1);
 }
 
 a.anchor:active {
-    color: rgba(255, 255, 255,0.5);
+    color: rgba(255, 255, 255, 0.5);
 }
 
-a:hover, #bottom a:hover {
+a:hover,
+#bottom a:hover {
     opacity: 1;
-    color: White;
-    background: rgba(0,125,11,1);
+    color: Black;
+    background: rgba(166, 226, 46, 1);
 }
 
-a:active {
-    color: rgba(255,255,255,0.7);
-    background: rgba(0,125,11,0.5);
+a:active,
+#bottom a:active {
+    color: Black;
+    background: rgba(166, 226, 46, 0.5);
 }
 
 a.image {
@@ -153,13 +156,17 @@ a.image {
     float: right;
 }
 
-.clear {    
+.clear {
     clear: both;
 }
 
 .b {
     font-weight: bold;
     color: rgb(253, 151, 31);
+}
+
+a.b:hover {
+    font-weight: normal;
 }
 
 .faded {
@@ -173,7 +180,7 @@ a.image {
 @media screen and (max-width: 1080px) {
     .column2 {
         width: 100%;
-    } 
+    }
     .column2-fill {
         width: 100%;
     }
