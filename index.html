@@ -2,30 +2,34 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" name="theme-color" content="#272822">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>James Huynh</title>
-    <link rel="icon" type="image/ico" href="misc/favicon.png" />
-    <link rel="stylesheet" type="text/css" href="misc/main.css" />
+    <link rel="icon" type="image/ico" href="resources/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
+
+<div id='menu'>
+    <div>
+        <a href="#"><img class='imageCirCrop' src="resources/logo.png" alt="logo"></a> <br>
+<!--         About Site <br>
+        About Me <br>
+        My Courses <br>
+        Social -->
+    </div>
+</div>
 
 <body>
     <header>
         <br>
         <h1>
             James Huynh
-            <div id="last-modified"></div>
-            <script language="Javascript">
-                var len = document.lastModified.length;
-                var date = document.lastModified.substring(0,len-8).replace(/ /g,'').split('/');
-                date = date[2] + '-' + date[0] + '-' + date[1];
-                document.getElementById("last-modified").innerHTML = "Last modified: " + date;
-            </script>
+            <div id="lastModified"></div>
             <hr>
-
         </h1>
-
-        <img src="misc/cover.png" alt="cover">
+        <img src="resources/cover.png" alt="cover">
     </header>
+
 <!--     <div id="about_site" class="column2">
         <h2>
             <div style="position: relative;">
@@ -37,36 +41,138 @@
         <p></p>
     </div> -->
     <!-- <div id="about_me" class="column2-fill"> -->
+
     <div id="about_me">
         <h2>
-                <div style="position: relative;">
-                    <a class="anchor" href="#about_me">#</a>
-                </div>
-                About Me
-                <hr>
-            </h2>
+            <div style="position: relative;">
+                <a class="anchor" href="#about_me">#</a>
+            </div>
+            About Me
+            <hr>
+        </h2>
+        <br>
+        <div class="text">
         <p>I'm from <b>Mississauga, Ontario</b>. I started my undergraduate program in September 2016 for <b>Computer Science</b> at the <b>University of Toronto</b>, St. George campus. I plan on participating in the Professional Experience Year (PEY) Program, so I'm probably going to be in the class of 2021.</p>
         <p>I enjoy gaming in my free time. I've recently been playing: </p>
+        </div>
         <ul>
-            <li><a class="b" href="https://playoverwatch.com/en-us/" target="_blank">Overwatch</a><span class="faded">—currently hovering between Gold and Platinum in competitive.</span></li>
-            <li><a class="b" href="http://store.steampowered.com/app/252950/Rocket_League/" target="_blank">Rocket League</a></li>
+            <li><span class="bullet">></span><a class="b" href="https://playoverwatch.com/en-us/" target="_blank">Overwatch</a><span class="faded">—currently hovering between Gold and Platinum in competitive.</span></li>
+            <li><span class="bullet">></span><a class="b" href="http://store.steampowered.com/app/252950/Rocket_League/" target="_blank">Rocket League</a></li>
         </ul>
     </div>
     <br class="clear">
-    
+    <div id="courses">
+        <h2>
+            <div style="position: relative;">
+                <a class="anchor" href="#courses">#</a>
+            </div>
+            My Courses
+            <hr>
+        </h2>
+
+        <!-- Fall 2017 -->
+            <a class='noborder' onclick="toggle('Fall2017', 'shrinkEnd'); toggle('Fall2017Text','fadeOutEnd'); toggle('Fall2017Hr','hrFadeOutEnd')"><span class='peek h3'>Fall 2017</span></a>
+            <hr id='Fall2017Hr' class='hrFadeInIni h3'>
+        <div id='Fall2017' class='enlargeIni'><div id='Fall2017Text' class='fadeInIni'>
+        <ul class="marginH3">
+            <!-- CSC209 -->
+            <a onclick="toggle('CSC209', 'enlarge'); toggle('CSC209Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>CSC209H - Software Tools and Systems Programming</span></li></a>
+                <div id='CSC209' class='shrink'><div id='CSC209Text' class='fadeOut'><ul><li>
+                    <span class="bullet">></span><a class='b' href='http://www.teach.cs.toronto.edu/~csc209h/fall/' target='_blank'>Course Website</a>
+                </li></ul></div></div>
+            <!-- CSC236 -->
+            <li><span class="bullet">></span>CSC236H - Introduction to the Theory of Computation</li>
+            <!-- CSC343 -->
+            <a onclick="toggle('CSC343', 'enlarge'); toggle('CSC343Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>CSC343H - Introduction to Databases</span></li></a>
+                <div id='CSC343' class='shrink'><div id='CSC343Text' class='fadeOut'><ul><li>
+                    <span class="bullet">></span><a class='b' href='http://www.teach.cs.toronto.edu/~csc343h/fall/' target='_blank'>Course Website</a>
+                </li></ul></div></div>
+            <!-- HPS100 -->
+            <li><span class="bullet">></span>HPS100H - Introduction to History and Philosophy of Science</li>
+            <!-- MAT235 -->
+            <li><span class="bullet">></span>MAT235Y - Calculus II</li>
+            <!-- STA257 -->
+            <li><span class="bullet">></span>STA257H - Probability and Statistics I</li>
+            <br>
+        </ul>
+        </div></div>
+
+        <!-- Winter 2017 -->
+        <a class='noborder' onclick="toggle('Winter2017', 'enlarge2'); toggle('Winter2017Text','fadeIn'); toggle('Winter2017Hr','hrFadeIn')"><span class='peek h3'>Winter 2017</span></a>
+        <hr id='Winter2017Hr' class='hrFadeOut h3'>
+        <div id='Winter2017' class='shrink'><div id='Winter2017Text' class='fadeOut'>
+        <ul class=marginH3>
+            <!-- BIO130 -->
+            <li><span class="bullet">></span>BIO130H - Molecular and Cell Biology</li>
+            <!-- CSC207 -->
+            <a onclick="toggle('CSC207', 'enlarge'); toggle('CSC207Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>CSC207H - Software Design</span></li></a>
+                <div id='CSC207' class='shrink'><div id='CSC207Text' class='fadeOut'><ul><li>
+                    <span class="bullet">></span><a class='b' href='http://www.teach.cs.toronto.edu/~csc207h/winter/index.shtml' target='_blank'>Course Website</a>
+                </li></ul></div></div>
+            <!-- ECO105 -->
+            <li><span class="bullet">></span>ECO105Y - Principles of Economics for Non-Specialists</li>
+            <!-- MAT137 -->
+            <a onclick="toggle('MAT1372', 'enlarge'); toggle('MAT1372Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>MAT137Y - Calculus!</span></li></a>
+                <div id='MAT1372' class='shrink'><div id='MAT1372Text' class='fadeOut'><ul><li>
+                    <span class="bullet">></span><a class='b' href='http://www.math.toronto.edu/~alfonso/137/137.html' target='_blank'>Course Website</a>
+                </li></ul></div></div>
+            <!-- MAT223 -->
+            <a onclick="toggle('MAT223', 'enlarge'); toggle('MAT223Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>MAT223H - Linear Algebra I</span></li></a>
+                <div id='MAT223' class='shrink'><div id='MAT223Text' class='fadeOut'><ul><li>
+                    <span class="bullet">></span><a class='b' href='http://www.math.toronto.edu/nhoell/MAT223/' target='_blank'>Course Website</a>
+                </li></ul></div></div>
+            <!-- PSY100 -->
+            <li><span class="bullet">></span>PSY100H - Introductory Psychology</li>
+            <br>
+        </ul>
+        </div></div>
+
+        <!-- Fall 2016 -->
+        <a class='noborder' onclick="toggle('Fall2016', 'enlarge2'); toggle('Fall2016Text','fadeIn'); toggle('Fall2016Hr','hrFadeIn')"><span class='peek h3'>Fall 2016</span></a>
+        <hr id='Fall2016Hr' class='hrFadeOut h3'>
+        <div id='Fall2016' class='shrink'><div id='Fall2016Text' class='fadeOut'>
+        <ul class='marginH3'>
+            <!-- CCR199 -->
+            <a onclick="toggle('CCR199', 'enlarge'); toggle('CCR199Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>CCR199H - L0381 - The Cossacks</span></li></a>
+                <div id='CCR199' class='shrink'><div id='CCR199Text' class='fadeOut'><ul><li>
+                    <span class="bullet">></span><a class='b' href='http://homes.chass.utoronto.ca/~tarn/courses/199.html' target='_blank'>Course Website</a>
+                </li></ul></div></div>
+            <!-- CSC148 -->
+            <a onclick="toggle('CSC148', 'enlarge'); toggle('CSC148Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>CSC148H - Introduction to Computer Science</span></li></a>
+                <div id='CSC148' class='shrink'><div id='CSC148Text' class='fadeOut'><ul><li>
+                    <span class="bullet">></span><a class='b' href='http://www.cdf.toronto.edu/~csc148h/fall/' target='_blank'>Course Website</a>
+                </li></ul></div></div>
+            <!-- CSC165 -->
+            <a onclick="toggle('CSC165', 'enlarge'); toggle('CSC165Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>CSC165H - Mathematical Expression and Reasoning for Computer Science</span></li></a>
+                <div id='CSC165' class='shrink'><div id='CSC165Text' class='fadeOut'><ul><li>
+                    <span class="bullet">></span><a class='b' href='http://www.cdf.toronto.edu/~csc165h/fall/index.shtml' target='_blank'>Course Website</a>
+                </li></ul></div></div>
+            <!-- ECO105 -->
+            <li><span class="bullet">></span>ECO105Y - Principles of Economics for Non-Specialists</li>
+            <!-- MAT137 -->
+            <a onclick="toggle('MAT137', 'enlarge'); toggle('MAT137Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>MAT137Y - Calculus!</span></li></a>
+                <div id='MAT137' class='shrink'><div id='MAT137Text' class='fadeOut'><ul><li>
+                    <span class="bullet">></span><a class='b' href='http://www.math.toronto.edu/~alfonso/137/137.html' target='_blank'>Course Website</a>
+                </li></ul></div></div>
+            <br>
+        </ul>
+        </div></div>
+    </div>
+
     <div id="bottom">
         <div align="center" style="margin-top: 6em;">
             <h3 style="margin-bottom: 0px;">
                 My Links
                 <hr style="color: rgb(90,90,90); width: 200px;">
             </h3>
+            <a href="resources/James-Huynh-Resume.pdf" target="_blank">Résume</a>
             <a href="https://www.linkedin.com/in/cabbagecanfly" target="_blank">LinkedIn</a>
             <a href="https://github.com/CabbageCanFly" target="_blank">GitHub</a>
             <a href="http://steamcommunity.com/id/cabbagecanfly" target="_blank">Steam</a>
             <a href="http://cabbagecanfly.deviantart.com" target="_blank">DeviantArt</a>
             <hr style="margin-top: 1em;">
             <br>
-            <img class="image-cir-crop" src="misc/pic.jpg" alt="portrait" />
+            <img class="imageCirCrop" src="resources/pic.jpg" alt="portrait" />
             <div class="faded">
                 Yes, cabbages can fly.
             </div>
@@ -82,6 +188,7 @@
         </footer>
         <br>
     </div>
+    <script src="scripts/main.js"></script>
 </body>
 
 </html>

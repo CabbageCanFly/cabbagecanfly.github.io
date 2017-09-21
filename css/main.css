@@ -1,0 +1,536 @@
+/*----- INITIAL -----*/
+
+/*body.preload * {
+    animation-duration: 0s !important;
+    -webkit-animation-duration: 0s !important;
+    transition: background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
+}*/
+
+.nocopy {
+    cursor: default;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+@font-face {
+    font-family: 'Yanone Kaffeesatz';
+    src: url('../resources/Yanone/YanoneKaffeesatz-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../resources/Yanone/YanoneKaffeesatz-Regular.otf');
+}
+
+@font-face {
+    font-family: 'Yanone Kaffeesatz Light';
+    src: url('../resources/Yanone/YanoneKaffeesatz-Light.eot?#iefix') format('embedded-opentype'),
+    url("../resources/Yanone/YanoneKaffeesatz-Light.otf");
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-300px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+#menu {
+    /*background-color: white;
+    padding: 0.4vw;
+    color: rgb(115,115,115);*/
+
+    top: 1vw;
+    /*position: fixed;*/
+    position: sticky;
+    position: -webkit-sticky;
+
+    float: right;
+    margin-top: 42px; 
+    -webkit-animation: 1500ms slideInFromTop;
+    -moz-animation: 1500ms slideInFromTop;
+    -ms-animation: 1500ms slideInFromTop;
+    -o-animation: 1500ms slideInFromTop;
+    animation: 1500ms slideInFromTop;
+
+    margin-right: -11vw;
+}
+
+#menu div {
+    text-align: center;
+    font-size: 1em;
+}
+
+#menu img {
+    -webkit-transition: opacity 125ms;
+    -moz-transition: opacity 125ms;
+    -ms-transition: opacity 125ms;
+    -o-transition: opacity 125ms;
+    transition: opacity 125ms;
+    opacity: 0.6;
+    width: 6vw;
+}
+
+
+/*----- MAIN TEXT COMPONENTS -----*/
+
+hr {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+    color: White;
+    background-color: White;
+    border: none;
+    height: 2px;
+}
+
+body {
+    font-family: "Yanone Kaffeesatz Light";
+    font-size: 1.15em;
+    margin: 1% 15%;
+    color: White;
+    background: rgb(39, 40, 34);
+}
+
+header {
+    font-family: "Yanone Kaffeesatz";
+}
+
+header img {
+    width: 100%;
+}
+
+h1 {
+    font-size: 2.2em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    color: rgb(249, 38, 114);
+}
+
+#lastModified {
+    font-family: "Yanone Kaffeesatz Light";
+    font-weight: normal;
+    padding-top: 1.23em;
+    font-size: 0.45em;
+    float: right;
+    color: rgb(125, 125, 125);
+}
+
+
+h2 {
+    font-size: 1.7em;
+    margin-top: 0.5em;
+    margin-bottom: -0.0em;
+    color: rgb(102, 217, 239);
+}
+
+h2 hr {
+    color: rgb(150, 150, 150);
+    background-color: rgb(150, 150, 150);
+}
+
+h3 {
+    font-size: 1.2em;
+    margin-top: -1.36em;
+    margin-bottom: -0.6em;
+    color: rgb(166, 226, 46);
+}
+.h3 {
+    font-weight: bold;
+    font-size: 1.2em;
+    /*margin-top: -1.36em;*/
+    margin-bottom: -0.6em; 
+    color: rgb(166, 226, 46);
+}
+
+a.noborder {
+    border: none;
+}
+
+h3 hr {
+    color: rgb(90, 90, 90);
+    background-color: rgb(90, 90, 90);
+    width: 125px;
+}
+hr.h3 {
+    color: rgb(90, 90, 90);
+    background-color: rgb(90, 90, 90);
+    width: 125px;
+}
+
+/*#courses h3 hr {
+    text-align: left;
+    margin-left: 0;
+    margin-bottom: 0.4em;
+}*/
+#courses hr.h3 {
+    text-align: left;
+    margin-left: 0;
+    margin-top: 0.1em;
+    margin-bottom: -1.50em;
+}
+
+.marginH3 {
+    margin-top: 2.2em;
+    margin-bottom: -0.6em;
+}
+
+b {
+    font-weight: normal;
+    color: rgb(253, 151, 31);
+}
+
+p {
+    color: rgb(255, 255, 255);
+}
+
+div.text {
+    margin-top: -2.1em;
+}
+
+a {
+    color: White;
+    text-decoration: none;
+    border-bottom: 1px solid;
+}
+
+footer {
+    color: rgb(125, 125, 125);
+    font-size: 0.85em;
+}
+
+/*----- LISTS -----*/
+li {
+    text-indent: -1em;
+    margin-bottom: 2px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.bullet {
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: bolder;
+}
+
+span.peek {
+    display: inline-block;
+    width: 100%;
+}
+span.peek:hover {
+    cursor: pointer;
+    color: black;
+    background: rgba(166, 226, 46, 1);
+}
+
+li.peek span{
+    border-bottom: 1px solid;
+    border-color: rgb(120,120,120);
+}
+li.peek:hover .bullet {
+    cursor: pointer;
+    color: black;
+    background: rgba(166, 226, 46, 1);
+}
+li.peek:hover {
+    cursor: pointer;
+    color: black;
+    background: rgba(166, 226, 46, 1);
+}
+
+.bullet:after {
+    content: "";
+    margin-left: 0.6em;
+}
+
+/*----- HYPERLINKS -----*/
+
+#menu a {
+    border-bottom: none;
+}
+#menu a:hover {
+    background: none;
+}
+#menu a:hover img {
+    opacity: 1;
+}
+
+footer a {
+    color: rgb(115, 115, 115);
+}
+
+a.anchor {
+    color: rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    border-bottom: 0px;
+    position: absolute;
+    left: -17px;
+    top: -6px;
+    background: none;
+}
+
+a.anchor:hover,
+h2:hover a.anchor {
+    opacity: 1;
+    background: none;
+    font-size: 125%;
+}
+
+a.anchor:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+a.anchor:active {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+a:hover,
+#bottom a:hover {
+    opacity: 1;
+    color: Black;
+    background: rgba(166, 226, 46, 1);
+}
+
+a:active,
+#bottom a:active {
+    color: Black;
+    background: rgba(166, 226, 46, 0.5);
+}
+
+a.image {
+    text-decoration: none;
+    background: none;
+}
+
+
+/*----- MISCELLANEOUS -----*/
+
+.column2 {
+    width: 49%;
+    float: left;
+}
+
+.column2Fill {
+    width: 49%;
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.b {
+    color: rgb(253, 151, 31);
+}
+
+.faded {
+    color: rgb(115, 115, 115);
+}
+
+.imageCirCrop {
+    border-radius: 50%;
+}
+
+
+/*----- ANIMATIONS/TRANSITIONS/MOTIONS -----*/
+/*NOTE: ORDER MATTERS FOR TOGGLE*/
+
+/*This state is for elements initially HIDDEN.*/
+.fadeOut {
+    position: relative;
+    z-index: -1;
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: top 650ms, opacity 550ms;
+    -moz-transition: top 650ms, opacity 550ms;
+    -ms-transition: top 650ms, opacity 550ms;
+    -o-transition: top 650ms, opacity 550ms;
+    transition: top 650ms, opacity 550ms;
+
+    top: -30px;
+    opacity: 0;
+}
+/*This state is for elements initially HIDDEN.*/
+.fadeIn {
+    z-index: 0;
+    cursor: auto;
+    -webkit-touch-callout: auto;
+    -webkit-user-select: auto;
+    -khtml-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+
+    top: 0px;
+    opacity: 1;
+}
+
+/*This state is for elements initially VISIBLE.*/
+.fadeInIni {
+    position: relative;
+    z-index: 0;
+    cursor: auto;
+    -webkit-touch-callout: auto;
+    -webkit-user-select: auto;
+    -khtml-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+
+    -webkit-transition: top 650ms, opacity 550ms;
+    -moz-transition: top 650ms, opacity 550ms;
+    -ms-transition: top 650ms, opacity 550ms;
+    -o-transition: top 650ms, opacity 550ms;
+    transition: top 650ms, opacity 550ms;
+
+    top: 0px;
+    opacity: 1;
+
+}
+/*This state is for elements initially VISIBLE.*/
+.fadeOutEnd {
+    z-index: -1;
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    top: -30px;
+    opacity: 0;
+}
+
+/*This state is for elements initially HIDDEN.*/
+.shrink {
+    z-index: -2;
+    -webkit-transition-timing-function: ease-in-out;
+    -moz-transition-timing-function: ease-in-out;
+    -ms-transition-timing-function: ease-in-out;
+    -o-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: max-height 500ms, margin-top 650ms, margin-bottom 650ms;
+    -moz-transition: max-height 500ms, margin-top 650ms, margin-bottom 650ms;
+    -ms-transition: max-height 500ms, margin-top 650ms, margin-bottom 650ms;
+    -o-transition: max-height 500ms, margin-top 650ms, margin-bottom 650ms;
+    transition: max-height 500ms, margin-top 650ms, margin-bottom 650ms;
+
+    max-height: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+/*This state is for elements initially HIDDEN.*/
+.enlarge {
+    max-height: 100px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+/*This state is for elements initially HIDDEN.
+Also, this state accounts for larger containers, hence the larger "max-height".*/
+.enlarge2 {
+    max-height: 550px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+/*This state is for elements initially HIDDEN.
+Also, this state accounts for larger containers, hence the larger "max-height".*/
+.enlarge3 {
+    max-height: 700px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+/*This state is for elements initially VISIBLE.*/
+.enlargeIni {
+    z-index: -2;
+    -webkit-transition-timing-function: ease-in-out;
+    -moz-transition-timing-function: ease-in-out;
+    -ms-transition-timing-function: ease-in-out;
+    -o-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: max-height 500ms, margin-top 650ms, margin-bottom 650ms;
+    -moz-transition: max-height 500ms, margin-top 650ms, margin-bottom 650ms;
+    -ms-transition: max-height 500ms, margin-top 650ms, margin-bottom 650ms;
+    -o-transition: max-height 500ms, margin-top 650ms, margin-bottom 650ms;
+    transition: max-height 500ms, margin-top 650ms, margin-bottom 650ms;
+
+    max-height: 550px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+/*This state is for elements initially VISIBLE.*/
+.shrinkEnd {
+    max-height: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.hrFadeOut {
+    -webkit-transition: 325ms;
+    -moz-transition: 325ms;
+    -ms-transition: 325ms;
+    -o-transition: 325ms;
+    transition: 325ms;
+    opacity: 0;
+}
+
+.hrFadeIn {
+    opacity: 1;
+}
+
+.hrFadeInIni {
+    -webkit-transition: 325ms;
+    -moz-transition: 325ms;
+    -ms-transition: 325ms;
+    -o-transition: 325ms;
+    transition: 325ms;
+
+    opacity: 1;
+}
+
+.hrFadeOutEnd {
+    opacity: 0;
+}
+
+
+/*----- SCREEN BOUNDARIES -----*/
+
+@media screen and (max-width: 1080px) {
+    .column2 {
+        width: 100%;
+    }
+    .column2Fill {
+        width: 100%;
+    }
+    #menu img {
+        width: 8vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #lastModified {
+        padding-top: 0;
+        float: none;
+    }
+}
