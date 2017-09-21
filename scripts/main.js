@@ -5,7 +5,7 @@ document.getElementById("lastModified").innerHTML = "Last modified: " + date;
 
 setTimeout(function(){
     document.body.className="";
-},0);
+},500);
 
 // NOTE: ORDER MATTERS FOR TOGGLING CLASS.
 //		 <tog> has to come after the initial class in stylesheet.
