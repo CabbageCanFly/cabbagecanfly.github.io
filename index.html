@@ -5,13 +5,13 @@
     <meta charset="UTF-8" name="theme-color" content="#272822">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>James Huynh</title>
-    <link rel="icon" type="image/ico" href="resources/favicon.png" />
+    <link rel="icon" type="image/ico" href="resources/images/favicon.png" />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 
 <div id='menu'>
     <div>
-        <a href="#"><img class='imageCirCrop' src="resources/logo.png" alt="logo"></a> <br>
+        <a href="#"><img class='imageCirCrop' src="resources/images/logo.png" alt="logo"></a> <br>
 <!--         About Site <br>
         About Me <br>
         My Courses <br>
@@ -27,7 +27,7 @@
             <div id="lastModified"></div>
             <hr>
         </h1>
-        <img src="resources/cover.png" alt="cover">
+        <img src="resources/images/cover.png" alt="cover">
     </header>
 
 <!--     <div id="about_site" class="column2">
@@ -84,6 +84,9 @@
                 <li>
                     <span class="bullet">></span><a href='https://pcrs.teach.cs.toronto.edu/209/content/quests' target='_blank'>PCRS</a>
                 </li>
+                <li>
+                    <span class="bullet">></span><a href='https://markus.teach.cs.toronto.edu/csc209-2017-09/' target='_blank'>MarkUs</a>
+                </li>
                 </ul></div></div>
             <!-- CSC236 -->
             <li><span class="bullet">></span>CSC236H - Introduction to the Theory of Computation</li>
@@ -120,7 +123,18 @@
                     <span class="bullet">></span><a class='b' href='http://www.teach.cs.toronto.edu/~csc207h/winter/index.shtml' target='_blank'>Course Website</a>
                 </li></ul></div></div>
             <!-- ECO105 -->
-            <li><span class="bullet">></span>ECO105Y - Principles of Economics for Non-Specialists</li>
+            <a onclick="toggle('ECO1052', 'enlarge'); toggle('ECO1052Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>ECO105Y - Principles of Economics for Non-Specialists</span></li></a>
+                <div id='ECO1052' class='shrink'><div id='ECO1052Text' class='fadeOut'><ul>
+                <li>
+                    <span class="bullet">></span><a class='b' href='resources/courses/ECO105/ECO105 - Outline.pdf' target='_blank'>Course Outline</a>
+                </li>
+                <li>
+                    <span class="bullet">></span><a href='resources/courses/ECO105/Micro' target='_blank'>Microeconomics Lecture Slides</a>
+                </li>
+                <li>
+                    <span class="bullet">></span><a href='resources/courses/ECO105/Macro' target='_blank'>Macroeconomics Lecture Slides</a>
+                </li>
+                </ul></div></div>
             <!-- MAT137 -->
             <a onclick="toggle('MAT1372', 'enlarge'); toggle('MAT1372Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>MAT137Y - Calculus!</span></li></a>
                 <div id='MAT1372' class='shrink'><div id='MAT1372Text' class='fadeOut'><ul><li>
@@ -128,9 +142,11 @@
                 </li></ul></div></div>
             <!-- MAT223 -->
             <a onclick="toggle('MAT223', 'enlarge'); toggle('MAT223Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>MAT223H - Linear Algebra I</span></li></a>
-                <div id='MAT223' class='shrink'><div id='MAT223Text' class='fadeOut'><ul><li>
+                <div id='MAT223' class='shrink'><div id='MAT223Text' class='fadeOut'><ul>
+                <li>
                     <span class="bullet">></span><a class='b' href='http://www.math.toronto.edu/nhoell/MAT223/' target='_blank'>Course Website</a>
-                </li></ul></div></div>
+                </li>
+                </ul></div></div>
             <!-- PSY100 -->
             <li><span class="bullet">></span>PSY100H - Introductory Psychology</li>
             <br>
@@ -158,13 +174,25 @@
                     <span class="bullet">></span><a class='b' href='http://www.cdf.toronto.edu/~csc165h/fall/index.shtml' target='_blank'>Course Website</a>
                 </li></ul></div></div>
             <!-- ECO105 -->
-            <li><span class="bullet">></span>ECO105Y - Principles of Economics for Non-Specialists</li>
+            <a onclick="toggle('ECO105', 'enlarge'); toggle('ECO105Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>ECO105Y - Principles of Economics for Non-Specialists</span></li></a>
+                <div id='ECO105' class='shrink'><div id='ECO105Text' class='fadeOut'><ul>
+                <li>
+                    <span class="bullet">></span><a class='b' href='resources/courses/ECO105/ECO105 - Outline.pdf' target='_blank'>Course Outline</a>
+                </li>
+                <li>
+                    <span class="bullet">></span><a href='resources/courses/ECO105/Micro' target='_blank'>Microeconomics Lecture Slides</a>
+                </li>
+                <li>
+                    <span class="bullet">></span><a href='resources/courses/ECO105/Macro' target='_blank'>Macroeconomics Lecture Slides</a>
+                </li>
+                </ul></div></div>
             <!-- MAT137 -->
             <a onclick="toggle('MAT137', 'enlarge'); toggle('MAT137Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>MAT137Y - Calculus!</span></li></a>
-                <div id='MAT137' class='shrink'><div id='MAT137Text' class='fadeOut'><ul><li>
+                <div id='MAT137' class='shrink'><div id='MAT137Text' class='fadeOut'><ul>
+                <li>
                     <span class="bullet">></span><a class='b' href='http://www.math.toronto.edu/~alfonso/137/137.html' target='_blank'>Course Website</a>
-                </li></ul></div></div>
-            <br>
+                </li>
+                </ul></div></div>
         </ul>
         </div></div>
     </div>
@@ -182,7 +210,7 @@
             <a href="http://cabbagecanfly.deviantart.com" target="_blank">DeviantArt</a>
             <hr style="margin-top: 1em;">
             <br>
-            <img class="imageCirCrop" src="resources/pic.jpg" alt="portrait" />
+            <img class="imageCirCrop" src="resources/images/pic.jpg" alt="portrait" />
             <div class="faded">
                 Yes, cabbages can fly.
             </div>
