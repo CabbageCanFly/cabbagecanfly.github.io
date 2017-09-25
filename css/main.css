@@ -441,7 +441,7 @@ a.image {
 }
 /*This state is for elements initially HIDDEN.*/
 .enlarge {
-    max-height: 100px;
+    max-height: 200px;
     margin-top: 8px;
     margin-bottom: 8px;
 }
