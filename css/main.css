@@ -143,6 +143,8 @@ h3 {
     color: rgb(166, 226, 46);
 }
 .h3 {
+    position: relative;
+    z-index: 2;
     font-weight: bold;
     font-size: 1.2em;
     /*margin-top: -1.36em;*/
@@ -350,7 +352,7 @@ a.image {
 /*NOTE: ORDER MATTERS FOR TOGGLE*/
 
 /*This state is for elements initially HIDDEN.*/
-.fadeOut {
+.fadeOut > div {
     position: relative;
     z-index: -1;
     cursor: default;
@@ -366,11 +368,11 @@ a.image {
     -o-transition: top 650ms, opacity 550ms;
     transition: top 650ms, opacity 550ms;
 
-    top: -30px;
+    top: -60px;
     opacity: 0;
 }
 /*This state is for elements initially HIDDEN.*/
-.fadeIn {
+.fadeIn > div {
     z-index: 0;
     cursor: auto;
     -webkit-touch-callout: auto;
@@ -417,7 +419,7 @@ a.image {
     -ms-user-select: none;
     user-select: none;
 
-    top: -30px;
+    top: -60px;
     opacity: 0;
 }
 
