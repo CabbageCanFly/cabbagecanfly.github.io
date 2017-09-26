@@ -93,7 +93,8 @@ hr {
 
 body {
     font-family: "Yanone Kaffeesatz Light";
-    font-size: 1.15em;
+    /*font-size: 1.15em;*/
+    font-size: 1.3em;
     margin: 1% 15%;
     color: White;
     background: rgb(39, 40, 34);
@@ -341,6 +342,7 @@ a.image {
 
 .faded {
     color: rgb(115, 115, 115);
+    
 }
 
 .imageCirCrop {
