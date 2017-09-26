@@ -370,7 +370,7 @@ a.image {
     -o-transition: top 650ms, opacity 550ms;
     transition: top 650ms, opacity 550ms;
 
-    top: -60px;
+    top: -45px;
     opacity: 0;
 }
 /*This state is for elements initially HIDDEN.*/
@@ -421,7 +421,7 @@ a.image {
     -ms-user-select: none;
     user-select: none;
 
-    top: -60px;
+    top: -45px;
     opacity: 0;
 }
 
@@ -521,6 +521,9 @@ Also, this state accounts for larger containers, hence the larger "max-height".*
 /*----- SCREEN BOUNDARIES -----*/
 
 @media screen and (max-width: 1080px) {
+    body {
+        font-size: 1.05em;
+    }
     .column2 {
         width: 100%;
     }
