@@ -370,7 +370,7 @@ a.image {
     -o-transition: top 650ms, opacity 550ms;
     transition: top 650ms, opacity 550ms;
 
-    top: -45px;
+    top: -27px;
     opacity: 0;
 }
 /*This state is for elements initially HIDDEN.*/
@@ -389,7 +389,7 @@ a.image {
 }
 
 /*This state is for elements initially VISIBLE.*/
-.fadeInIni {
+.fadeInIni > div {
     position: relative;
     z-index: 0;
     cursor: auto;
@@ -411,7 +411,7 @@ a.image {
 
 }
 /*This state is for elements initially VISIBLE.*/
-.fadeOutEnd {
+.fadeOutEnd > div {
     z-index: -1;
     cursor: default;
     -webkit-touch-callout: none;
@@ -421,7 +421,7 @@ a.image {
     -ms-user-select: none;
     user-select: none;
 
-    top: -45px;
+    top: -27px;
     opacity: 0;
 }
 
