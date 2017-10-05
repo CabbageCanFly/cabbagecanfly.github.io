@@ -349,6 +349,10 @@ a.image {
     border-radius: 50%;
 }
 
+.copyright {
+    font-family: "Arial";
+}
+
 
 /*----- ANIMATIONS/TRANSITIONS/MOTIONS -----*/
 /*NOTE: ORDER MATTERS FOR TOGGLE*/
