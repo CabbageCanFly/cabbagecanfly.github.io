@@ -109,6 +109,8 @@ header img {
 }
 
 h1 {
+    font-family: "Yanone Kaffeesatz";
+    font-weight: normal;
     font-size: 2.2em;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
@@ -126,6 +128,8 @@ h1 {
 
 
 h2 {
+    font-family: "Yanone Kaffeesatz";
+    font-weight: normal;
     font-size: 1.7em;
     margin-top: 0.5em;
     margin-bottom: -0.0em;
@@ -138,6 +142,8 @@ h2 hr {
 }
 
 h3 {
+    font-family: "Yanone Kaffeesatz";
+    font-weight: normal;
     font-size: 1.2em;
     margin-top: -1.36em;
     margin-bottom: -0.6em;
@@ -145,9 +151,11 @@ h3 {
 }
 
 .h3 {
+    font-family: "Yanone Kaffeesatz";
+    font-weight: normal;
     position: relative;
     z-index: 2;
-    font-weight: bold;
+    /*font-weight: bold;*/
     font-size: 1.2em;
     /*margin-top: -1.36em;*/
     margin-bottom: -0.6em;
