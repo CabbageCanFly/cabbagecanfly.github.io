@@ -579,7 +579,7 @@ Also, this state accounts for larger containers, hence the larger "max-height".*
 
 @media screen and (max-width: 1080px) {
     body {
-        font-size: 1.05em;
+        font-size: 1.15em;
     }
     .column2 {
         width: 100%;
