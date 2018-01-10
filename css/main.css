@@ -501,7 +501,7 @@ a.image {
 Also, this state accounts for larger containers, hence the larger "max-height".*/
 
 .enlarge2 {
-    max-height: 800px;
+    max-height: 700px;
     margin-top: 8px;
     margin-bottom: 8px;
 }
@@ -532,7 +532,7 @@ Also, this state accounts for larger containers, hence the larger "max-height".*
     -o-transition: max-height 500ms, margin-top 650ms, margin-bottom 650ms;
     transition: max-height 500ms, margin-top 650ms, margin-bottom 650ms;
 
-    max-height: 800px;
+    max-height: 700px;
     margin-top: 8px;
     margin-bottom: 8px;
 }
@@ -592,6 +592,15 @@ Also, this state accounts for larger containers, hence the larger "max-height".*
     }
 }
 
+@media screen and (max-width: 720px) {
+    .enlarge2 {
+        max-height: 1000px;
+    }
+    .enlargeIni {
+        max-height: 1000px;
+    }
+}
+
 @media screen and (max-width: 500px) {
     #lastModified {
         padding-top: 0;
@@ -603,5 +612,11 @@ Also, this state accounts for larger containers, hence the larger "max-height".*
     }
     .copyrightFooter hr {
         display: block;
+    }
+    .enlarge2 {
+        max-height: 1600px;
+    }
+    .enlargeIni {
+        max-height: 1600px;
     }
 }
