@@ -362,7 +362,7 @@ a.image {
 }
 
 .faded {
-    color: rgb(115, 115, 115);
+    color: rgb(145, 145, 145);
 }
 
 .imageCirCrop {
@@ -491,7 +491,7 @@ a.image {
 /*This state is for elements initially HIDDEN.*/
 
 .enlarge {
-    max-height: 200px;
+    max-height: 400px;
     margin-top: 8px;
     margin-bottom: 8px;
 }
@@ -501,7 +501,7 @@ a.image {
 Also, this state accounts for larger containers, hence the larger "max-height".*/
 
 .enlarge2 {
-    max-height: 550px;
+    max-height: 800px;
     margin-top: 8px;
     margin-bottom: 8px;
 }
@@ -511,7 +511,7 @@ Also, this state accounts for larger containers, hence the larger "max-height".*
 Also, this state accounts for larger containers, hence the larger "max-height".*/
 
 .enlarge3 {
-    max-height: 700px;
+    max-height: 1000px;
     margin-top: 8px;
     margin-bottom: 8px;
 }
@@ -532,7 +532,7 @@ Also, this state accounts for larger containers, hence the larger "max-height".*
     -o-transition: max-height 500ms, margin-top 650ms, margin-bottom 650ms;
     transition: max-height 500ms, margin-top 650ms, margin-bottom 650ms;
 
-    max-height: 550px;
+    max-height: 800px;
     margin-top: 8px;
     margin-bottom: 8px;
 }
