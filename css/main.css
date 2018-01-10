@@ -22,6 +22,16 @@ body.preload * {
     /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
+::selection {
+    background: rgb(249, 38, 114); /* WebKit/Blink Browsers */
+    color: White;
+}
+
+::-moz-selection {
+    background: rgb(249, 38, 114); /* Gecko Browsers */
+    color: White;
+}
+
 @font-face {
     font-family: 'Yanone Kaffeesatz';
     src: url('../resources/Yanone/YanoneKaffeesatz-Regular.eot?#iefix') format('embedded-opentype'),
