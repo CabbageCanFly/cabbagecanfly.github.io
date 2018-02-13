@@ -389,6 +389,7 @@ a.image {
 }
 
 #bottom {
+    position: relative;
     z-index: 5;
 }
 
