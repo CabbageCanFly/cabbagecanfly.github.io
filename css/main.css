@@ -388,6 +388,10 @@ a.image {
     display: none;
 }
 
+#bottom {
+    z-index: 5;
+}
+
 
 
 /*----- ANIMATIONS/TRANSITIONS/MOTIONS -----*/
