@@ -42,6 +42,10 @@ b a {
 	font-weight: normal;
 }
 
+a {
+	color: white;
+}
+
 a.text {
 	text-decoration: none;
 	position: relative;
