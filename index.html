@@ -1,299 +1,317 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="UTF-8" name="theme-color" content="#272822">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>James Huynh</title>
+	<title>James Huynh</title>
+	<meta charset="UTF-8" name="theme-color" content="#272822">
+	<meta name="viewport" content="width=device-width">
     <link rel="icon" type="image/ico" href="resources/images/favicon.png" />
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link rel="stylesheet" href="css/main.css">
 </head>
+<input type="radio" name="btn_c1" id="btn_c1_1">
+<input type="radio" name="btn_c1" id="btn_c1_2">
+<input type="radio" name="btn_c1" id="btn_c1_3">
+<input type="radio" checked="checked" name="btn_c1" id="btn_c1_4">
+<input type="checkbox" id="btn_c2_1">
+<body>
+<label for="btn_c2_1"><div id="clickOff"></div></label>
+<header id="top" class="faded">
+	<div id="info_ico">
+		<label for="btn_c2_1"><svg viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-.001 5.75c.69 0 1.251.56 1.251 1.25s-.561 1.25-1.251 1.25-1.249-.56-1.249-1.25.559-1.25 1.249-1.25zm2.001 12.25h-4v-1c.484-.179 1-.201 1-.735v-4.467c0-.534-.516-.618-1-.797v-1h3v6.265c0 .535.517.558 1 .735v.999z"/></svg></label>
+	</div>
+	<div class="noClickField"></div>
+	<div id="info_content">
+		<div id="lastModified"></div>
+		<div><span>Fonts:</span>
+			<div><a class="text yanone" href="https://www.yanone.de/fonts/kaffeesatz/">Yanone Kaffeesatz</a>, <a class="text encode" href="https://fonts.google.com/specimen/Encode+Sans+Condensed">Encode Sans Condensed</a></div>
+		</div>
+		<div><span>Colors:</span> Monokai 
+			<div>#272822, #FD971F, #A6E22E</div>
+		</div>
+		<div><span>icons:</span> <a class="text" href="https://iconmonstr.com/">iconmonstr</a></div>
+	</div>
+</header>
+<section class="center" id="center1">
+	<label for="btn_c1_4"><div id="title"><div id="title_bg"></div><span class="arrow up"></span>
+		<h1><div class="logo"><div class="logo_row"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="logo_row"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="logo_row"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="logo_row"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="logo_row"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="logo_row"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="logo_row"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="logo_row"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="logo_row"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="logo_row"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="logo_row"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="logo_row"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="logo_row"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="logo_row"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="logo_row"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div><!-- Title -->James Huynh</h1>
+		<div><!-- Headline -->Yes, cabbages can fly.</div>
+	</div></label>
+	<nav id="btn_c1">
+		<div class="btn_c1_label">
+			<label id="btn_c1_1L" for="btn_c1_1">About</label>
+		</div>
+		<div class="btn_c1_label">
+			<label id="btn_c1_2L" for="btn_c1_2">Courses</label>
 
-<div id='menu'>
-    <div>
-        <a href="#"><img class='imageCirCrop' src="resources/images/logo.png" alt="logo"></a> <br>
-<!--         About Site <br>
-        About Me <br>
-        My Courses <br>
-        Social -->
-    </div>
-</div>
+			<div id="social">
+				<div class="noClickField"></div>
+				<div id="social_links">
+					<div id="resumeIco">
+					<div class="icoSVG"><a href="resources/James-Huynh-Resume.pdf"><svg aria-label="Resume" viewbox="0 0 24 24">
+						<path d="M24 0v24h-24v-24h24zm-6.118 16.064c-2.293-.529-4.427-.993-3.394-2.945 3.146-5.942.834-9.119-2.488-9.119-3.388 0-5.643 3.299-2.488 9.119 1.064 1.963-1.15 2.427-3.394 2.945-2.048.473-2.124 1.49-2.118 3.269l.004.667h15.993l.003-.646c.007-1.792-.062-2.815-2.118-3.29z"/>
+					</svg></a></div>
+					<div class="icoLabel">Résumé</div>
+					</div>
+					<div id="linkedinIco">
+					<div class="icoSVG"><a href="https://www.linkedin.com/in/cabbagecanfly"><svg aria-label="LinkedIn" viewbox="0 0 24 24">
+						<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+					</svg></a></div>
+					<div class="icoLabel">LinkedIn</div>
+					</div>
+					<div id="githubIco">
+					<div class="icoSVG"><a href="https://github.com/CabbageCanFly"><svg aria-label="Github" viewbox="0 0 24 24">
+						<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-4.466 19.59c-.405.078-.534-.171-.534-.384v-2.195c0-.747-.262-1.233-.55-1.481 1.782-.198 3.654-.875 3.654-3.947 0-.874-.312-1.588-.823-2.147.082-.202.356-1.016-.079-2.117 0 0-.671-.215-2.198.82-.64-.18-1.324-.267-2.004-.271-.68.003-1.364.091-2.003.269-1.528-1.035-2.2-.82-2.2-.82-.434 1.102-.16 1.915-.077 2.118-.512.56-.824 1.273-.824 2.147 0 3.064 1.867 3.751 3.645 3.954-.229.2-.436.552-.508 1.07-.457.204-1.614.557-2.328-.666 0 0-.423-.768-1.227-.825 0 0-.78-.01-.055.487 0 0 .525.246.889 1.17 0 0 .463 1.428 2.688.944v1.489c0 .211-.129.459-.528.385-3.18-1.057-5.472-4.056-5.472-7.59 0-4.419 3.582-8 8-8s8 3.581 8 8c0 3.533-2.289 6.531-5.466 7.59z"/>
+					</svg></a></div>
+					<div class="icoLabel">Github</div>
+					</div>
+					<div id="steamIco">
+					<div class="icoSVG"><a href="http://steamcommunity.com/id/cabbagecanfly"><svg aria-label="Steam" role="img" viewBox="0 0 512 512">
+						<path d="m183 280 41 28 27 41 87-62-94-96"/><circle cx="340" cy="190" r="49"/><g fill="none"><circle cx="179" cy="352" r="63" stroke-width="19"/><path d="m-18 271 195 81" stroke-width="80" stroke-linecap="round"/><circle cx="340" cy="190" r="81" stroke-width="32"/></g>
+					</svg></a></div>
+					<div class="icoLabel">Steam</div>
+					</div>
+					<div id="deviantIco">
+					<div class="icoSVG"><a href="http://cabbagecanfly.deviantart.com"><svg aria-label="DeviantArt" viewBox="0 0 24 24">
+						<path d="M0 0v24h24v-24h-24zm17 6.908l-2.865 5.467.239.292h2.626v4h-4.823l-.431.291-1.449 2.749-.291.293h-3.006v-2.908l2.975-5.489-.24-.27h-2.735v-4h4.917l.431-.291 1.453-2.749.29-.293h2.909v2.908z"/>
+					</svg></a></div>
+					<div class="icoLabel">DeviantArt</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="btn_c1_label">
+			<label id="btn_c1_3L" for="btn_c1_3">Projects</label>
+		</div> -->
+	</nav>
+</section>
+<article id="about" class="content">
+	I'm from <b>Mississauga, Ontario</b>. I started my undergraduate program in September 2016 for <b>Computer Science</b> at the <b>University of Toronto</b>, St. George campus.
 
-<body class="preload">
-    <header>
-        <br>
-        <h1>
-            James Huynh
-            <div id="lastModified"></div>
-            <hr>
-        </h1>
-        <img src="resources/images/cover.png" alt="cover">
-    </header>
+	<p>I plan on participating in the Professional Experience Year (PEY) Program, so I'm probably going to be in the class of 2021.</p>
 
-<!--     <div id="about_site" class="column2">
-        <h2>
-            <div style="position: relative;">
-                <a class="anchor" href="#about_site">#</a>
-            </div>
-            About this Website
-            <hr>
-        </h2>
-        <p></p>
-    </div> -->
-    <!-- <div id="about_me" class="column2-fill"> -->
+	<p>I enjoy gaming in my free time. I've recently been playing:
 
-    <div id="about_me">
-        <h2>
-            <div style="position: relative;">
-                <a class="anchor" href="#about_me">#</a>
-            </div>
-            About Me
-            <hr>
-        </h2>
-        <br>
-        <div class="text">
-        <p>I'm from <b>Mississauga, Ontario</b>. I started my undergraduate program in September 2016 for <b>Computer Science</b> at the <b>University of Toronto</b>, St. George campus. I plan on participating in the Professional Experience Year (PEY) Program, so I'm probably going to be in the class of 2021.</p>
-        <p>I enjoy gaming in my free time. I've recently been playing: </p>
-        </div>
-        <ul>
-        	<li><span class="bullet">></span><a class="b" href="http://maplestory.nexon.net/" target="_blank">MapleStory</a></li>
-        	<li><span class="bullet">></span><a class="b" href="http://store.steampowered.com/app/252950/Rocket_League/" target="_blank">Rocket League</a></li>
-            <li><span class="bullet">></span><a class="b" href="https://www.destinythegame.com/ca/en/home" target="_blank">Destiny 2</a></li>
-            <li><span class="bullet">></span><a class="b" href="https://playoverwatch.com/en-us/" target="_blank">Overwatch</a></li>
-        </ul>
-    </div>
-    <br class="clear">
-    <div id="courses">
-        <h2>
-            <div style="position: relative;">
-                <a class="anchor" href="#courses">#</a>
-            </div>
-            My Courses
-            <hr>
-        </h2>
+	<ul>
+		<li><a class="text" href="http://maplestory.nexon.net/">MapleStory</a></li>
+		<li><a class="text" href="https://www.ea.com/games/titanfall/titanfall-2/">Titanfall 2</a></li>
+    	<li><a class="text" href="http://store.steampowered.com/app/252950/Rocket_League/">Rocket League</a></li>
+        <li><a class="text" href="https://www.destinythegame.com/ca/en/home">Destiny 2</a></li>
+        <li><a class="text" href="https://playoverwatch.com/en-us/">Overwatch</a></li>
+	</ul>
+	</p>
+</article>
+<article id="courses" class="content">
+	<button class="accordion">Winter 2018</button>
+	<div class="panel">
+		<ul>
+			<li>
+				<button class="accordion">CSC258H - Computer Organization</button>
+				<div class="panel">
+					<ul>
+					<li>
+						<b>Course Description:</b> <i class="faded">Computer structures, machine languages, instruction execution, addressing techniques, and digital representation of data. Computer system organization, memory storage devices, and microprogramming. Block diagram circuit realizations of memory, control and arithmetic functions. There are a number of laboratory periods in which students conduct experiments with digital logic circuits.</i>
+					</li>
+					<li>
+						<a class="text" href="https://bb-2018-01.teach.cs.toronto.edu/c/csc258h1">Course Forum</a>
+					</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<button class="accordion">CSC263H - Data Structures and Analysis</button>
+				<div class="panel">
+					<ul>
+					<li>
+						<b>Course Description:</b> <i class="faded">Algorithm analysis: worst-case, average-case, and amortized complexity. Expected worst-case complexity, randomized quicksort and selection. Standard abstract data types, such as graphs, dictionaries, priority queues, and disjoint sets. A variety of data structures for implementing these abstract data types, such as balanced search trees, hashing, heaps, and disjoint forests. Design and comparison of data structures. Introduction to lower bounds.</i>
+					</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<span>MAT235Y - Calculus II</span>
+			</li>
+			<li>
+				<span>STA247H - Probability with Computer Applications</span>
+			</li>
+		</ul>
+	</div>
 
-		<!-- Winter 2018 -->
-            <a class='noborder' onclick="toggle('Winter2018', 'shrinkEnd'); toggle('Winter2018Text','fadeOutEnd'); toggle('Winter2018Hr','hrFadeOutEnd')"><span class='peek h3'>Winter 2018</span></a>
-            <hr id='Winter2018Hr' class='hrFadeInIni h3'>
-        <div id='Winter2018' class='enlargeIni'><div id='Winter2018Text' class='fadeInIni'>
-        <div><ul class="marginH3">
-            <!-- CSC258 -->
-            <a onclick="toggle('CSC258', 'enlarge'); toggle('CSC258Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>CSC258H - Computer Organization</span></li></a>
-                <div id='CSC258' class='shrink'><div id='CSC258Text' class='fadeOut'><div><ul>
-                <li>
-                	<span class="bullet faded">></span><b>Course Description: </b><i class='faded'>Computer structures, machine languages, instruction execution, addressing techniques, and digital representation of data. Computer system organization, memory storage devices, and microprogramming. Block diagram circuit realizations of memory, control and arithmetic functions. There are a number of laboratory periods in which students conduct experiments with digital logic circuits.</i>
-                </li>
-                <li>
-                	<span class="bullet">></span><a href="https://bb-2018-01.teach.cs.toronto.edu/c/csc258h1" target="_blank">Course forum</a>
-                </li>
-                </ul></div></div></div>
-            <!-- CSC263 -->
-            <a onclick="toggle('CSC263', 'enlarge'); toggle('CSC263Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>CSC263H - Data Structures and Analysis</span></li></a>
-                <div id='CSC263' class='shrink'><div id='CSC263Text' class='fadeOut'><div><ul>
-                <li>
-                    <span class="bullet faded">></span><b>Course Description: </b><i class='faded'>Algorithm analysis: worst-case, average-case, and amortized complexity. Expected worst-case complexity, randomized quicksort and selection. Standard abstract data types, such as graphs, dictionaries, priority queues, and disjoint sets. A variety of data structures for implementing these abstract data types, such as balanced search trees, hashing, heaps, and disjoint forests. Design and comparison of data structures. Introduction to lower bounds.</i>
-                </li>
-                <li>
-                    <span class="bullet">></span><a class='b' href='http://www.cs.toronto.edu/~sam/teaching/263/' target='_blank'>Course Website</a>
-                </li>
-                <li>
-                    <span class="bullet">></span><a href='https://markus.teach.cs.toronto.edu/csc263-2018-01' target='_blank'>MarkUs</a>
-                </li>
-                </ul></div></div></div>
-            <!-- MAT235 -->
-            <li><span class="bullet">></span>MAT235Y - Calculus II</li>
-            <!-- STA247 -->
-            <li><span class="bullet">></span>STA247H - Probability with Computer Applications</li>
-            <br>
-        </ul></div>
-        </div></div>
+	<button class="accordion">Fall 2017</button>
+	<div class="panel">
+		<ul>
+			<li>
+				<button class="accordion">CSC209H - Software Tools and Systems Programming</button>
+				<div class="panel">
+					<ul>
+					<li>
+						<b>Course Description:</b> <i class="faded">Software techniques in a Unix-style environment, using scripting languages and a machine-oriented programming language (typically C). What goes on in the operating system when programs are executed. Core topics: creating and using software tools, pipes and filters, file processing, shell programming, processes, system calls, signals, basic network programming.</i>
+					</li>
+					<li>
+						<a class="text" href="http://www.teach.cs.toronto.edu/~csc209h/fall/">Course Website</a>
+					</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<button class="accordion">CSC236H - Introduction to the Theory of Computation</button>
+				<div class="panel">
+					<ul>
+					<li>
+						<b>Course Description:</b> <i class="faded">The application of logic and proof techniques to Computer Science. Mathematical induction; correctness proofs for iterative and recursive algorithms; recurrence equations and their solutions; introduction to automata and formal languages.</i>
+					</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<button class="accordion">CSC343H - Introduction to Databases</button>
+				<div class="panel">
+					<ul>
+					<li>
+						<b>Course Description:</b> <i class="faded">Introduction to database management systems. The relational data model. Relational algebra. Querying and updating databases: the query language SQL. Application programming with SQL. Integrity constraints, normal forms, and database design. Elements of database system technology: query processing, transaction management.</i>
+					</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<span>HPS100H - Introduction to History and Philosophy of Science</span>
+			</li>
+			<li>
+				<span>MAT235Y - Calculus II</span>
+			</li>
+			<li>
+				<span>STA257H - Probability and Statistics I</span>
+			</li>
+		</ul>
+	</div>
 
-        <!-- Fall 2017 -->
-            <a class='noborder' onclick="toggle('Fall2017', 'enlarge2'); toggle('Fall2017Text','fadeIn'); toggle('Fall2017Hr','hrFadeIn')"><span class='peek h3'>Fall 2017</span></a>
-            <hr id='Fall2017Hr' class='hrFadeOut h3'>
-        <div id='Fall2017' class='shrink'><div id='Fall2017Text' class='fadeOut'>
-        <div><ul class="marginH3">
-            <!-- CSC209 -->
-            <a onclick="toggle('CSC209', 'enlarge'); toggle('CSC209Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>CSC209H - Software Tools and Systems Programming</span></li></a>
-                <div id='CSC209' class='shrink'><div id='CSC209Text' class='fadeOut'><div><ul>
-                <li>
-                	<span class="bullet faded">></span><b>Course Description: </b><i class='faded'>Software techniques in a Unix-style environment, using scripting languages and a machine-oriented programming language (typically C). What goes on in the operating system when programs are executed. Core topics: creating and using software tools, pipes and filters, file processing, shell programming, processes, system calls, signals, basic network programming.</i>
-                </li>
-                <li>
-                    <span class="bullet">></span><a class='b' href='http://www.teach.cs.toronto.edu/~csc209h/fall/' target='_blank'>Course Website</a>
-                </li>
-                <li>
-                    <span class="bullet">></span><a href='https://pcrs.teach.cs.toronto.edu/209/content/quests' target='_blank'>PCRS</a>
-                </li>
-                <li>
-                    <span class="bullet">></span><a href='https://markus.teach.cs.toronto.edu/csc209-2017-09/' target='_blank'>MarkUs</a>
-                </li>
-                </ul></div></div></div>
-            <!-- CSC236 -->
-            <a onclick="toggle('CSC236', 'enlarge'); toggle('CSC236Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>CSC236H - Introduction to the Theory of Computation</span></li></a>
-                <div id='CSC236' class='shrink'><div id='CSC236Text' class='fadeOut'><div><ul>
-                <li>
-                	<span class="bullet faded">></span><b>Course Description: </b><i class='faded'>
-                	The application of logic and proof techniques to Computer Science. Mathematical induction; correctness proofs for iterative and recursive algorithms; recurrence equations and their solutions; introduction to automata and formal languages.</i>
-                </li>
-                <li>
-                    <span class="bullet">></span><a href='https://markus.teach.cs.toronto.edu/csc236-2017-09/' target='_blank'>MarkUs</a>
-                </li>
-                </ul></div></div></div>
-            <!-- CSC343 -->
-            <a onclick="toggle('CSC343', 'enlarge'); toggle('CSC343Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>CSC343H - Introduction to Databases</span></li></a>
-                <div id='CSC343' class='shrink'><div id='CSC343Text' class='fadeOut'><div><ul>
-                <li>
-                	<span class="bullet faded">></span><b>Course Description: </b><i class='faded'>Introduction to database management systems. The relational data model. Relational algebra. Querying and updating databases: the query language SQL. Application programming with SQL. Integrity constraints, normal forms, and database design. Elements of database system technology: query processing, transaction management.</i>
-                </li>
-                <li>
-                    <span class="bullet">></span><a class='b' href='http://www.teach.cs.toronto.edu/~csc343h/fall/' target='_blank'>Course Website</a>
-                </li>
-                <li>
-                    <span class="bullet">></span><a href='https://pcrs.teach.cs.toronto.edu/343/content/quests' target='_blank'>PCRS</a>
-                </li>
-                <li>
-                    <span class="bullet">></span><a href='https://markus.cdf.toronto.edu/csc343-2017-09/' target='_blank'>Markus</a>
-                </li>
-                </ul></div></div></div>
-            <!-- HPS100 -->
-            <li><span class="bullet">></span>HPS100H - Introduction to History and Philosophy of Science</li>
-            <!-- MAT235 -->
-            <li><span class="bullet">></span>MAT235Y - Calculus II</li>
-            <!-- STA257 -->
-            <li><span class="bullet">></span>STA257H - Probability and Statistics I</li>
-            <br>
-        </ul></div>
-        </div></div>
+	<button class="accordion">Winter 2017</button>
+	<div class="panel">
+		<ul>
+			<li>
+				<span>BIO130H - Molecular and Cell Biology</span>
+			</li>
+			<li>
+				<button class="accordion">CSC207H - Software Design</button>
+				<div class="panel">
+					<ul>
+					<li>
+						<b>Course Description:</b> <i class="faded">An introduction to software design and development concepts, methods, and tools using a statically-typed object-oriented programming language such as Java. Topics from: version control, unit testing, refactoring, object-oriented design and development, design patterns, advanced IDE usage, regular expressions, and reflection. Representation of floating-point numbers and introduction to numerical computation.</i>
+					</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<button class="accordion">MAT137Y - Calculus!</button>
+				<div class="panel">
+					<ul>
+					<li>
+						<a class="text" href='http://www.math.toronto.edu/~alfonso/137/137.html'>Course Website</a>
+					</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<button class="accordion">ECO105Y - Principles of Economics for Non-Specialists</button>
+				<div class="panel">
+					<ul>
+					<li>
+						<a class="text" href='https://cabbagecanfly.github.io/resources/courses/ECO105/ECO105 - Outline.pdf'>Course Outline</a>
+					</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<button class="accordion">MAT223H - Linear Algebra I</button>
+				<div class="panel">
+					<ul>
+					<li>
+						<a class="text" href='http://www.math.toronto.edu/nhoell/MAT223/'>Course Website</a>
+					</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<span>PSY100H - Introductory Psychology</span>
+			</li>
+		</ul>
+	</div>
 
-        <!-- Winter 2017 -->
-        <a class='noborder' onclick="toggle('Winter2017', 'enlarge2'); toggle('Winter2017Text','fadeIn'); toggle('Winter2017Hr','hrFadeIn')"><span class='peek h3'>Winter 2017</span></a>
-        <hr id='Winter2017Hr' class='hrFadeOut h3'>
-        <div id='Winter2017' class='shrink'><div id='Winter2017Text' class='fadeOut'>
-        <div><ul class=marginH3>
-            <!-- BIO130 -->
-            <li><span class="bullet">></span>BIO130H - Molecular and Cell Biology</li>
-            <!-- CSC207 -->
-            <a onclick="toggle('CSC207', 'enlarge'); toggle('CSC207Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>CSC207H - Software Design</span></li></a>
-                <div id='CSC207' class='shrink'><div id='CSC207Text' class='fadeOut'><div><ul>
-                <li>
-                	<span class="bullet faded">></span><b>Course Description: </b><i class='faded'>An introduction to software design and development concepts, methods, and tools using a statically-typed object-oriented programming language such as Java. Topics from: version control, unit testing, refactoring, object-oriented design and development, design patterns, advanced IDE usage, regular expressions, and reflection. Representation of floating-point numbers and introduction to numerical computation.</i>
-                </li>
-                <li>
-                    <span class="bullet">></span><a class='b' href='http://www.teach.cs.toronto.edu/~csc207h/winter/index.shtml' target='_blank'>Course Website</a>
-                </li>
-            	</ul></div></div></div>
-            <!-- ECO105 -->
-            <a onclick="toggle('ECO1052', 'enlarge'); toggle('ECO1052Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>ECO105Y - Principles of Economics for Non-Specialists</span></li></a>
-                <div id='ECO1052' class='shrink'><div id='ECO1052Text' class='fadeOut'><div><ul>
-                <li>
-                    <span class="bullet">></span><a class='b' href='https://cabbagecanfly.github.io/resources/courses/ECO105/ECO105 - Outline.pdf' target='_blank'>Course Outline</a>
-                </li>
-                </ul></div></div></div>
-            <!-- MAT137 -->
-            <a onclick="toggle('MAT1372', 'enlarge'); toggle('MAT1372Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>MAT137Y - Calculus!</span></li></a>
-                <div id='MAT1372' class='shrink'><div id='MAT1372Text' class='fadeOut'><div><ul>
-                <li>
-                    <span class="bullet">></span><a class='b' href='http://www.math.toronto.edu/~alfonso/137/137.html' target='_blank'>Course Website</a>
-                </li>
-                </ul></div></div></div>
-            <!-- MAT223 -->
-            <a onclick="toggle('MAT223', 'enlarge'); toggle('MAT223Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>MAT223H - Linear Algebra I</span></li></a>
-                <div id='MAT223' class='shrink'><div id='MAT223Text' class='fadeOut'><div><ul>
-                <li>
-                    <span class="bullet">></span><a class='b' href='http://www.math.toronto.edu/nhoell/MAT223/' target='_blank'>Course Website</a>
-                </li>
-                </ul></div></div></div>
-            <!-- PSY100 -->
-            <li><span class="bullet">></span>PSY100H - Introductory Psychology</li>
-            <br>
-        </ul></div>
-        </div></div>
+	<button class="accordion">Fall 2016</button>
+	<div class="panel">
+		<ul>
+			<li>
+				<button class="accordion">CCR199H - L0381 - The Cossacks</button>
+				<div class="panel">
+					<ul>
+					<li>
+						<a class="text" href="http://homes.chass.utoronto.ca/~tarn/courses/199.html">Course Website</a>
+					</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<button class="accordion">CSC148H - Introduction to Computer Science</button>
+				<div class="panel">
+					<ul>
+					<li>
+						<b>Course Description:</b> <i class="faded">Abstract data types and data structures for implementing them. Linked data structures. Encapsulation and information-hiding. Object-oriented programming. Specifications. Analyzing the efficiency of programs. Recursion.</i>
+					</li>
+					<li>
+						<a class="text" href="http://www.teach.cs.toronto.edu/~csc148h/fall/">Course Website</a>
+					</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<button class="accordion">CSC165H - Mathematical Expression and Reasoning for Computer Science</button>
+				<div class="panel">
+					<ul>
+					<li>
+						<b>Course Description:</b> <i class="faded">Introduction to abstraction and rigour. Informal introduction to logical notation and reasoning. Understanding, using and developing precise expressions of mathematical ideas, including definitions and theorems. Structuring proofs to improve presentation and comprehension. General problem-solving techniques. Running time analysis of iterative programs. Formal definition of Big-Oh. Diagonalization, the Halting Problem, and some reductions. Unified approaches to programming and theoretical problems.</i>
+					</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<button class="accordion">ECO105Y - Principles of Economics for Non-Specialists</button>
+				<div class="panel">
+					<ul>
+					<li>
+						<a class="text" href='https://cabbagecanfly.github.io/resources/courses/ECO105/ECO105 - Outline.pdf'>Course Outline</a>
+					</li>
+					</ul>
+				</div>
+			</li>
+			<li>
+				<button class="accordion">MAT137Y - Calculus!</button>
+				<div class="panel">
+					<ul>
+					<li>
+						<a class="text" href='http://www.math.toronto.edu/~alfonso/137/137.html'>Course Website</a>
+					</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</div>
+</article>
 
-        <!-- Fall 2016 -->
-        <a class='noborder' onclick="toggle('Fall2016', 'enlarge2'); toggle('Fall2016Text','fadeIn'); toggle('Fall2016Hr','hrFadeIn')"><span class='peek h3'>Fall 2016</span></a>
-        <hr id='Fall2016Hr' class='hrFadeOut h3'>
-        <div id='Fall2016' class='shrink'><div id='Fall2016Text' class='fadeOut'>
-        <div><ul class='marginH3'>
-            <!-- CCR199 -->
-            <a onclick="toggle('CCR199', 'enlarge'); toggle('CCR199Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>CCR199H - L0381 - The Cossacks</span></li></a>
-                <div id='CCR199' class='shrink'><div id='CCR199Text' class='fadeOut'><div><ul><li>
-                    <span class="bullet">></span><a class='b' href='http://homes.chass.utoronto.ca/~tarn/courses/199.html' target='_blank'>Course Website</a>
-                </li></ul></div></div></div>
-            <!-- CSC148 -->
-            <a onclick="toggle('CSC148', 'enlarge'); toggle('CSC148Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>CSC148H - Introduction to Computer Science</span></li></a>
-                <div id='CSC148' class='shrink'><div id='CSC148Text' class='fadeOut'><div><ul>
-                <li>
-                	<span class="bullet faded">></span><b>Course Description: </b><i class='faded'>Abstract data types and data structures for implementing them. Linked data structures. Encapsulation and information-hiding. Object-oriented programming. Specifications. Analyzing the efficiency of programs. Recursion.</i>
-                </li>
-                <li>
-                    <span class="bullet">></span><a class='b' href='http://www.cdf.toronto.edu/~csc148h/fall/' target='_blank'>Course Website</a>
-                </li>
-            	</ul></div></div></div>
-            <!-- CSC165 -->
-            <a onclick="toggle('CSC165', 'enlarge'); toggle('CSC165Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>CSC165H - Mathematical Expression and Reasoning for Computer Science</span></li></a>
-                <div id='CSC165' class='shrink'><div id='CSC165Text' class='fadeOut'><div><ul>
-                <li>
-                    <span class="bullet faded">></span><b>Course Description: </b><i class='faded'>Introduction to abstraction and rigour. Informal introduction to logical notation and reasoning. Understanding, using and developing precise expressions of mathematical ideas, including definitions and theorems. Structuring proofs to improve presentation and comprehension. General problem-solving techniques. Running time analysis of iterative programs. Formal definition of Big-Oh. Diagonalization, the Halting Problem, and some reductions. Unified approaches to programming and theoretical problems.</i>
-                </li>
-                <li>
-                    <span class="bullet">></span><a class='b' href='http://www.cdf.toronto.edu/~csc165h/fall/index.shtml' target='_blank'>Course Website</a>
-                </li>
-                </ul></div></div></div>
-            <!-- ECO105 -->
-            <a onclick="toggle('ECO105', 'enlarge'); toggle('ECO105Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>ECO105Y - Principles of Economics for Non-Specialists</span></li></a>
-                <div id='ECO105' class='shrink'><div id='ECO105Text' class='fadeOut'><div><ul>
-                <li>
-                    <span class="bullet">></span><a class='b' href='https://cabbagecanfly.github.io/resources/courses/ECO105/ECO105 - Outline.pdf' target='_blank'>Course Outline</a>
-                </li>
-                </ul></div></div></div>
-            <!-- MAT137 -->
-            <a onclick="toggle('MAT137', 'enlarge'); toggle('MAT137Text','fadeIn')"><li class='peek'><span class='bullet'>+</span><span>MAT137Y - Calculus!</span></li></a>
-                <div id='MAT137' class='shrink'><div id='MAT137Text' class='fadeOut'><div><ul>
-                <li>
-                    <span class="bullet">></span><a class='b' href='http://www.math.toronto.edu/~alfonso/137/137.html' target='_blank'>Course Website</a>
-                </li>
-                </ul></div></div></div>
-        </ul></div>
-        </div></div>
-    </div>
+<footer class="faded" id="bottom">
+	<div id="copyright">
+		© <span id="year"></span> James Huynh
+	</div>
+</footer>
+<!-- <div style="text-align: center;">
+	<img class="imgCir" src="resources/images/pic.jpg" alt="portrait" />
+</div> -->
 
-    <div id="bottom">
-        <div align="center" style="margin-top: 6em;">
-            <h3 style="margin-bottom: 0px;">
-                My Links
-                <hr>
-            </h3>
-            <a href="resources/James-Huynh-Resume.pdf" target="_blank">Résumé</a>
-            <a href="https://www.linkedin.com/in/cabbagecanfly" target="_blank">LinkedIn</a>
-            <a href="https://github.com/CabbageCanFly" target="_blank">GitHub</a>
-            <a href="http://steamcommunity.com/id/cabbagecanfly" target="_blank">Steam</a>
-            <a href="http://cabbagecanfly.deviantart.com" target="_blank">DeviantArt</a>
-            <hr style="margin-top: 1em;">
-            <br>
-            <img class="imageCirCrop" src="resources/images/pic.jpg" alt="portrait" />
-            <div class="faded">
-                Yes, cabbages can fly.
-            </div>
-        </div>
-        <br>
-        <footer>
-            <hr>
-            <div style="float: left;">
-                <!-- <a href="http://www.colourlovers.com/palette/1718713/Monokai" target="_blank">Monokai Colour Palette</a> -->
-                Monokai Colour Palette
-            </div>
-            <div style="float: right;">
-                <a href="https://www.yanone.de/fonts/kaffeesatz/" target="_blank">Yanone Kaffesatz Font</a>
-            </div>
-            <div class="copyrightFooter" style="margin: auto; text-align: center;">
-                <hr>
-            	<span class="copyright">©</span> <span id="copyright"></span> James Huynh
-            </div>
-        </footer>
-        <br>
-    </div>
-    <script src="scripts/main.js"></script>
+<noscript>
+	<style>
+		.panel {
+			max-height: 100%;
+		}
+	</style>
+</noscript>
+<script src="js/main.js"></script>
+
 </body>
-
 </html>
