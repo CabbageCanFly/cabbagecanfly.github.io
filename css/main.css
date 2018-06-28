@@ -13,10 +13,6 @@
 	font-style: 'Encode Sans Condensed';
 }
 
-section, article {
-	/*opacity: 0.23;*/
-}
-
 body {
 	background-color: #272822;
 	font-family: 'Encode Sans Condensed', sans-serif;
@@ -1319,9 +1315,8 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 
 .logo {
 	position: absolute;
-	margin-left: -3.2rem;
-	margin-top: 0.75rem;
-	cursor: pointer;
+	margin-left: -73px;
+	margin-top: -15px;
 }
 
 .logo_row {
@@ -1338,8 +1333,8 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 	width: 2px;
 	height: 2px;
 	opacity: 1;
-	-webkit-animation: pixelReEnter 3.45s;
-	        animation: pixelReEnter 3.45s;
+	/*-webkit-animation: pixelReEnter 3.45s;*/
+	        /*animation: pixelReEnter 3.45s;*/
 	-webkit-transition: background-color 0.5s;
 	-o-transition: background-color 0.5s;
 	transition: background-color 0.5s;
@@ -1352,8 +1347,8 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 /*#title:active > h1 > .logo > .logo_row > span {*/
 .logo:active > .logo_row > span {
 	opacity: 1;
-	-webkit-animation: pixelReEnterAgain 3.45s;
-	        animation: pixelReEnterAgain 3.45s;
+	/*-webkit-animation: pixelReEnterAgain 3.45s;*/
+	        /*animation: pixelReEnterAgain 3.45s;*/
 	/*animation-timing-function: cubic-bezier(.33,.72,0,.49);*/
 }
 
