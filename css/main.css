@@ -156,9 +156,6 @@ a.text:active:before {
     font-size: 1rem;
 	font-family: 'Encode Sans Condensed', sans-serif;
     cursor: pointer;
-    -webkit-transition: color 0.2s, width 0.2s;
-    -o-transition: color 0.2s, width 0.2s;
-    transition: color 0.2s, width 0.2s;
 }
 .accordion:before {
 	position: absolute;
@@ -643,9 +640,6 @@ input#btn_c1_1:checked ~ #about a.text:after {
 	height: 24px;
 	width: 24px;
 	fill: rgba(255,255,255,0.20);
-	-webkit-transition: fill 0.2s;
-	-o-transition: fill 0.2s;
-	transition: fill 0.2s;
 }
 #info_ico label {
 	display: inline-block;
@@ -817,9 +811,9 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 	width: 2em;
 	background-color: white;
 	fill: #272822;
-	-webkit-transition: fill 0.2s, border-color 0.2s, background-color 0.2s, opacity 0.2s;
-	-o-transition: fill 0.2s, border-color 0.2s, background-color 0.2s, opacity 0.2s;
-	transition: fill 0.2s, border-color 0.2s, background-color 0.2s, opacity 0.2s;
+	-webkit-transition: opacity 0.2s;
+	-o-transition: opacity 0.2s;
+	transition: opacity 0.2s;
 	border: 2.4px solid white;
 	border-radius: 25%;
 }
