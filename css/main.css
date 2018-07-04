@@ -330,16 +330,14 @@ input#btn_c1_2:checked ~ #courses > .accordion:after {
 	position: absolute;
 	content: '';
 	border: 5px solid;
-	transform: scale(1.05, 1.13);
-	/*border-color: rgba(255,255,255,0.04);*/
-	border-color: #FD971F;
-	opacity: 0.5;
+	transform: scale(1.05, 1.17);
+	border-color: rgba(255,255,255,0.07);
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
 	border-radius: 8px;
-	animation: fadeEnlarge 5s ease-out infinite;
+	animation: fadeEnlarge 6s ease-out infinite;
 }
 
 #title:hover > #title_bg {
@@ -1130,15 +1128,15 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 }
 @-webkit-keyframes fadeEnlarge {
 	30%, 100% {
-		-webkit-transform: scale(1.13, 1.27);
-		        transform: scale(1.13, 1.27);
+		-webkit-transform: scale(1.09, 1.25);
+		        transform: scale(1.09, 1.25);
 		opacity: 0;
 	}
 }
 @keyframes fadeEnlarge {
 	30%, 100% {
-		-webkit-transform: scale(1.13, 1.27);
-		        transform: scale(1.13, 1.27);
+		-webkit-transform: scale(1.09, 1.25);
+		        transform: scale(1.09, 1.25);
 		opacity: 0;
 	}
 }
