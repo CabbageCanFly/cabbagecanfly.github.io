@@ -363,6 +363,7 @@ input#btn_c1_2:checked ~ #courses > .accordion:after {
 }
 
 input#btn_c1_4:checked ~ #center1 #title_bg:before {
+	opacity: 0;
 	animation: none;
 }
 input#btn_c1_4:checked ~ #center1 > label > #title > span.arrow {
