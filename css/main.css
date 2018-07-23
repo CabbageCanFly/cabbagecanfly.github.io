@@ -143,6 +143,7 @@ a.text:active:before {
 .accordion {
 	display: inline-block;
 	position: relative;
+	outline: none;
     text-align: left;
     width: 100%;
     background: none;
