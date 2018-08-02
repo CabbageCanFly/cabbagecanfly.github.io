@@ -1,3 +1,14 @@
+/*
+Colours:
+orange					green					black
+#FD971F					#FD971F					#272822
+rgba(253, 151, 31, 1)	rgba(253, 151, 31, 1)	rgba(39, 40, 34, 1)
+
+white					pink					blue
+#FFFFFF					#F92672					#66D9EF
+rgba(255, 255, 255, 1)	rgba(249, 38, 114, 1)	rgba(102, 217, 239, 1)
+*/
+
 @font-face {
 	font-family: 'Yanone Kaffeesatz';
 	src: url('../resources/fonts/YanoneKaffeesatz-Regular.ttf');
@@ -11,6 +22,18 @@
 }
 .encode {
 	font-style: 'Encode Sans Condensed';
+}
+
+* {
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
+}
+::selection {
+    background-color: #F92672;
+    color: White;
+}
+::-moz-selection {
+    background-color: #F92672;
+    color: White;
 }
 
 body {
