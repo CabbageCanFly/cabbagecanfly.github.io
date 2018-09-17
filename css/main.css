@@ -41,7 +41,7 @@ rgba(255, 255, 255, 1)	rgba(249, 38, 114, 1)	rgba(102, 217, 239, 1)
 }
 
 body {
-	/*opacity: 0.3;*/
+	opacity: 0.3;
 	background-color: #272822;
 	font-family: 'Encode Sans Condensed', sans-serif;
 	color: White;
@@ -58,6 +58,14 @@ h1, h2, h3, h4 {
 h1 {
 	font-weight: normal;
 	margin: 0;
+}
+
+#name { 
+    display: block;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 1.5em;
+    margin: 0;
+    font-weight: normal;
 }
 
 b {
@@ -346,6 +354,7 @@ input#btn_c1_courses:checked ~ #courses > .accordion:after {
 
 #title {
 	position: relative;
+	display: block;
 	margin-left: 3.2rem;
     cursor: pointer;
 }
