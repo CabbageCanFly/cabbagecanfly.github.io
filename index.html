@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>James Huynh</title>
-	<meta charset="UTF-8" name="theme-color" content="#272822">
+	<meta charset="UTF-8">
+	<meta name="theme-color" content="#272822">
 	<meta name="viewport" content="width=device-width">
     <link rel="icon" type="image/ico" href="resources/images/favicon.png" />
 	<link rel="stylesheet" href="css/main.css">
@@ -17,13 +18,19 @@
 	  gtag('config', 'UA-121864444-1');
 	</script>
 </head>
-<input type="radio" name="btn_c1" id="btn_c1_1">
-<input type="radio" name="btn_c1" id="btn_c1_2">
-<input type="radio" name="btn_c1" id="btn_c1_3">
-<input type="radio" checked="checked" name="btn_c1" id="btn_c1_4"> 
-<input type="checkbox" id="btn_c2_1">
 <body>
-<label for="btn_c2_1"><div id="clickOff"></div></label>
+<input type="radio" name="btn_c1" id="btn_c1_about" class="hide">
+<input type="radio" name="btn_c1" id="btn_c1_courses" class="hide">
+<input type="radio" name="btn_c1" id="btn_c1_3" class="hide">
+<input type="radio" checked="checked" name="btn_c1" id="btn_c1_4" class="hide">
+<input type="checkbox" id="btn_c2_1" class="hide">
+<label for="btn_c2_1"><span id="clickOff"></span></label>
+<div id="searchContainer">
+	<div id="search">
+		<input autofocus spellcheck="false" type="text" onkeyup="" placeholder="Type anywhere to search">
+		<span></span>
+	</div>
+</div>
 <header id="top" class="faded">
 	<div id="info_ico">
 		<label for="btn_c2_1"><svg viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1 18h-2v-8h2v8zm-1-12.25c.69 0 1.25.56 1.25 1.25s-.56 1.25-1.25 1.25-1.25-.56-1.25-1.25.56-1.25 1.25-1.25z"/></svg></label>
@@ -47,10 +54,10 @@
 	</div></label>
 	<nav id="btn_c1">
 		<div class="btn_c1_label">
-			<label id="btn_c1_1L" for="btn_c1_1">About</label>
+			<label id="btn_c1_aboutL" for="btn_c1_about">About</label>
 		</div>
 		<div class="btn_c1_label">
-			<label id="btn_c1_2L" for="btn_c1_2">Courses</label>
+			<label id="btn_c1_coursesL" for="btn_c1_courses">Courses</label>
 
 			<div id="social">
 				<div class="noClickField"></div>
