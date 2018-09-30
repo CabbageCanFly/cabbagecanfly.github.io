@@ -36,10 +36,10 @@ function setSearch() {
 		if (!e.metaKey) {
 			if(e.keyCode >= 65 && e.keyCode <= 90 || e.keyCode >= 48 &&
 				e.keyCode <= 57 || e.keyCode == 8 || e.keyCode == 46) {
-				
+				checkSearch(search);
 			}
 			if (e.keyCode == 13) {
-				checkSearch(search);
+				// checkSearch(search);
 			}
 		}
 	};
@@ -49,7 +49,7 @@ function checkSearch(input) {
 	if (input.value == curInp) {
 		return;
 	} else {
-		curInp = input.value;	
+		curInp = input.value;
 	}
 	let elems = document.getElementsByClassName("found");
 	while (elems.length) {
@@ -65,6 +65,7 @@ function checkSearch(input) {
 	let value = input.value;
 	let regex = new RegExp('^[a-zA-Z0-9_ ]+$');
 	if (regex.test(value) == false) {
+		setAccordion();
 		return;
 	}
 
