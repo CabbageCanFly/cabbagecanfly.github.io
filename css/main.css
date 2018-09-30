@@ -35,20 +35,20 @@ rgba(255, 255, 255, 1)	rgba(249, 38, 114, 1)	rgba(102, 217, 239, 1)
     background-color: #F92672;
     color: White;
 }
-#highlight {
+.found {
 	background-color: #F92672 !important;
     color: White !important;
 }
 
 body {
-	opacity: 0.3;
+	/*opacity: 0.3;*/
 	background-color: #272822;
 	font-family: 'Encode Sans Condensed', sans-serif;
 	color: White;
 	margin: 0 15vw 0 15vw;
-	/*overflow: hidden;*/
-	overflow-y: hidden;
-	overflow-x: scroll;
+	overflow: hidden;
+	/*overflow-y: hidden;*/
+	/*overflow-x: scroll;*/
 }
 
 h1, h2, h3, h4 {
@@ -305,11 +305,6 @@ a.text:active:before {
 	line-height: 1.5em;
 }
 
-input#btn_c1_courses:checked ~ #courses > .accordion:after {
-	-webkit-animation: widthFill_accordion 0.5s ease-out;
-	        animation: widthFill_accordion 0.5s ease-out;
-}
-
 #center1 {
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: -webkit-transform 0.5s;
@@ -512,21 +507,6 @@ input#btn_c1_4:checked ~ #center1 #social div.noClickField {
     transition: transform 0.2s, -webkit-transform 0.2s;
 }
 
-#btn_c1 label:after {
-	position: absolute;
-	content: '';
-	background-color: #272822;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	height: 101%;
-	width: 101%;
-	z-index: -1;
-    -webkit-animation: widthFill 0.75s ease-out forwards;
-            animation: widthFill 0.75s ease-out forwards;
-}
-
 #btn_c1 label:hover {
 	color: #272822;
 }
@@ -602,9 +582,6 @@ article.content {
 #about li {
 	margin-bottom: 3px;
 }
-#courses a.text:after {
-	display: none;
-}
 
 input#btn_c1_about:checked ~ article.content,
 input#btn_c1_courses:checked ~ article.content {
@@ -621,10 +598,6 @@ input#btn_c1_courses:checked ~ #courses {
 	opacity: 1;
 	transition: opacity 0.5s;
 	z-index: 1;
-}
-input#btn_c1_about:checked ~ #about a.text:after {
-	-webkit-animation: widthFill 0.75s ease-out forwards;
-	        animation: widthFill 0.75s ease-out forwards;
 }
 
 #top {
