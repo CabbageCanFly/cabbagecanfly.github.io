@@ -69,12 +69,9 @@ h1 {
     font-weight: normal;
 }
 
-b {
+.b {
+	font-family: 'EncodeSansCondensed', sans-serif;
 	color: #FD971F;
-}
-
-b a {
-	font-weight: normal;
 }
 
 a {
@@ -91,6 +88,9 @@ a.text {
     -webkit-transition: color 0.2s;
     -o-transition: color 0.2s;
     transition: color 0.2s;
+    /* Safari-flicker/shift-graphical-glitch hacky fix*/
+    -webkit-perspective: 1000;
+	-webkit-backface-visibility: hidden;
 }
 
 a.text:before {
@@ -200,6 +200,9 @@ a.text:active:before {
     font-size: 1rem;
 	font-family: 'EncodeSansCondensed_Light', sans-serif;
     cursor: pointer;
+    /* Safari-flicker/shift-graphical-glitch hacky fix*/
+    -webkit-perspective: 1000;
+	-webkit-backface-visibility: hidden;
 }
 .accordion:before {
 	position: absolute;
@@ -229,8 +232,10 @@ a.text:active:before {
 	-webkit-transform: scaleY(1);
 	    -ms-transform: scaleY(1);
 	        transform: scaleY(1);
-	border-bottom: 1px solid white;
-	border-radius: 4px;
+    border-radius: 4px;
+}
+.accordion-active:before {
+	border-bottom: 2px solid white;
 }
 .accordion:active:before {
 	opacity: 0.75;
@@ -275,13 +280,16 @@ a.text:active:before {
 	margin-top: 0;
 	padding-top: 0;
 	padding-left: 1.4em;
+	/* Safari-flicker/shift-graphical-glitch hacky fix*/
+    -webkit-perspective: 1000;
+	-webkit-backface-visibility: hidden;
 }
 
 .panel li {
 	width: 100%;
 }
 
-.panel li > span {
+.panel li > span.notAccordion {
 	position: relative;
 	display: block;
 	padding-top: 0.4em;
@@ -290,7 +298,7 @@ a.text:active:before {
     padding-left: 0.6em;
 }
 
-.panel > ul >li > span:before {
+.panel > ul >li > span.notAccordion:before {
 	position: absolute;
 	content: '';
 	background-color: rgba(255,255,255,0.45);
@@ -483,6 +491,9 @@ input#btn_c1_4:checked ~ #center1 #social div.noClickField {
     -webkit-transition: color 0.2s;
     -o-transition: color 0.2s;
     transition: color 0.2s;
+    /* Safari-flicker/shift-graphical-glitch hacky fix*/
+    -webkit-perspective: 1000;
+	-webkit-backface-visibility: hidden;
 }
 
 #btn_c1 label:before {
@@ -1018,66 +1029,6 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 		        transform-origin: right;
 		-webkit-transform: scaleX(0);
 		        transform: scaleX(0);
-	}
-}
-@-webkit-keyframes widthFill_accordion {
-	0% {
-		left: 0;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		width: 101%;
-		opacity: 1;
-		-webkit-transform-origin: right;
-		        transform-origin: right;
-		-webkit-transform: scaleX(1);
-		        transform: scaleX(1);
-		content: '';
-		background-color: #272822;
-	}
-	100% {
-		left: 0;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		width: 101%;
-		opacity: 1;
-		-webkit-transform-origin: right;
-		        transform-origin: right;
-		-webkit-transform: scaleX(0);
-		        transform: scaleX(0);
-		content: '';
-		background-color: #272822;
-	}
-}
-@keyframes widthFill_accordion {
-	0% {
-		left: 0;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		width: 101%;
-		opacity: 1;
-		-webkit-transform-origin: right;
-		        transform-origin: right;
-		-webkit-transform: scaleX(1);
-		        transform: scaleX(1);
-		content: '';
-		background-color: #272822;
-	}
-	100% {
-		left: 0;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		width: 101%;
-		opacity: 1;
-		-webkit-transform-origin: right;
-		        transform-origin: right;
-		-webkit-transform: scaleX(0);
-		        transform: scaleX(0);
-		content: '';
-		background-color: #272822;
 	}
 }
 @-webkit-keyframes zdelay {
