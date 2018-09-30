@@ -42,6 +42,10 @@ rgba(255, 255, 255, 1)	rgba(249, 38, 114, 1)	rgba(102, 217, 239, 1)
 	background-color: #F92672 !important;
     color: White !important;
 }
+.meta {
+	display: none;
+	position: absolute;
+}
 
 body {
 	/*opacity: 0.3;*/
@@ -568,7 +572,7 @@ input#btn_c1_3:checked ~ #center1 {
 	        transform: translateY(-30vh);
 }
 
-article.content {
+.content {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -595,8 +599,8 @@ article.content {
 	margin-bottom: 3px;
 }
 
-input#btn_c1_about:checked ~ article.content,
-input#btn_c1_courses:checked ~ article.content {
+input#btn_c1_about:checked ~ .content,
+input#btn_c1_courses:checked ~ .content {
 	animation: shiftUp 0.5s;
 }
 
@@ -918,7 +922,7 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 }
 
 @media screen and (max-width: 340px) {
-	article.content {
+	.content {
 		margin-left: 7vw;
 		margin-right: 7vw;
 	}
@@ -930,13 +934,13 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 	}
 }
 @media screen and (max-width: 540px) {
-	article.content {
+	.content {
 		margin-left: 8vw;
 		margin-right: 8vw;
 	}
 }
 @media screen and (min-width: 1280px) {
-	article.content {
+	.content {
 		margin-left: 22vw;
 		margin-right: 22vw;
 	}
@@ -957,18 +961,18 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 		    -ms-transform: translateY(-30vh);
 		        transform: translateY(-30vh);
 	}
-	article.content {
+	.content {
 		max-height: 60vh;
 		margin-top: 33vh;
 	}
 }
 @media screen and (max-height: 460px) {
-	article.content {
+	.content {
 		margin-top: 35vh;
 	}
 }
 @media screen and (max-height: 400px) {
-	article.content {
+	.content {
 		max-height: 54vh;
 		margin-top: 37vh;
 	}
@@ -989,7 +993,7 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 		    -ms-transform: translateY(-25vh);
 		        transform: translateY(-25vh);
 	}
-	article.content {
+	.content {
 		max-height: 51vh;
 	}
 }
