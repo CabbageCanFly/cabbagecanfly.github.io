@@ -10,18 +10,20 @@ rgba(255, 255, 255, 1)	rgba(249, 38, 114, 1)	rgba(102, 217, 239, 1)
 */
 
 @font-face {
-	font-family: 'Yanone Kaffeesatz';
+	font-family: 'YanoneKaffeesatz';
 	src: url('../resources/fonts/YanoneKaffeesatz-Regular.ttf');
 }
 @font-face {
-	font-family: 'Encode Sans Condensed';
+	font-family: 'YanoneKaffeesatz_Light';
+	src: url('../resources/fonts/YanoneKaffeesatz-Light.ttf');
+}
+@font-face {
+	font-family: 'EncodeSansCondensed';
 	src: url('../resources/fonts/EncodeSansCondensed-Regular.ttf');
 }
-.yanone {
-	font-style: 'Yanone Kaffeesatz';
-}
-.encode {
-	font-style: 'Encode Sans Condensed';
+@font-face {
+	font-family: 'EncodeSansCondensed_Light';
+	src: url('../resources/fonts/EncodeSansCondensed-Light.ttf');
 }
 
 * {
@@ -44,16 +46,14 @@ rgba(255, 255, 255, 1)	rgba(249, 38, 114, 1)	rgba(102, 217, 239, 1)
 body {
 	/*opacity: 0.3;*/
 	background-color: #272822;
-	font-family: 'Encode Sans Condensed', sans-serif;
+	font-family: 'EncodeSansCondensed_Light', sans-serif;
 	color: White;
 	margin: 0 15vw 0 15vw;
 	overflow: hidden;
-	/*overflow-y: hidden;*/
-	/*overflow-x: scroll;*/
 }
 
 h1, h2, h3, h4 {
-	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-family: 'YanoneKaffeesatz', sans-serif;
 }
 
 h1 {
@@ -63,8 +63,8 @@ h1 {
 
 #name { 
     display: block;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    font-size: 1.5em;
+    font-family: 'YanoneKaffeesatz_Light', sans-serif;
+    font-size: 1.75em;
     margin: 0;
     font-weight: normal;
 }
@@ -198,7 +198,7 @@ a.text:active:before {
     padding-left: 0.6em;
     margin-bottom: 4px;
     font-size: 1rem;
-	font-family: 'Encode Sans Condensed', sans-serif;
+	font-family: 'EncodeSansCondensed_Light', sans-serif;
     cursor: pointer;
 }
 .accordion:before {
@@ -478,7 +478,7 @@ input#btn_c1_4:checked ~ #center1 #social div.noClickField {
     color: white;
     padding: 0.4em 0.6em;
     font-size: 1rem;
-	font-family: 'Encode Sans Condensed', sans-serif;
+	font-family: 'EncodeSansCondensed_Light', sans-serif;
     cursor: pointer;
     -webkit-transition: color 0.2s;
     -o-transition: color 0.2s;
@@ -667,7 +667,7 @@ input#btn_c1_courses:checked ~ #courses {
 	position: relative;
     background: none;
     border: none;
-	font-family: 'Encode Sans Condensed', sans-serif;
+	font-family: 'EncodeSansCondensed_Light', sans-serif;
     cursor: pointer;
     -webkit-transition: color 0.2s;
     -o-transition: color 0.2s;
