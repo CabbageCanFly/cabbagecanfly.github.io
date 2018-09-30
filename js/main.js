@@ -24,7 +24,7 @@ function setSearch() {
 
 	window.onkeydown = function (e) {
 		if (!e) e = window.event;
-		if (!e.metaKey) {
+		if (!e.metaKey && !e.ctrlKey && !e.altKey) {
 			if(e.keyCode >= 65 && e.keyCode <= 90 || e.keyCode >= 48 &&
 				e.keyCode <= 57 || e.keyCode == 8 || e.keyCode == 46) {
 				search.focus();
@@ -33,13 +33,10 @@ function setSearch() {
 	};
 	window.onkeyup = function (e) {
 		if (!e) e = window.event;
-		if (!e.metaKey) {
+		if (!e.metaKey && !e.ctrlKey && !e.altKey) {
 			if(e.keyCode >= 65 && e.keyCode <= 90 || e.keyCode >= 48 &&
 				e.keyCode <= 57 || e.keyCode == 8 || e.keyCode == 46) {
 				checkSearch(search);
-			}
-			if (e.keyCode == 13) {
-				// checkSearch(search);
 			}
 		}
 	};
@@ -79,15 +76,15 @@ function checkSearch(input) {
 	// check if value is inside a html tag or not
 	// if the first angle bracket is a '<' the value is outside of a html tag
 	if (nr_words === 1) {
-			regex = new RegExp(value+'(?=[^>]*?(<|$))','gi');
+		regex = new RegExp(value+'(?=[^>]*?(<|$))','gi');
 	} else {
-			// there can be a html tag between two words
-			regex = value_words[0]+'(?=[^>]*?(<|$))';
-			for (let i = 1; i < nr_words; i++) {
-				 // there can be a space and a whole html tag between two parts 
-				 regex += '(?: ?)(?:<[^>]*?>)?(?: ?)'+value_words[i]+'(?=[^>]*?(<|$))';     
-			}
-			regex = new RegExp(regex,'gi');
+		// there can be a html tag between two words
+		regex = value_words[0]+'(?=[^>]*?(<|$))';
+		for (let i = 1; i < nr_words; i++) {
+			 // there can be a space and a whole html tag between two parts 
+			 regex += '(?: ?)(?:<[^>]*?>)?(?: ?)'+value_words[i]+'(?=[^>]*?(<|$))';     
+		}
+		regex = new RegExp(regex,'gi');
 	}
 
 	let matches = null;
@@ -99,7 +96,7 @@ function checkSearch(input) {
 		let end_tag = '</span>';
 		// if the match contains html tags there need to be a </span>
 		// before the html tag starts and a <span if the html tags closes again
-		 // abc <p>def => abc </span><p><span class="found">def</span>   
+		// abc <p>def => abc </span><p><span class="found">def</span>   
 		let match = matches[0].replace(/>/g,'>'+start_tag);
 		match = match.replace(/<(?!span class="found">)/g,end_tag+'<');
 			
@@ -111,26 +108,25 @@ function checkSearch(input) {
 		positions.push(matches.index); 
 	}
 
-
 	let add_nr_chars = 0;
 	let new_html_content = html_content;
 	// iterate through all positions and add a span tag to mark the query
 	for (let i = 0; i < positions.length; i++) {
-			// add this before / after the found value
-			let start_tag = '<span class="found" id="found_'+i+'">';
-			let end_tag = '</span>';
-			// string before value
-			let content_before = new_html_content.substr(0,positions[i]+add_nr_chars);
-			// value and start_tag and end_tag
-			let value_and_tags = start_tag + found[i] + end_tag;
-			// string after value
-			let content_after = new_html_content.substr(positions[i]+add_nr_chars+found[i].length-add_found_char[i]);
+		// add this before / after the found value
+		let start_tag = '<span class="found" id="found_'+i+'">';
+		let end_tag = '</span>';
+		// string before value
+		let content_before = new_html_content.substr(0,positions[i]+add_nr_chars);
+		// value and start_tag and end_tag
+		let value_and_tags = start_tag + found[i] + end_tag;
+		// string after value
+		let content_after = new_html_content.substr(positions[i]+add_nr_chars+found[i].length-add_found_char[i]);
 
-			// number of characters which have been added
-			add_nr_chars += start_tag.length + end_tag.length + add_found_char[i];
-			
-			// new content
-			new_html_content = content_before + value_and_tags + content_after;
+		// number of characters which have been added
+		add_nr_chars += start_tag.length + end_tag.length + add_found_char[i];
+		
+		// new content
+		new_html_content = content_before + value_and_tags + content_after;
 	}
 	articles[articleInd].innerHTML = new_html_content;
 	}
@@ -157,11 +153,14 @@ function checkSearch(input) {
 			document.getElementById("btn_c1_" + elem.id).checked = true;
 		}
 	}
+
+	// checkAccordion() called twice, with a slight delay, to allow
+	// 	accordion panel to properly expand completely.
+	// setAccordion() re-adds event listener to each accordion due to HTML DOM
+	//  overwriting.
 	checkAccordion();
 	setAccordion();
 	setTimeout(checkAccordion, 400);
-	// checkAccordion();
-	
 }
 
 function setAccordion() {
