@@ -25,8 +25,9 @@ function setSearch() {
 	window.onkeydown = function (e) {
 		if (!e) e = window.event;
 		if (!e.metaKey && !e.ctrlKey && !e.altKey) {
-			if(e.keyCode >= 65 && e.keyCode <= 90 || e.keyCode >= 48 &&
-				e.keyCode <= 57 || e.keyCode == 8 || e.keyCode == 46) {
+			if((e.keyCode >= 65 && e.keyCode <= 90) || (e.keyCode >= 48 && 
+				e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105) || 
+				e.keyCode == 8 || e.keyCode == 46) {
 				search.focus();
 			}
 		}
@@ -34,8 +35,9 @@ function setSearch() {
 	window.onkeyup = function (e) {
 		if (!e) e = window.event;
 		if (!e.metaKey && !e.ctrlKey && !e.altKey) {
-			if(e.keyCode >= 65 && e.keyCode <= 90 || e.keyCode >= 48 &&
-				e.keyCode <= 57 || e.keyCode == 8 || e.keyCode == 46) {
+			if((e.keyCode >= 65 && e.keyCode <= 90) || (e.keyCode >= 48 && 
+				e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105) || 
+				e.keyCode == 8 || e.keyCode == 46) {
 				checkSearch(search);
 			}
 		}
