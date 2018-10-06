@@ -962,6 +962,9 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 		margin-left: 8vw;
 		margin-right: 8vw;
 	}
+	#search input::placeholder {
+		opacity: 0;
+	}
 }
 @media screen and (min-width: 1280px) {
 	.content {
@@ -994,6 +997,9 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 	.content {
 		margin-top: 35vh;
 	}
+	#search input::placeholder {
+		opacity: 0;
+	}
 }
 @media screen and (max-height: 400px) {
 	.content {
@@ -1019,6 +1025,23 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 	}
 	.content {
 		max-height: 51vh;
+		margin-top: 45vh;
+	}
+}
+@media screen and (max-height: 280px) {
+	#copyright {
+		right: 0.3em;
+		text-align: right;
+	}
+}
+@media screen and (max-height: 250px) {
+	.content {
+		margin-top: 50vh;
+	}
+}
+@media screen and (max-height: 220px) {
+	body {
+		overflow: scroll;
 	}
 }
 /*--------------- media queries ---------------*/
