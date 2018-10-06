@@ -22,6 +22,8 @@
 	</script>
 </head>
 <body>
+
+<!-- Radio button/checkbox toggle trick; a non-JS toggle -->
 <input type="radio" name="btn_c1" id="btn_c1_about" class="hide">
 <input type="radio" name="btn_c1" id="btn_c1_courses" class="hide">
 <input type="radio" name="btn_c1" id="btn_c1_3" class="hide">
@@ -34,6 +36,7 @@
 		<span></span>
 	</div>
 </div>
+<!-- Header misc info -->
 <header id="top" class="faded">
 	<div id="info_ico">
 		<label for="btn_c2_1"><svg viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1 18h-2v-8h2v8zm-1-12.25c.69 0 1.25.56 1.25 1.25s-.56 1.25-1.25 1.25-1.25-.56-1.25-1.25.56-1.25 1.25-1.25z"/></svg></label>
@@ -50,10 +53,11 @@
 		<div><span>icons:</span> <a target="_blank" class="text" href="https://iconmonstr.com/">iconmonstr</a></div>
 	</div>
 </header>
+<!-- Main title/splash -->
 <section class="center" id="center1">
 	<h2 class="meta">James Huynh</h2>
 	<label for="btn_c1_4"><span id="title"><span id="title_bg"></span><span class="arrow up"></span>
-		<span id="name"><svg class="logo" height="84" preserveAspectRatio="xMinYMin" viewBox="0 0 540.16 540.91"><defs><style>.cls-1{opacity: 0;}.cls-2{fill:#A6E22E;}</style></defs><title>Cabbage</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M.75.25Q269.06.25,537.37.17c2.89,0,3.46.57,3.45,3.45q-.13,267,0,534c0,2.89-.57,3.46-3.45,3.45q-266.62-.13-533.25,0c-2.89,0-3.46-.57-3.45-3.45Q.8,268.94.75.25Zm288,348.86h12.08V336.89h12.09V324.8h12V301h11.69V264.9H324.61V252.82H312.52v-12H288.71V229.21H240.63v11.95H228.55v12H216.72v12H204.64v24.08H193v36.08h11.87v11.82h12v12.09h12.09v11.59h59.81Zm71.78-84.18v36.22h-12v24H336.94v23.68h11.93v-12H361v-12h11.83v-12h12.09V288.82H396.5V228.76H384.62V205h-12V193.24H312.57v12H300.93v11.83h11.92v12.09h24.09v12.09h12v23.69ZM145,217v84.21h12v11.65h11.82V276.91h12.09V252.82H193v-12H204.8v-12h12.09V216.82h35.57v-12H240.7v-12H228.61V181.27H168.52v11.87H156.7V217Z"/><path class="cls-2" d="M288.74,349.11v11.62H228.93V349.14H216.84V337.05h-12V325.23H193V289.15h11.62V265.07h12.08v-12h11.82v-12h12.09V229.21h48.07v11.65h23.82v12h12.09V264.9h11.94V301H324.86V324.8h-12v12.09H300.82v12.22Z"/><path class="cls-2" d="M360.52,264.93H348.9V241.24h-12V229.14H312.85V217.05H300.93V205.22h11.64v-12h60.09V205h12v23.8H396.5v60.06H384.88v24.09H372.79v12H361v12H348.87v12H336.94V325.11h11.62v-24h12Z"/><path class="cls-2" d="M145,217H156.7V193.14h11.82V181.27h60.08V192.9H240.7v12h11.76v12H216.89v12.09H204.8v12H193v12H180.88v24.09H168.79v35.91H157V301.18H145Z"/></g></g></svg>James Huynh</span>
+		<span id="name"><svg id="logo" height="84" preserveAspectRatio="xMinYMin" viewBox="0 0 540.16 540.91"><defs><style>.cls-1{opacity: 0;}.cls-2{fill:#A6E22E;}</style></defs><title>Cabbage</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M.75.25Q269.06.25,537.37.17c2.89,0,3.46.57,3.45,3.45q-.13,267,0,534c0,2.89-.57,3.46-3.45,3.45q-266.62-.13-533.25,0c-2.89,0-3.46-.57-3.45-3.45Q.8,268.94.75.25Zm288,348.86h12.08V336.89h12.09V324.8h12V301h11.69V264.9H324.61V252.82H312.52v-12H288.71V229.21H240.63v11.95H228.55v12H216.72v12H204.64v24.08H193v36.08h11.87v11.82h12v12.09h12.09v11.59h59.81Zm71.78-84.18v36.22h-12v24H336.94v23.68h11.93v-12H361v-12h11.83v-12h12.09V288.82H396.5V228.76H384.62V205h-12V193.24H312.57v12H300.93v11.83h11.92v12.09h24.09v12.09h12v23.69ZM145,217v84.21h12v11.65h11.82V276.91h12.09V252.82H193v-12H204.8v-12h12.09V216.82h35.57v-12H240.7v-12H228.61V181.27H168.52v11.87H156.7V217Z"/><path class="cls-2" d="M288.74,349.11v11.62H228.93V349.14H216.84V337.05h-12V325.23H193V289.15h11.62V265.07h12.08v-12h11.82v-12h12.09V229.21h48.07v11.65h23.82v12h12.09V264.9h11.94V301H324.86V324.8h-12v12.09H300.82v12.22Z"/><path class="cls-2" d="M360.52,264.93H348.9V241.24h-12V229.14H312.85V217.05H300.93V205.22h11.64v-12h60.09V205h12v23.8H396.5v60.06H384.88v24.09H372.79v12H361v12H348.87v12H336.94V325.11h11.62v-24h12Z"/><path class="cls-2" d="M145,217H156.7V193.14h11.82V181.27h60.08V192.9H240.7v12h11.76v12H216.89v12.09H204.8v12H193v12H180.88v24.09H168.79v35.91H157V301.18H145Z"/></g></g></svg>James Huynh</span>
 		<span>Yes, cabbages can fly.</span>
 	</span></label>
 	<nav id="btn_c1">
@@ -104,6 +108,7 @@
 		</div> -->
 	</nav>
 </section>
+<!-- About content -->
 <article id="about" class="content">
 	<h2 class="meta">About</h2>
 	I'm from <span class='b'>Mississauga, Ontario</span>. I started my undergraduate program in September 2016 for <span class='b'>Computer Science</span> at the <span class='b'>University of Toronto</span>, St. George campus.
@@ -119,7 +124,7 @@
         <li><a target="_blank" class="text" href="https://playoverwatch.com/en-us/">Overwatch</a></li>
 	</ul>
 </article>
-
+<!-- Courses content -->
 <article id="courses" class="content">
 	<h2 class="meta">Courses</h2>
 	<button class="accordion">Fall 2018</button>
@@ -408,12 +413,14 @@
 	</div>
 </article>
 
+<!-- Year obtained through last modified -->
 <footer class="faded" id="bottom">
 	<div id="copyright">
 		© <span id="year"></span> James Huynh
 	</div>
 </footer>
 
+<!-- All course panels/accordions automatically expanded when JS unavailable -->
 <noscript>
 	<style>
 		.panel {
@@ -421,7 +428,7 @@
 		}
 	</style>
 </noscript>
-<script src="js/main.js"></script>
 
+<script src="js/main.js"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@ white					pink					blue
 rgba(255, 255, 255, 1)	rgba(249, 38, 114, 1)	rgba(102, 217, 239, 1)
 */
 
+/*--------------- Fonts ---------------*/
 @font-face {
 	font-family: 'YanoneKaffeesatz';
 	src: url('../resources/fonts/YanoneKaffeesatz-Regular.ttf');
@@ -25,7 +26,9 @@ rgba(255, 255, 255, 1)	rgba(249, 38, 114, 1)	rgba(102, 217, 239, 1)
 	font-family: 'EncodeSansCondensed_Light';
 	src: url('../resources/fonts/EncodeSansCondensed-Light.ttf');
 }
+/*--------------- end fonts ---------------*/
 
+/*--------------- Miscellaneous highlight styles ---------------*/
 * {
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
 	-webkit-overflow-scrolling: touch;
@@ -42,6 +45,8 @@ rgba(255, 255, 255, 1)	rgba(249, 38, 114, 1)	rgba(102, 217, 239, 1)
 	background-color: #F92672 !important;
     color: White !important;
 }
+/*--------------- end Miscellaneous highlight styles ---------------*/
+
 .meta {
 	display: none;
 	position: absolute;
@@ -97,6 +102,7 @@ a.text {
 	-webkit-backface-visibility: hidden;
 }
 
+/* Before pseudoelements are usually used as hover styles */
 a.text:before {
 	position: absolute;
 	content: '';
@@ -264,7 +270,7 @@ a.text:active:before {
 	margin-top: 0.5em;
 	margin-bottom: 4px;
 }
-
+/* Panel represents content in accordion */
 .panel {
 	margin-top: 0;
 	margin-bottom: 0;
@@ -292,7 +298,8 @@ a.text:active:before {
 .panel li {
 	width: 100%;
 }
-
+/* A course/panel with no additional content does not
+	expand, so it's not an accordion. */
 .panel li > span.notAccordion {
 	position: relative;
 	display: block;
@@ -329,6 +336,7 @@ a.text:active:before {
 	        transform: translateY(0vh);
 }
 
+/* This refers to the radio buttons that are part of name="btn_c1". */
 #btn_c1 {
 	position: relative;
 	display: -webkit-box;
@@ -348,11 +356,9 @@ a.text:active:before {
 	     -o-transition-duration: 0.5s;
 	        transition-duration: 0.5s;
 }
-
 #btn_c1 > div {
 	height: 2.4em;
 }
-
 #btn_c1_aboutL {
 	margin-left: 1em;
 }
@@ -366,7 +372,6 @@ a.text:active:before {
 	margin-left: 3.2rem;
     cursor: pointer;
 }
-
 #title_bg {
 	position: absolute;
 	background-color: rgba(255,255,255,0.04);
@@ -391,7 +396,6 @@ a.text:active:before {
 	border-radius: 8px;
 	animation: fadeEnlarge 6s ease-out infinite;
 }
-
 #title:hover > #title_bg {
 	background-color: rgba(255,255,255,0.09);
 }
@@ -405,7 +409,9 @@ a.text:active:before {
 #title:active > span.arrow {
 	opacity: 0.6;
 }
-
+/* Arrow is toggled on when viewing webpage content;
+	this arrow indicates that the title is clickable to
+	return to initial state of webpage. */
 #title > span.arrow {
 	display: initial;
 	position: absolute;
@@ -443,9 +449,7 @@ input#btn_c1_4:checked ~ #center1 #title > span.arrow {
 	-webkit-transition: opacity 0.2s;
 	-o-transition: opacity 0.2s;
 	transition: opacity 0.2s;
-	
 }
-
 #social_links {
 	text-align: center;
 	display: -webkit-box;
@@ -458,7 +462,8 @@ input#btn_c1_4:checked ~ #center1 #title > span.arrow {
 	        justify-content: center;
 	width: 16em;
 }
-
+/* The social links can be unintentionally
+	clicked on without this div. */
 #social div.noClickField {
 	position: absolute;
 	padding: 0.5em;
@@ -477,10 +482,14 @@ input#btn_c1_4:checked ~ #center1 #social div.noClickField {
 	display: none;
 }
 
-.btn_c1_label {
+/* div wrapper for radio button labels */
+div.btn_c1_label {
 	text-align: center;
 }
-
+/* label tags toggle radio buttons; styled
+	to look like a better looking button with text.
+   This is a lil' HTML/CSS trick to avoid JS to 
+   	toggle classes/IDs. */
 #btn_c1 label {
 	display: inline-block;
 	position: relative;
@@ -499,7 +508,6 @@ input#btn_c1_4:checked ~ #center1 #social div.noClickField {
     -webkit-perspective: 1000;
 	-webkit-backface-visibility: hidden;
 }
-
 #btn_c1 label:before {
 	position: absolute;
 	content: '';
@@ -522,22 +530,47 @@ input#btn_c1_4:checked ~ #center1 #social div.noClickField {
     transition: transform 0.2s;
     transition: transform 0.2s, -webkit-transform 0.2s;
 }
-
 #btn_c1 label:hover {
 	color: #272822;
 }
-
 #btn_c1 label:hover:before {
 	-webkit-transform: scaleY(1);
 	    -ms-transform: scaleY(1);
 	        transform: scaleY(1);
 }
-
 #btn_c1 label:active:before {
 	opacity: 0.75;
 	border: 1px solid #272822;
 }
 
+.content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	cursor: default;
+	margin-left: 15vw;
+	margin-right: 15vw;
+	padding-left: 1.2rem;
+	padding-right: 1.2rem;
+	word-wrap: break-word;
+	overflow-y: overlay;
+	overflow-x: hidden;
+	height: 60vh;
+	margin-top: 32vh;
+	opacity: 0;
+	transition: opacity 0.3s;
+	animation: shiftDown 0.5s;
+}
+#about li {
+	margin-bottom: 3px;
+}
+
+/*--------------- Radio button toggle style trick ---------------*/
 input#btn_c1_about:checked ~ #center1 #btn_c1 > div > #btn_c1_aboutL {
 	color: #272822;
 }
@@ -572,33 +605,6 @@ input#btn_c1_3:checked ~ #center1 {
 	        transform: translateY(-30vh);
 }
 
-.content {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: -1;
-	-webkit-user-select: none;
-	   -moz-user-select: none;
-	    -ms-user-select: none;
-	        user-select: none;
-	cursor: default;
-	margin-left: 15vw;
-	margin-right: 15vw;
-	padding-left: 1.2rem;
-	padding-right: 1.2rem;
-	word-wrap: break-word;
-	overflow-y: overlay;
-	overflow-x: hidden;
-	height: 60vh;
-	margin-top: 32vh;
-	opacity: 0;
-	transition: opacity 0.3s;
-	animation: shiftDown 0.5s;
-}
-#about li {
-	margin-bottom: 3px;
-}
-
 input#btn_c1_about:checked ~ .content,
 input#btn_c1_courses:checked ~ .content {
 	animation: shiftUp 0.5s;
@@ -615,18 +621,8 @@ input#btn_c1_courses:checked ~ #courses {
 	transition: opacity 0.5s;
 	z-index: 1;
 }
+/*--------------- end radio button toggle style trick ---------------*/
 
-#top {
-	position: fixed;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	font-size: 0.9em;
-	left: 0;
-	top: 0;
-	width: 100vw;
-	z-index: 0;
-}
 #bottom {
 	position: fixed;
 	font-size: 0.9em;
@@ -641,6 +637,18 @@ input#btn_c1_courses:checked ~ #courses {
 	margin-top: -1.75em;
 }
 
+/*--------------- Header info ---------------*/
+#top {
+	position: fixed;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	font-size: 0.9em;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	z-index: 0;
+}
 #top:before {
 	position: absolute;
 	content: '';
@@ -688,6 +696,10 @@ input#btn_c1_courses:checked ~ #courses {
     -o-transition: color 0.2s;
     transition: color 0.2s;
 }
+
+/* The space beneath header becomes a large
+	button to toggle the checkbox, returns
+	back to main content when clicked on. */
 #clickOff {
 	position: absolute;
 	top: 0;
@@ -762,6 +774,7 @@ input#btn_c1_courses:checked ~ #courses {
 	fill: rgba(255,255,255,0.75) !important;
 }
 
+/* Checkbox button trick for header info */
 input#btn_c2_1:checked ~ #top #info_ico svg {
 	fill: #272822 !important;
 }
@@ -808,6 +821,7 @@ input#btn_c2_1:not(:checked) ~ #top {
 	-webkit-animation: zdelay 0.40s;
 	        animation: zdelay 0.40s;
 }
+/*--------------- end header info ---------------*/
 
 #copyright {
 	margin: auto;
@@ -841,6 +855,7 @@ input#btn_c1_4:checked ~ #bottom #copyright {
     border-radius: 50%;
 }
 
+/*--------------- Social icon/SVG styles ---------------*/
 #social svg {
 	position: relative;
 	height: 2em;
@@ -920,7 +935,9 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 	        transform: translateY(0em);
 	opacity: 1;
 }
+/*--------------- end social icon/SVG styles ---------------*/
 
+/*--------------- Media queries ---------------*/
 @media screen and (max-width: 340px) {
 	.content {
 		margin-left: 7vw;
@@ -997,7 +1014,9 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 		max-height: 51vh;
 	}
 }
+/*--------------- media queries ---------------*/
 
+/*--------------- Animations ---------------*/
 @-webkit-keyframes widthFill {
 	0% {
 		width: 101%;
@@ -1035,6 +1054,41 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 		        transform: scaleX(0);
 	}
 }
+@-webkit-keyframes fadeEnlarge {
+	30%, 100% {
+		-webkit-transform: scale(1.09, 1.25);
+		        transform: scale(1.09, 1.25);
+		opacity: 0;
+	}
+}
+@keyframes fadeEnlarge {
+	30%, 100% {
+		-webkit-transform: scale(1.09, 1.25);
+		        transform: scale(1.09, 1.25);
+		opacity: 0;
+	}
+}
+@keyframes shiftUp {
+	0% {
+		transform: translateY(30vh);
+	}
+	100% {
+		transform: translateY(0vh);
+	}
+}
+@keyframes shiftDown {
+	0% {
+		transform: translateY(0vh);
+	}
+	100% {
+		transform: translateY(30vh);
+	}
+}
+/*--------------- end animations ---------------*/
+
+/*--------------- These are some hacky animations to time
+	when a certain element is clickable/visible
+	during another animation/transition. ---------------*/
 @-webkit-keyframes zdelay {
 	0%, 99% {
 		z-index: 10;
@@ -1067,43 +1121,15 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 		visibility: visible;
 	}
 }
-@-webkit-keyframes fadeEnlarge {
-	30%, 100% {
-		-webkit-transform: scale(1.09, 1.25);
-		        transform: scale(1.09, 1.25);
-		opacity: 0;
-	}
-}
-@keyframes fadeEnlarge {
-	30%, 100% {
-		-webkit-transform: scale(1.09, 1.25);
-		        transform: scale(1.09, 1.25);
-		opacity: 0;
-	}
-}
-@keyframes shiftUp {
-	0% {
-		transform: translateY(30vh);
-	}
-	100% {
-		transform: translateY(0vh);
-	}
-}
-@keyframes shiftDown {
-	0% {
-		transform: translateY(0vh);
-	}
-	100% {
-		transform: translateY(30vh);
-	}
-}
+/*--------------- end hacky animations ---------------*/
 
-.logo {
+#logo {
 	position: absolute;
 	margin-left: -73px;
 	margin-top: -15px;
 }
 
+/*--------------- Search bar styles ---------------*/
 #searchContainer {
 	position: absolute;
 	top: 0;
@@ -1151,3 +1177,4 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 #search input:focus ~ :before {
 	opacity: 1;
 }
+/*--------------- end search bar styles ---------------*/
