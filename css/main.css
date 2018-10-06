@@ -1217,7 +1217,7 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 	width: 100%;
 	font-size: 12pt;
 	color: white;
-	opacity: 0.5;
+	opacity: 0.3;
 	font-family: "Courier New", Courier, monospace;
 	background-color: rgba(255,255,255,0);
 	left: 12px;
@@ -1226,14 +1226,15 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 	padding: 3px 2px 3px 2px;
 	margin: 0;
 	border: 0;
-	/*border-bottom: 3px solid rgba(255,255,255,0.2);*/
 	transition: color 0.2s;
 }
+input#btn_c1_4:checked ~ #searchContainer #search input,
+input#btn_c1_4:checked ~ #searchContainer #search :before {
+	opacity: 0.5;
+}
 #search input:focus {
-	opacity: 1;
+	opacity: 1 !important;
 	width: 100%;
-	/*background-color: rgba(255,255,255,0.1);*/
-	/*border-bottom: 3px solid rgba(255,255,255,0.2);*/
 	color: white;
 }
 #search input ~ :before {
@@ -1243,8 +1244,9 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 	content: '>';
 	font-size: 12pt;
 	color: white;
-	opacity: 0.5;
+	opacity: 0.3;
 	font-family: "Courier New", Courier, monospace;
+	transition: opacity 0.2s;
 }
 #search input:focus ~ :before {
 	opacity: 1;
@@ -1258,12 +1260,17 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 	content: '#';
 	color: rgba(255,255,255,0);
 	background-color: rgba(255,255,255,0);
-	border-bottom: 3px solid rgba(255,255,255,0.2);
+	border-bottom: 3px solid;
+	border-color: rgba(255,255,255,0.15);
 	z-index: -1;
-    transition: width 0.4s;
+    transition: width 0.4s, border-color 0.2s;
+}
+input#btn_c1_4:checked ~ #searchContainer #search :after {
+	border-color: rgba(255,255,255,0.2);
 }
 #search input:focus ~ :after {
-	background-color: rgba(255,255,255,0.1);
+	background-color: rgba(255,255,255,0.075);
+	border-color: rgba(255,255,255,0.2);
 	width: 100% !important;
 }
 /*--------------- end search bar styles ---------------*/
