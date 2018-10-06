@@ -44,6 +44,9 @@ function setSearch() {
 				e.keyCode == 8 || e.keyCode == 46) {
 				checkSearch(searchElem);
 			}
+			if (e.keyCode == 27) {
+				searchElem.blur();
+			}
 		}
 	};
 }

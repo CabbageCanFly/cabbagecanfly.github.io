@@ -962,9 +962,6 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 		margin-left: 8vw;
 		margin-right: 8vw;
 	}
-	#search input::placeholder {
-		opacity: 0;
-	}
 }
 @media screen and (min-width: 1280px) {
 	.content {
@@ -993,12 +990,32 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 		margin-top: 33vh;
 	}
 }
-@media screen and (max-height: 460px) {
-	.content {
-		margin-top: 35vh;
+@media screen and (max-height: 500px) {
+	#search input {
+		color: rgba(255,255,255,0) !important;
+	}
+	#search input ~ :after {
+		/*transform: scaleX(0.035);*/
+		background-color: rgba(255,255,255,0.1) !important;
+		width: 0.5em !important;
+		animation: searchFadeOut 0.6s 0.4s infinite alternate !important;
+	}
+	#search input:focus {
+		color: white !important;
+	}
+	#search input:focus ~ :after {
+		animation: none !important;
 	}
 	#search input::placeholder {
 		opacity: 0;
+	}
+	#search input:focus::placeholder {
+		opacity: 1;
+	}
+}
+@media screen and (max-height: 460px) {
+	.content {
+		margin-top: 35vh;
 	}
 }
 @media screen and (max-height: 400px) {
@@ -1114,6 +1131,16 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 		transform: translateY(30vh);
 	}
 }
+@keyframes searchFadeOut {
+	0%, 49% {
+		opacity: 1;
+		background-color: rgba(255,255,255,0);
+	}
+	51%, 100% {
+		opacity: 0;
+		background-color: rgba(255,255,255,0);
+	}
+}
 /*--------------- end animations ---------------*/
 
 /*--------------- These are some hacky animations to time
@@ -1190,18 +1217,24 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 	width: 100%;
 	font-size: 12pt;
 	color: white;
-	opacity: 0.7;
+	opacity: 0.5;
 	font-family: "Courier New", Courier, monospace;
 	background-color: rgba(255,255,255,0);
 	left: 12px;
-	top: -3px;
+	top: -4px;
 	outline: 0;
-	padding: 0;
+	padding: 3px 2px 3px 2px;
 	margin: 0;
 	border: 0;
+	/*border-bottom: 3px solid rgba(255,255,255,0.2);*/
+	transition: color 0.2s;
 }
 #search input:focus {
 	opacity: 1;
+	width: 100%;
+	/*background-color: rgba(255,255,255,0.1);*/
+	/*border-bottom: 3px solid rgba(255,255,255,0.2);*/
+	color: white;
 }
 #search input ~ :before {
 	position: absolute;
@@ -1210,10 +1243,27 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 	content: '>';
 	font-size: 12pt;
 	color: white;
-	opacity: 0.7;
+	opacity: 0.5;
 	font-family: "Courier New", Courier, monospace;
 }
 #search input:focus ~ :before {
 	opacity: 1;
+}
+#search input ~ :after {
+	position: absolute;
+	top: -4px;
+	left: 12px;
+	width: 100%;
+	padding: 3px 2px 0 2px;
+	content: '#';
+	color: rgba(255,255,255,0);
+	background-color: rgba(255,255,255,0);
+	border-bottom: 3px solid rgba(255,255,255,0.2);
+	z-index: -1;
+    transition: width 0.4s;
+}
+#search input:focus ~ :after {
+	background-color: rgba(255,255,255,0.1);
+	width: 100% !important;
 }
 /*--------------- end search bar styles ---------------*/
