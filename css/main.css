@@ -334,7 +334,7 @@ a.text:active:before {
 	-webkit-transform: translateY(0vh);
 	    -ms-transform: translateY(0vh);
 	        transform: translateY(0vh);
-	animation: iniEnter 0.8s ease-out, shiftUp 1s;
+	animation: iniEnter 0.85s, shiftUp 0.6s;
 }
 
 
@@ -631,7 +631,7 @@ input#btn_c1_courses:checked ~ #courses {
 	left: 0;
 	bottom: 0;
 	width: 100vw;
-	animation: iniEnter 2.2s ease-out;
+	animation: iniEnter 2.25s;
 }
 
 #bottom > div {
@@ -682,12 +682,15 @@ input#btn_c1_courses:checked ~ #courses {
 	-webkit-transition: padding-top 0.2s;
 	-o-transition: padding-top 0.2s;
 	transition: padding-top 0.2s;
-	animation: iniEnter 1.5s ease-out;
+	animation: iniEnter 1.5s;
 }
 #info_ico svg {
 	height: 24px;
 	width: 24px;
 	fill: rgba(255,255,255,0.20);
+	-webkit-transition: fill 0.2s;
+	-o-transition: fill 0.2s;
+	transition: fill 0.2s;
 }
 #info_ico label {
 	display: inline-block;
@@ -1126,7 +1129,7 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 	}
 }
 @keyframes iniEnter {
-	0%, 70% {
+	0%, 40% {
 		opacity: 0;
 	}
 	100% {
@@ -1147,7 +1150,7 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 	top: 0;
 	left: 0;
 	width: 100%;
-	animation: iniEnter 1.5s ease-out;
+	animation: iniEnter 1.5s;
 }
 #search {
 	position: relative;

@@ -16,7 +16,7 @@ function main() {
 	document.getElementById("year").innerHTML = year;
 
 	// Delayed to allow initial load animation to run.
-	setTimeout(setSearch, 1000);
+	setTimeout(setSearch, 850);
 	setAccordion();
 }
 
