@@ -334,7 +334,7 @@ a.text:active:before {
 	-webkit-transform: translateY(0vh);
 	    -ms-transform: translateY(0vh);
 	        transform: translateY(0vh);
-	animation: iniEnter 0.85s, shiftUp 0.6s;
+	animation: iniEnter 0.85s;
 }
 
 
