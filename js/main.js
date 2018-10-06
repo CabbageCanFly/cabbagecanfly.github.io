@@ -15,7 +15,8 @@ function main() {
 	document.getElementById("lastModified").innerHTML = "<span>Last modified:</span><div>" + date + "</div>";
 	document.getElementById("year").innerHTML = year;
 
-	setSearch();
+	// Delayed to allow initial load animation to run.
+	setTimeout(setSearch, 1000);
 	setAccordion();
 }
 
@@ -139,10 +140,11 @@ function checkSearch(input) {
 	// Expand the accordion that contains the found content.
 	elems = document.getElementsByClassName("found");
 	for (let i = 0; i < elems.length; i++) {
-		elem = elems[i];
+		let elem = elems[i];
+		let arr;
 		while (elem.tagName != "ARTICLE") {
 			if (hasClass(elem, "accordion")) {
-			    arr = elem.className.split(" ");
+			   arr = elem.className.split(" ");
 			    if (arr.indexOf("accordion-active") == -1) {
 			        elem.className += " accordion-active";
 			    }

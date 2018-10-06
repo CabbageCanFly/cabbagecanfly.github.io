@@ -334,7 +334,9 @@ a.text:active:before {
 	-webkit-transform: translateY(0vh);
 	    -ms-transform: translateY(0vh);
 	        transform: translateY(0vh);
+	animation: iniEnter 0.8s ease-out, shiftUp 1s;
 }
+
 
 /* This refers to the radio buttons that are part of name="btn_c1". */
 #btn_c1 {
@@ -629,6 +631,7 @@ input#btn_c1_courses:checked ~ #courses {
 	left: 0;
 	bottom: 0;
 	width: 100vw;
+	animation: iniEnter 2.2s ease-out;
 }
 
 #bottom > div {
@@ -679,6 +682,7 @@ input#btn_c1_courses:checked ~ #courses {
 	-webkit-transition: padding-top 0.2s;
 	-o-transition: padding-top 0.2s;
 	transition: padding-top 0.2s;
+	animation: iniEnter 1.5s ease-out;
 }
 #info_ico svg {
 	height: 24px;
@@ -1121,6 +1125,14 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 		visibility: visible;
 	}
 }
+@keyframes iniEnter {
+	0%, 70% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
 /*--------------- end hacky animations ---------------*/
 
 #logo {
@@ -1135,6 +1147,7 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 	top: 0;
 	left: 0;
 	width: 100%;
+	animation: iniEnter 1.5s ease-out;
 }
 #search {
 	position: relative;
