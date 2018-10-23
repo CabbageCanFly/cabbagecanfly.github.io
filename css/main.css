@@ -1196,7 +1196,7 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 
 /*--------------- Search bar styles ---------------*/
 #searchContainer {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
