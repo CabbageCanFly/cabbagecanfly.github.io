@@ -650,7 +650,7 @@ input#btn_c1_courses:checked ~ #courses {
 	left: 0;
 	top: 0;
 	width: 100vw;
-	z-index: 0;
+	z-index: 10;
 }
 #top:before {
 	position: absolute;
@@ -667,15 +667,15 @@ input#btn_c1_courses:checked ~ #courses {
 	-webkit-transform-origin: top center;
 	    -ms-transform-origin: top center;
 	        transform-origin: top center;
-    -webkit-transition: -webkit-transform 0.45s ease-out;
-    transition: -webkit-transform 0.45s ease-out;
-    -o-transition: transform 0.45s ease-out;
-    transition: transform 0.45s ease-out;
-    transition: transform 0.45s ease-out, -webkit-transform 0.45s ease-out;
+    -webkit-transition: -webkit-transform 0.2s ease-out;
+    transition: -webkit-transform 0.2s ease-out;
+    -o-transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
 }
 
 #info_ico {
-	z-index: 4;
+	z-index: 5;
 	padding-top: 8px;
 	padding-bottom: 8px;
 	padding-left: 8px;
@@ -798,7 +798,6 @@ input#btn_c2_1:checked ~ #top #info_content {
 	    -ms-user-select: auto;
 	        user-select: auto;
 	cursor: auto;
-	z-index: 2;
 }
 input#btn_c2_1:checked ~ #top div.noClickField {
 	display: none;
@@ -1197,7 +1196,7 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 /*--------------- Search bar styles ---------------*/
 #searchContainer {
 	position: fixed;
-	z-index: 1;
+	z-index: 4;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -1229,8 +1228,8 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 	border: 0;
 	transition: color 0.2s;
 }
-input#btn_c1_4:checked ~ #searchContainer #search input,
-input#btn_c1_4:checked ~ #searchContainer #search :before {
+input#btn_c1_4:checked ~ #top #searchContainer #search input,
+input#btn_c1_4:checked ~ #top #searchContainer #search :before {
 	opacity: 0.5;
 }
 #search input:focus {
@@ -1266,12 +1265,16 @@ input#btn_c1_4:checked ~ #searchContainer #search :before {
 	z-index: -1;
     transition: width 0.4s, border-color 0.2s;
 }
-input#btn_c1_4:checked ~ #searchContainer #search :after {
+input#btn_c1_4:checked ~ #top #searchContainer #search :after {
 	border-color: rgba(255,255,255,0.2);
 }
 #search input:focus ~ :after {
 	background-color: rgba(255,255,255,0.075);
 	border-color: rgba(255,255,255,0.2);
 	width: 100% !important;
+}
+
+input#btn_c2_1:checked ~ #top #searchContainer {
+	z-index: -100;
 }
 /*--------------- end search bar styles ---------------*/
