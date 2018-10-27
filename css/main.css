@@ -677,7 +677,7 @@ input#btn_c1_courses:checked ~ #courses {
 #info_ico {
 	z-index: 5;
 	padding-top: 8px;
-	padding-bottom: 8px;
+	/*padding-bottom: 8px;*/
 	padding-left: 8px;
 	-webkit-transition: padding-top 0.2s;
 	-o-transition: padding-top 0.2s;
@@ -722,14 +722,12 @@ input#btn_c1_courses:checked ~ #courses {
 
 #info_content {
 	z-index: 2;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
 	-ms-flex-wrap: wrap;
 	    flex-wrap: wrap;
 	padding: 0.6em 0.5em;
 	color: #272822;
 	opacity: 0;
+	display: none;
 	-webkit-user-select: none;
 	   -moz-user-select: none;
 	    -ms-user-select: none;
@@ -766,17 +764,6 @@ input#btn_c1_courses:checked ~ #courses {
 	background-color: #FD971F;
 	visibility: hidden;
 }
-#top div.noClickField {
-	position: absolute;
-	padding: 0.5em;
-	margin-left: -0.5em;
-	margin-top: -0.5em;
-	height: 110%;
-	width: 100%;
-	z-index: 3;
-	display: initial;
-}
-
 #info_ico label:hover svg {
 	fill: rgba(255,255,255,0.75) !important;
 }
@@ -793,14 +780,14 @@ input#btn_c2_1:checked ~ label #clickOff  {
 }
 input#btn_c2_1:checked ~ #top #info_content {
 	opacity: 1;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
 	-webkit-user-select: auto;
 	   -moz-user-select: auto;
 	    -ms-user-select: auto;
 	        user-select: auto;
 	cursor: auto;
-}
-input#btn_c2_1:checked ~ #top div.noClickField {
-	display: none;
 }
 input#btn_c2_1:checked ~ #top {
 	z-index: 10;
@@ -1204,7 +1191,7 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 }
 #search {
 	position: relative;
-	margin-top: 12px;
+	margin-top: 8px;
 	margin-left: 40px;
 	margin-right: 52px;
 }
@@ -1221,7 +1208,7 @@ input#btn_c1_4:checked ~ #bottom #copyright {
 	font-family: "Courier New", Courier, monospace;
 	background-color: rgba(255,255,255,0);
 	left: 12px;
-	top: -4px;
+	top: 0;
 	outline: 0;
 	padding: 3px 2px 3px 2px;
 	margin: 0;
@@ -1239,7 +1226,7 @@ input#btn_c1_4:checked ~ #top #searchContainer #search :before {
 }
 #search input ~ :before {
 	position: absolute;
-	top: 0;
+	top: 4px;
 	left: 0;
 	content: '>';
 	font-size: 12pt;
@@ -1253,7 +1240,7 @@ input#btn_c1_4:checked ~ #top #searchContainer #search :before {
 }
 #search input ~ :after {
 	position: absolute;
-	top: -4px;
+	top: 0;
 	left: 12px;
 	width: 100%;
 	padding: 3px 2px 0 2px;
