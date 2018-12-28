@@ -34,16 +34,18 @@ rgba(255, 255, 255, 1)	rgba(249, 38, 114, 1)	rgba(102, 217, 239, 1)
 	-webkit-overflow-scrolling: touch;
 }
 ::selection {
-    background-color: #F92672;
-    color: White;
+    background-color: rgba(102, 217, 239, 0.99);
+    opacity: 1;
+    color: black;
 }
 ::-moz-selection {
-    background-color: #F92672;
-    color: White;
+    background-color: rgba(102, 217, 239, 0.99);
+    opacity: 1;
+    color: black;
 }
 .found {
-	background-color: #F92672 !important;
-    color: White !important;
+	background-color: rgba(102, 217, 239, 0.99) !important;
+    color: black !important;
 }
 /*--------------- end Miscellaneous highlight styles ---------------*/
 
@@ -123,17 +125,6 @@ a.text:before {
     -o-transition: transform 0.2s;
     transition: transform 0.2s;
     transition: transform 0.2s, -webkit-transform 0.2s;
-}
-a.text:after {
-	position: absolute;
-	content: '';
-	background-color: #272822;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	width: 0;
-	z-index: -1;
 }
 a.text:hover {
 	color: #272822;
