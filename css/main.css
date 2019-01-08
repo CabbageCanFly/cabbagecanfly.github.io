@@ -298,6 +298,7 @@ a.text:active:before {
     padding-bottom: 0.4em;
     padding-right: 1.0em;
     padding-left: 0.6em;
+    margin-bottom: 4px;
 }
 
 .panel > ul >li > span.notAccordion:before {
