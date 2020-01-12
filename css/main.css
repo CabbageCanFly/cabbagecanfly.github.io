@@ -51,7 +51,9 @@ html {
     font-family: 'Roboto Condensed Light', sans-serif;
     color: white;
     font-size: 16px;
-    height: 300vh;
+}
+body {
+    margin: 1.5em;
 }
 
 h1, h2, h3, h4 {
@@ -59,7 +61,11 @@ h1, h2, h3, h4 {
 }
 
 a {
-    color: white;
+    color: #66D9EF;
+    text-decoration: none;
+}
+a:hover, a:focus {
+    text-decoration: underline;
 }
 
 .hidden {
@@ -86,6 +92,9 @@ a {
     width: 18px;
 }
 
+.text--margin-top-md {
+    margin-top: 12px;
+}
 .text--no-margin-top {
     margin-top: 0;
 }
@@ -103,7 +112,7 @@ a {
     position: relative;
     margin-top: 5em;
 }
-.header--centered, .footer--centered {
+.header--centered {
     margin-left: auto;
     margin-right: auto;
     max-width: 300px;
@@ -122,7 +131,7 @@ a {
 
 .version-nav {
     position: fixed;
-    padding: 12px;
+    padding: 1.5em;
     left: 0;
     bottom: 0;
 }
@@ -145,5 +154,27 @@ a {
 }
 
 .footer {
-    font-size: 12px;
+    font-size: 14px;
+}
+/* Temporary style */
+.footer--centered {
+    position: absolute;
+    bottom: 1.5em;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+}
+
+@media (min-width: 700px) {
+    body {
+        margin: auto;
+        max-width: 650px;
+    }
+    .footer--centered {
+        bottom: 1em;
+    }
+    .version-nav {
+        padding: 1em;
+    }
 }
