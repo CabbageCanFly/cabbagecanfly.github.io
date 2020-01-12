@@ -8,20 +8,13 @@ var MY_COLOURS = {
     blue: "#66D9EF"
 }
 var CABBAGE_FLY_COUNT = 3;
+var scrollEvents = [checkHeaderSticky, checkBioReveal];
 
 var colours = Object.values(MY_COLOURS);
 
+
 function randomNegative() {
     return anime.random(0,1) == 1 ? -1 : 1;
-}
-
-var headerDecorItems = document.querySelectorAll(".header-decor__item");
-headerDecorItems.forEach(function(item, i) {
-    scheduleRandomFlow(item, anime.random(0,2000));
-});
-
-function scheduleRandomFlow(elem, delay) {
-    setTimeout(function() { randomFlow(elem)() }, delay);
 }
 
 // Randomized flowing lines animation in the header
@@ -57,16 +50,6 @@ function randomFlow(elem) {
             complete: randomFlow(elem)
         });
     }
-}
-
-var cabbage = document.querySelector(".cabbage.cabbage--centered");
-var header = document.querySelector(".header");
-for (var i = 0; i < CABBAGE_FLY_COUNT; i++) {
-    var newCabbage = cabbage.cloneNode(true);
-    newCabbage.setAttribute("class","hidden cabbage cabbage--fly cabbage--small");
-    header.appendChild(newCabbage);
-    newCabbage.style.left = (header.clientWidth / 2 - newCabbage.clientWidth / 2) + "px";
-    randomFly(newCabbage)();
 }
 
 // Randomized 'flying' instances
@@ -105,3 +88,64 @@ function randomFly(elem) {
         });
     }
 }
+
+function checkHeaderSticky() {
+    var header = document.querySelector(".header--sticky");
+    var headerShrink = document.querySelector(".header--can-shrink");
+    var headerBg = document.querySelector(".header__bg");
+    var rect = header.getBoundingClientRect();
+    var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+    if (rect.y <= 2 && !header.classList.contains("header--sticky-active")) {
+        header.classList.add("header--sticky-active");
+        headerShrink.classList.add("header--can-shrink-active");
+        headerBg.classList.add("header__bg--active");
+        header.parentElement.style.height = rect.height + "px";
+    } else if (scrollTop + 2 <= window.innerHeight / 2 - rect.height / 2) {
+        header.classList.remove("header--sticky-active");
+        headerShrink.classList.remove("header--can-shrink-active");
+        headerBg.classList.remove("header__bg--active");
+    }
+};
+
+function checkBioReveal() {
+    var threshold = 150;
+    var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+    var content = document.querySelector(".about");
+    if (content.style.opacity < 1 || scrollTop <= threshold) {
+        var ratio = scrollTop / threshold;
+        document.querySelector(".about").style.opacity = Math.max(0.1, ratio);
+    }
+}
+
+function checkScrollEvents() {
+    scrollEvents.forEach(function(fn) {
+        fn();
+    });
+}
+
+function main() {
+    document.querySelector("html").classList.remove("hidden");
+    checkScrollEvents();
+    window.onscroll = checkScrollEvents;
+
+    var headerDecorItems = document.querySelectorAll(".header-decor__item");
+    headerDecorItems.forEach(function(item, i) {
+        scheduleRandomFlow(item, anime.random(0,2000));
+    });
+
+    function scheduleRandomFlow(elem, delay) {
+        setTimeout(function() { randomFlow(elem)() }, delay);
+    }
+
+    var cabbage = document.querySelector(".cabbage.cabbage--centered");
+    var header = document.querySelector(".header--centered");
+    for (var i = 0; i < CABBAGE_FLY_COUNT; i++) {
+        var newCabbage = cabbage.cloneNode(true);
+        newCabbage.setAttribute("class","hidden cabbage cabbage--fly cabbage--small");
+        header.appendChild(newCabbage);
+        newCabbage.style.left = (header.clientWidth / 2 - newCabbage.clientWidth / 2) + "px";
+        randomFly(newCabbage)();
+    }
+}
+
+window.addEventListener("DOMContentLoaded", main, false);
