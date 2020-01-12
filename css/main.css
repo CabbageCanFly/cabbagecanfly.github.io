@@ -82,6 +82,10 @@ b {
     opacity: 0;
 }
 
+.clickable {
+    cursor: pointer;
+}
+
 .cabbage {
     position: relative;
     width: 54px;

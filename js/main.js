@@ -122,11 +122,21 @@ function checkScrollEvents() {
         fn();
     });
 }
+function scrollToTop() {
+    var position = document.body.scrollTop || document.documentElement.scrollTop;
+    if (position) {
+        window.scrollBy(0, -Math.max(1, Math.floor(position / 6)));
+        requestAnimationFrame(scrollToTop);
+    }
+}
 
 function main() {
     document.querySelector("html").classList.remove("hidden");
     checkScrollEvents();
     window.onscroll = checkScrollEvents;
+
+    document.querySelector(".header__bg").addEventListener("click", scrollToTop);
+    document.querySelector(".header--can-shrink").addEventListener("click", scrollToTop);
 
     var headerDecorItems = document.querySelectorAll(".header-decor__item");
     headerDecorItems.forEach(function(item, i) {
