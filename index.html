@@ -1,462 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>James Huynh</title>
-	<meta charset="UTF-8">
-	<meta name="author" content="James Huynh">
-	<meta name="description" content="This is my personal website, which serves as my portfolio. And yes, cabbages can fly.">
-	<meta name="keywords" content="portfolio, toronto, student, University of Toronto, uoft">
-	<meta name="theme-color" content="#272822">
-	<meta name="viewport" content="width=device-width">
-	
-	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-	<link rel="manifest" href="site.webmanifest">
-	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#f92672">
-	<meta name="msapplication-TileColor" content="#b91d47">
-	<meta name="msapplication-TileImage" content="mstile-144x144.png">
+    <title>James Huynh</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="James Huynh">
+    <meta name="description" content="This is my personal website, which serves as my portfolio. And yes, cabbages can fly.">
+    <meta name="keywords" content="portfolio, toronto, student, University of Toronto, uoft, software, engineering, computer science">
+    <meta name="theme-color" content="#272822">
+    <meta name="viewport" content="width=device-width">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#f92672">
+    <meta name="msapplication-TileColor" content="#b91d47">
+    <meta name="msapplication-TileImage" content="mstile-144x144.png">
 
-	<link rel="stylesheet" href="css/main.css">
-	
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121864444-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-121864444-1');
-	</script>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="lib/anime.min.js"></script>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121864444-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-121864444-1');
+    </script>
 </head>
 <body>
+    <header class="header header--centered">
+        <div class="header-decor">
+            <div class="header-decor__item"></div>
+            <div class="header-decor__item"></div>
+            <div class="header-decor__item"></div>
+            <div class="header-decor__item"></div>
+            <div class="header-decor__item"></div>
+            <div class="header-decor__item"></div>
+            <div class="header-decor__item"></div>
+            <div class="header-decor__item"></div>
+            <div class="header-decor__item"></div>
+        </div>
+        <!-- #### Cabbage Logo #### -->
+        <div class="cabbage cabbage--centered">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58 42" version="1.1">
+                <title>Cabbage</title>
+                <defs>
+                    <clipPath clipPathUnits="userSpaceOnUse">
+                        <rect y="165.07968" x="121.28419" height="204.29237" width="302.97989" id="rect3782" />
+                    </clipPath>
+                    <clipPath clipPathUnits="userSpaceOnUse">
+                        <rect y="181.2843" x="144.90468" height="179.91281" width="251.75256" id="rect3790" />
+                    </clipPath>
+                </defs>
+                <g id="layer1" transform="translate(-89.637202,-85.038713)">
+                    <path d="m 108.35816,123.73428 v -1.30935 h -1.36507 -1.36507 v -1.33721 -1.33721 h -1.33721 -1.33721 v -1.30936 -1.30935 h -1.30935 -1.30936 v -4.01163 -4.01164 h 1.30936 1.30935 v -2.70228 -2.70228 h 1.33721 1.33721 v -1.33722 -1.33722 h 1.30936 1.30935 v -1.337207 -1.33721 h 1.36507 1.36507 v -1.30935 -1.30936 h 5.34884 5.34885 v 1.30936 1.30935 h 2.64656 2.64656 v 1.33721 1.337207 h 1.33721 1.33721 v 1.33722 1.33722 h 1.33721 1.33723 v 4.01163 4.01164 h -1.30937 -1.30935 v 2.64656 2.64657 h -1.33721 -1.33721 v 1.33721 1.33721 h -1.33721 -1.33722 v 1.36507 1.36507 h -1.3372 -1.33721 v 1.30935 1.30935 h -6.6582 -6.6582 z m 24.06981,-3.95592 v -2.64656 h 1.2815 1.28149 v -2.67442 -2.67443 h 1.33721 1.33721 v -4.03949 -4.03949 h -1.28149 -1.2815 v -2.64658 -2.646557 h -1.33721 -1.33721 v -1.36507 -1.36507 h -2.67443 -2.67443 v -1.33721 -1.33722 h -1.33721 -1.3372 v -1.30935 -1.30935 h 1.28149 1.2815 v -1.33721 -1.33721 h 6.71392 6.71391 v 1.30935 1.30935 h 1.33721 1.33722 v 2.64657 2.64656 h 1.30935 1.30934 v 6.686057 6.68607 h -1.30934 -1.30935 v 2.70228 2.70228 h -1.33722 -1.33721 v 1.33721 1.33721 h -1.30935 -1.30935 v 1.33721 1.33722 h -1.36507 -1.36507 v 1.33721 1.33721 h -1.30936 -1.30935 z m -40.116345,-6.68605 v -1.30936 h -1.337212 -1.337211 v -9.38835 -9.388337 h 1.309353 1.309353 v -2.64656 -2.64656 h 1.309353 1.309352 v -1.33722 -1.33721 h 6.686057 6.68606 v 1.30936 1.30935 h 1.36507 1.36507 v 1.33721 1.33721 h 1.30935 1.30935 v 1.30935 1.30936 h -3.98377 -3.98378 v 1.36507 1.36507 h -1.33721 -1.33721 v 1.33721 1.33721 h -1.30935 -1.30936 v 1.33721 1.337207 h -1.365067 -1.36507 v 2.67444 2.67442 h -1.33721 -1.33721 v 4.01163 4.01164 h -1.309355 -1.309353 z" />
+                </g>
+            </svg>
+        </div>
+        <!-- #### end Cabbage Logo #### -->
+        <h1 class="text--no-margin-bottom">James Huynh</h1>
+        <h4 class="text--no-margin-top text--roboto text--lighter">Yes, cabbages can fly.</h3>
+    </header>
+    
+    <nav class="version-nav">
+        <div class="test">
+            <ul>
+                <li><a class="version-nav__link" href="v1">v1</a></li>
+                <li><a class="version-nav__link" href="v2">v2</a></li>
+                <li><a class="version-nav__link" href="/">v3</a></li>
+            </ul>
+            <svg style="width: 100%; fill:none;" viewBox="0 0 42.7 100" xmlns="http://www.w3.org/2000/svg">
+                <rect width="42.7" height="100" />
+            </svg>
+        </div>
+    </nav>
 
-<!-- Radio button/checkbox toggle trick; a non-JS toggle -->
-<input type="radio" name="btn_c1" id="btn_c1_about" class="hide">
-<input type="radio" name="btn_c1" id="btn_c1_courses" class="hide">
-<input type="radio" name="btn_c1" id="btn_c1_3" class="hide">
-<input type="radio" checked="checked" name="btn_c1" id="btn_c1_4" class="hide">
-<input type="checkbox" id="btn_c2_1" class="hide">
-<label for="btn_c2_1"><span id="clickOff"></span></label>
 
-<!-- Header misc info -->
-<header id="top" class="faded">
-	<div id="info_ico">
-		<label for="btn_c2_1"><svg viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1 18h-2v-8h2v8zm-1-12.25c.69 0 1.25.56 1.25 1.25s-.56 1.25-1.25 1.25-1.25-.56-1.25-1.25.56-1.25 1.25-1.25z"/></svg></label>
-	</div>
-	<!-- Search bar -->
-	<div id="searchContainer">
-		<div id="search">
-			<input spellcheck="false" type="text" placeholder="Type anywhere to search">
-			<span></span>
-		</div>
-	</div>
-	<div id="info_content">
-		<div id="lastModified"></div>
-		<div><span>Fonts:</span>
-			<div><a target="_blank" class="text yanone" href="https://www.yanone.de/fonts/kaffeesatz/">Yanone Kaffeesatz</a>, <a target="_blank" class="text encode" href="https://fonts.google.com/specimen/Encode+Sans+Condensed">Encode Sans Condensed</a></div>
-		</div>
-		<div><span>Colors:</span> Monokai 
-			<div>#272822, #FD971F, #A6E22E</div>
-		</div>
-		<div><span>icons:</span> <a target="_blank" class="text" href="https://iconmonstr.com/">iconmonstr</a></div>
-	</div>
-</header>
-<!-- Main title/splash -->
-<section class="center" id="center1">
-	<h2 class="meta">James Huynh</h2>
-	<label for="btn_c1_4"><span id="title"><span id="title_bg"></span><span class="arrow up"></span>
-		<span id="name"><svg id="logo" height="84" preserveAspectRatio="xMinYMin" viewBox="0 0 540.16 540.91"><defs><style>.cls-1{opacity: 0;}.cls-2{fill:#A6E22E;}</style></defs><title>Cabbage</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M.75.25Q269.06.25,537.37.17c2.89,0,3.46.57,3.45,3.45q-.13,267,0,534c0,2.89-.57,3.46-3.45,3.45q-266.62-.13-533.25,0c-2.89,0-3.46-.57-3.45-3.45Q.8,268.94.75.25Zm288,348.86h12.08V336.89h12.09V324.8h12V301h11.69V264.9H324.61V252.82H312.52v-12H288.71V229.21H240.63v11.95H228.55v12H216.72v12H204.64v24.08H193v36.08h11.87v11.82h12v12.09h12.09v11.59h59.81Zm71.78-84.18v36.22h-12v24H336.94v23.68h11.93v-12H361v-12h11.83v-12h12.09V288.82H396.5V228.76H384.62V205h-12V193.24H312.57v12H300.93v11.83h11.92v12.09h24.09v12.09h12v23.69ZM145,217v84.21h12v11.65h11.82V276.91h12.09V252.82H193v-12H204.8v-12h12.09V216.82h35.57v-12H240.7v-12H228.61V181.27H168.52v11.87H156.7V217Z"/><path class="cls-2" d="M288.74,349.11v11.62H228.93V349.14H216.84V337.05h-12V325.23H193V289.15h11.62V265.07h12.08v-12h11.82v-12h12.09V229.21h48.07v11.65h23.82v12h12.09V264.9h11.94V301H324.86V324.8h-12v12.09H300.82v12.22Z"/><path class="cls-2" d="M360.52,264.93H348.9V241.24h-12V229.14H312.85V217.05H300.93V205.22h11.64v-12h60.09V205h12v23.8H396.5v60.06H384.88v24.09H372.79v12H361v12H348.87v12H336.94V325.11h11.62v-24h12Z"/><path class="cls-2" d="M145,217H156.7V193.14h11.82V181.27h60.08V192.9H240.7v12h11.76v12H216.89v12.09H204.8v12H193v12H180.88v24.09H168.79v35.91H157V301.18H145Z"/></g></g></svg>James Huynh</span>
-		<span>Yes, cabbages can fly.</span>
-	</span></label>
-	<nav id="btn_c1">
-		<div class="btn_c1_label">
-			<label id="btn_c1_aboutL" for="btn_c1_about">About</label>
-		</div>
-		<div class="btn_c1_label">
-			<label id="btn_c1_coursesL" for="btn_c1_courses">Courses</label>
-
-			<div id="social">
-				<div class="noClickField"></div>
-				<div id="social_links">
-					<div id="resumeIco">
-					<div class="icoSVG"><a target="_blank" href="resources/James-Huynh-Resume.pdf"><svg aria-label="Resume" viewbox="0 0 24 24">
-						<path d="M24 0v24h-24v-24h24zm-6.118 16.064c-2.293-.529-4.427-.993-3.394-2.945 3.146-5.942.834-9.119-2.488-9.119-3.388 0-5.643 3.299-2.488 9.119 1.064 1.963-1.15 2.427-3.394 2.945-2.048.473-2.124 1.49-2.118 3.269l.004.667h15.993l.003-.646c.007-1.792-.062-2.815-2.118-3.29z"/>
-					</svg></a></div>
-					<div class="icoLabel">Résumé</div>
-					</div>
-					<div id="linkedinIco">
-					<div class="icoSVG"><a target="_blank" href="https://www.linkedin.com/in/cabbagecanfly"><svg aria-label="LinkedIn" viewbox="0 0 24 24">
-						<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-					</svg></a></div>
-					<div class="icoLabel">LinkedIn</div>
-					</div>
-					<div id="githubIco">
-					<div class="icoSVG"><a target="_blank" href="https://github.com/CabbageCanFly"><svg aria-label="Github" viewbox="0 0 24 24">
-						<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-4.466 19.59c-.405.078-.534-.171-.534-.384v-2.195c0-.747-.262-1.233-.55-1.481 1.782-.198 3.654-.875 3.654-3.947 0-.874-.312-1.588-.823-2.147.082-.202.356-1.016-.079-2.117 0 0-.671-.215-2.198.82-.64-.18-1.324-.267-2.004-.271-.68.003-1.364.091-2.003.269-1.528-1.035-2.2-.82-2.2-.82-.434 1.102-.16 1.915-.077 2.118-.512.56-.824 1.273-.824 2.147 0 3.064 1.867 3.751 3.645 3.954-.229.2-.436.552-.508 1.07-.457.204-1.614.557-2.328-.666 0 0-.423-.768-1.227-.825 0 0-.78-.01-.055.487 0 0 .525.246.889 1.17 0 0 .463 1.428 2.688.944v1.489c0 .211-.129.459-.528.385-3.18-1.057-5.472-4.056-5.472-7.59 0-4.419 3.582-8 8-8s8 3.581 8 8c0 3.533-2.289 6.531-5.466 7.59z"/>
-					</svg></a></div>
-					<div class="icoLabel">Github</div>
-					</div>
-					<div id="steamIco">
-					<div class="icoSVG"><a target="_blank" href="http://steamcommunity.com/id/cabbagecanfly"><svg aria-label="Steam" role="img" viewBox="0 0 512 512">
-						<path d="m183 280 41 28 27 41 87-62-94-96"/><circle cx="340" cy="190" r="49"/><g fill="none"><circle cx="179" cy="352" r="63" stroke-width="19"/><path d="m-18 271 195 81" stroke-width="80" stroke-linecap="round"/><circle cx="340" cy="190" r="81" stroke-width="32"/></g>
-					</svg></a></div>
-					<div class="icoLabel">Steam</div>
-					</div>
-					<div id="deviantIco">
-					<div class="icoSVG"><a target="_blank" href="http://cabbagecanfly.deviantart.com"><svg aria-label="DeviantArt" viewBox="0 0 24 24">
-						<path d="M0 0v24h24v-24h-24zm17 6.908l-2.865 5.467.239.292h2.626v4h-4.823l-.431.291-1.449 2.749-.291.293h-3.006v-2.908l2.975-5.489-.24-.27h-2.735v-4h4.917l.431-.291 1.453-2.749.29-.293h2.909v2.908z"/>
-					</svg></a></div>
-					<div class="icoLabel">DeviantArt</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- <div class="btn_c1_label">
-			<label id="btn_c1_3L" for="btn_c1_3">Projects</label>
-		</div> -->
-	</nav>
-</section>
-<!-- About content -->
-<article id="about" class="content">
-	<h2 class="meta">About</h2>
-	I'm from <span class='b'>Mississauga, Ontario</span>. I started my undergraduate program in September 2016 for <span class='b'>Computer Science</span> at the <span class='b'>University of Toronto</span>, St. George campus.
-
-	<p>I am currently participating in the Professional Experience Year (PEY) Program, so I'm expected to be in the class of 2021.</p>
-
-	<p>I enjoy gaming in my free time. I've recently been playing:</p>
-	<ul>
-		<li><a target="_blank" class="text" href="https://www.callofduty.com/modernwarfare/">Call of Duty: Modern Warfare</a></li>
-	</ul>
-	<p>I used to play these a fair bit:</p>
-	<ul>
-		<li><a target="_blank" class="text" href="http://maplestory.nexon.net/">MapleStory</a></li>
-		<li><a target="_blank" class="text" href="https://www.ea.com/games/titanfall/titanfall-2/">Titanfall 2</a></li>
-    	<li><a target="_blank" class="text" href="http://store.steampowered.com/app/252950/Rocket_League/">Rocket League</a></li>
-        <li><a target="_blank" class="text" href="https://www.destinythegame.com/ca/en/home">Destiny 2</a></li>
-        <li><a target="_blank" class="text" href="https://playoverwatch.com/en-us/">Overwatch</a></li>
-	</ul>
-</article>
-<!-- Courses content -->
-<article id="courses" class="content">
-	<h2 class="meta">Courses</h2>
-	<button class="accordion">Winter 2019</button>
-	<div class="panel">
-		<ul>
-			<li>
-				<button class="accordion">CSC324H - Principles of Programming Languages</button>
-				<div class="panel">
-					<ul>
-					<li>
-						<span class='b'>Course Description:</span> <i class="faded">Programming principles common in modern languages; details of commonly used paradigms. The structure and meaning of code. Scope, control flow, datatypes, and parameter passing. Two non-procedural, non-object-oriented programming paradigms: functional programming (illustrated by languages such as Lisp/Scheme, ML or Haskell) and logic programming (typically illustrated in Prolog).</i>
-					</li>
-					<li>
-						<a target="_blank" class="text" href="http://www.cs.utoronto.ca/~trebla/CSC324-2019-Winter/">Course Website</a>
-					</li>
-                    <li>
-                        <a target="_blank" href="https://bb-2019-01.teach.cs.toronto.edu/c/csc324" class="text">Course Forum</a>
-                    </li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<button class="accordion">CSC367H - Parallel Programming</button>
-				<div class="panel">
-					<ul>
-					<li>
-						<span class='b'>Course Description:</span> <i class="faded">Introduction to aspects of parallel programming. Topics include computer instruction execution, instruction-level parallelism, memory system performance, task and data parallelism, parallel models (shared memory, message passing), synchronization, scalability and Amdahl's law, Flynn taxonomy, vector processing and parallel computing architectures.</i>
-					</li>
-					</ul>
-				</div>
-			</li>
-		</ul>
-	</div>
-
-	<button class="accordion">Fall 2018</button>
-	<div class="panel">
-		<ul>
-			<li>
-				<button class="accordion">CSC301H - Intro to Software Engineering</button>
-				<div class="panel">
-					<ul>
-					<li>
-						<span class='b'>Course Description:</span> <i class="faded">An introduction to agile development methods appropriate for medium-sized teams and rapidly-moving projects. Basic software development infrastructure; requirements elicitation and tracking; estimation and prioritization; teamwork skills; basic UML; design patterns and refactoring; security, discussion of ethical issues, and professional responsibility.</i>
-					</li>
-					<li>
-						<a target="_blank" class="text" href="https://csc301-fall-2018.github.io/">Course Website</a>
-					</li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<button class="accordion">CSC309H - Programming on the Web</button>
-				<div class="panel">
-					<ul>
-					<li>
-						<span class='b'>Course Description:</span> <i class="faded">An introduction to software development on the web. Concepts underlying the development of programs that operate on the web; survey of technological alternatives; greater depth on some technologies. Operational concepts of the internet and the web, static client content, dynamic client content, dynamically served content, n-tiered architectures, web development processes, and security on the web. Assignments involve increasingly more complex web-based programs. Guest lecturers from leading e-commerce firms will describe the architecture and operation of their web sites.</i>
-					</li>
-					<li>
-						<a target="_blank" class="text" href="https://www.teach.cs.toronto.edu/~csc309h/fall/">Course Website</a>
-					</li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<button class="accordion">CSC369H - Operating Systems</button>
-				<div class="panel">
-					<ul>
-					<li>
-						<span class='b'>Course Description:</span> <i class="faded">Principles of operating systems. The operating system as a control program and as a resource allocator. The concept of a process and concurrency problems: synchronization, mutual exclusion, deadlock. Additional topics include memory management, file systems, process scheduling, threads, and protection.</i>
-					</li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<button class="accordion">CSC384H - Introduction to Artificial Intelligence</button>
-				<div class="panel">
-					<ul>
-					<li>
-						<span class='b'>Course Description:</span> <i class="faded">Theories and algorithms that capture (or approximate) some of the core elements of computational intelligence. Topics include: search; logical representations and reasoning, classical automated planning, representing and reasoning with uncertainty, learning, decision making (planning) under uncertainty. Assignments provide practical experience, in both theory and programming, of the core topics.</i>
-					</li>
-					<li>
-						<a target="_blank" class="text" href="https://www.teach.cs.toronto.edu//~csc384h/fall/index.html">Course Website</a>
-					</li>
-					<li>
-						<a target="_blank" class="text" href='https://cabbagecanfly.github.io/resources/courses/CSC384/CSC384infosheet.pdf'>Course Infosheet</a>
-					</li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<button class="accordion">CSC458H - Computer Networking Systems</button>
-				<div class="panel">
-					<ul>
-					<li>
-						<span class='b'>Course Description:</span> <i class="faded">Computer networks with an emphasis on network programming and applications. An overview of networking basics: layering, naming, and addressing, packet switching fundamentals, socket programming, protocols, congestion control, routing, network security, wireless networks, multimedia, web 2.0, software-defined networking, and online social networks.</i>
-					</li>
-					<li>
-						<a target="_blank" class="text" href='https://cabbagecanfly.github.io/resources/courses/CSC458/CSC458syllabus.pdf'>Course Syllabus</a>
-					</li>
-					<li>
-						<a target="_blank" class="text" href='https://bb-2018-09.teach.cs.toronto.edu/c/csc458'>Course Forum</a>
-					</li>
-					</ul>
-				</div>
-			</li>
-		</ul>
-	</div>
-
-	<button class="accordion">Winter 2018</button>
-	<div class="panel">
-		<ul>
-			<li>
-				<button class="accordion">CSC258H - Computer Organization</button>
-				<div class="panel">
-					<ul>
-					<li>
-						<span class='b'>Course Description:</span> <i class="faded">Computer structures, machine languages, instruction execution, addressing techniques, and digital representation of data. Computer system organization, memory storage devices, and microprogramming. Block diagram circuit realizations of memory, control and arithmetic functions. There are a number of laboratory periods in which students conduct experiments with digital logic circuits.</i>
-					</li>
-					<li>
-						<a target="_blank" class="text" href="https://bb-2018-01.teach.cs.toronto.edu/c/csc258h1">Course Forum</a>
-					</li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<button class="accordion">CSC263H - Data Structures and Analysis</button>
-				<div class="panel">
-					<ul>
-					<li>
-						<span class='b'>Course Description:</span> <i class="faded">Algorithm analysis: worst-case, average-case, and amortized complexity. Expected worst-case complexity, randomized quicksort and selection. Standard abstract data types, such as graphs, dictionaries, priority queues, and disjoint sets. A variety of data structures for implementing these abstract data types, such as balanced search trees, hashing, heaps, and disjoint forests. Design and comparison of data structures. Introduction to lower bounds.</i>
-					</li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<span class="notAccordion">MAT235Y - Calculus II</span>
-			</li>
-			<li>
-				<span class="notAccordion">STA247H - Probability with Computer Applications</span>
-			</li>
-		</ul>
-	</div>
-
-	<button class="accordion">Fall 2017</button>
-	<div class="panel">
-		<ul>
-			<li>
-				<button class="accordion">CSC209H - Software Tools and Systems Programming</button>
-				<div class="panel">
-					<ul>
-					<li>
-						<span class='b'>Course Description:</span> <i class="faded">Software techniques in a Unix-style environment, using scripting languages and a machine-oriented programming language (typically C). What goes on in the operating system when programs are executed. Core topics: creating and using software tools, pipes and filters, file processing, shell programming, processes, system calls, signals, basic network programming.</i>
-					</li>
-					<li>
-						<a target="_blank" class="text" href="http://www.teach.cs.toronto.edu/~csc209h/fall/">Course Website</a>
-					</li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<button class="accordion">CSC236H - Introduction to the Theory of Computation</button>
-				<div class="panel">
-					<ul>
-					<li>
-						<span class='b'>Course Description:</span> <i class="faded">The application of logic and proof techniques to Computer Science. Mathematical induction; correctness proofs for iterative and recursive algorithms; recurrence equations and their solutions; introduction to automata and formal languages.</i>
-					</li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<button class="accordion">CSC343H - Introduction to Databases</button>
-				<div class="panel">
-					<ul>
-					<li>
-						<span class='b'>Course Description:</span> <i class="faded">Introduction to database management systems. The relational data model. Relational algebra. Querying and updating databases: the query language SQL. Application programming with SQL. Integrity constraints, normal forms, and database design. Elements of database system technology: query processing, transaction management.</i>
-					</li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<span class="notAccordion">HPS100H - Introduction to History and Philosophy of Science</span>
-			</li>
-			<li>
-				<span class="notAccordion">MAT235Y - Calculus II</span>
-			</li>
-			<li>
-				<span class="notAccordion">STA257H - Probability and Statistics I</span>
-			</li>
-		</ul>
-	</div>
-
-	<button class="accordion">Winter 2017</button>
-	<div class="panel">
-		<ul>
-			<li>
-				<span class="notAccordion">BIO130H - Molecular and Cell Biology</span>
-			</li>
-			<li>
-				<button class="accordion">CSC207H - Software Design</button>
-				<div class="panel">
-					<ul>
-					<li>
-						<span class='b'>Course Description:</span> <i class="faded">An introduction to software design and development concepts, methods, and tools using a statically-typed object-oriented programming language such as Java. Topics from: version control, unit testing, refactoring, object-oriented design and development, design patterns, advanced IDE usage, regular expressions, and reflection. Representation of floating-point numbers and introduction to numerical computation.</i>
-					</li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<button class="accordion">MAT137Y - Calculus!</button>
-				<div class="panel">
-					<ul>
-					<li>
-						<a target="_blank" class="text" href='http://www.math.toronto.edu/~alfonso/137/137.html'>Course Website</a>
-					</li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<button class="accordion">ECO105Y - Principles of Economics for Non-Specialists</button>
-				<div class="panel">
-					<ul>
-					<li>
-						<a target="_blank" class="text" href='https://cabbagecanfly.github.io/resources/courses/ECO105/ECO105%20-%20Outline.pdf'>Course Outline</a>
-					</li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<button class="accordion">MAT223H - Linear Algebra I</button>
-				<div class="panel">
-					<ul>
-					<li>
-						<a target="_blank" class="text" href='http://www.math.toronto.edu/nhoell/MAT223/'>Course Website</a>
-					</li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<span class="notAccordion">PSY100H - Introductory Psychology</span>
-			</li>
-		</ul>
-	</div>
-
-	<button class="accordion">Fall 2016</button>
-	<div class="panel">
-		<ul>
-			<li>
-				<button class="accordion">CCR199H - L0381 - The Cossacks</button>
-				<div class="panel">
-					<ul>
-					<li>
-						<a target="_blank" class="text" href="http://homes.chass.utoronto.ca/~tarn/courses/199.html">Course Website</a>
-					</li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<button class="accordion">CSC148H - Introduction to Computer Science</button>
-				<div class="panel">
-					<ul>
-					<li>
-						<span class='b'>Course Description:</span> <i class="faded">Abstract data types and data structures for implementing them. Linked data structures. Encapsulation and information-hiding. Object-oriented programming. Specifications. Analyzing the efficiency of programs. Recursion.</i>
-					</li>
-					<li>
-						<a target="_blank" class="text" href="http://www.teach.cs.toronto.edu/~csc148h/fall/">Course Website</a>
-					</li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<button class="accordion">CSC165H - Mathematical Expression and Reasoning for Computer Science</button>
-				<div class="panel">
-					<ul>
-					<li>
-						<span class='b'>Course Description:</span> <i class="faded">Introduction to abstraction and rigour. Informal introduction to logical notation and reasoning. Understanding, using and developing precise expressions of mathematical ideas, including definitions and theorems. Structuring proofs to improve presentation and comprehension. General problem-solving techniques. Running time analysis of iterative programs. Formal definition of Big-Oh. Diagonalization, the Halting Problem, and some reductions. Unified approaches to programming and theoretical problems.</i>
-					</li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<button class="accordion">ECO105Y - Principles of Economics for Non-Specialists</button>
-				<div class="panel">
-					<ul>
-					<li>
-						<a target="_blank" class="text" href='https://cabbagecanfly.github.io/resources/courses/ECO105/ECO105%20-%20Outline.pdf'>Course Outline</a>
-					</li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<button class="accordion">MAT137Y - Calculus!</button>
-				<div class="panel">
-					<ul>
-					<li>
-						<a target="_blank" class="text" href='http://www.math.toronto.edu/~alfonso/137/137.html'>Course Website</a>
-					</li>
-					</ul>
-				</div>
-			</li>
-		</ul>
-	</div>
-</article>
-
-<!-- Year obtained through last modified -->
-<footer class="faded" id="bottom">
-	<div id="copyright">
-		© <span id="year"></span> James Huynh
-	</div>
-</footer>
-
-<!-- All course panels/accordions automatically expanded when JS unavailable -->
-<noscript>
-	<style>
-		.panel {
-			max-height: 200%;
-		}
-	</style>
-</noscript>
-
-<script src="js/main.js"></script>
+    <footer class="footer footer--centered">
+        <div id="copyright">
+            © <span id="copyright__year">2020</span> James Huynh
+        </div>
+    </footer>
 </body>
+<noscript>
+</noscript>
+<script src="js/main.js"></script>
 </html>

@@ -1,0 +1,1259 @@
+/*
+Colours:
+orange					green					black
+#FD971F					#A6E22E					#272822
+rgba(253, 151, 31, 1)	rgba(166, 226, 46, 1)	rgba(39, 40, 34, 1)
+
+white					pink					blue
+#FFFFFF					#F92672					#66D9EF
+rgba(255, 255, 255, 1)	rgba(249, 38, 114, 1)	rgba(102, 217, 239, 1)
+*/
+
+/*--------------- Fonts ---------------*/
+@font-face {
+	font-family: 'YanoneKaffeesatz';
+	src: url('../resources/fonts/YanoneKaffeesatz-Regular.ttf');
+}
+@font-face {
+	font-family: 'YanoneKaffeesatz_Light';
+	src: url('../resources/fonts/YanoneKaffeesatz-Light.ttf');
+}
+@font-face {
+	font-family: 'EncodeSansCondensed';
+	src: url('../resources/fonts/EncodeSansCondensed-Regular.ttf');
+}
+@font-face {
+	font-family: 'EncodeSansCondensed_Light';
+	src: url('../resources/fonts/EncodeSansCondensed-Light.ttf');
+}
+/*--------------- end fonts ---------------*/
+
+/*--------------- Miscellaneous highlight styles ---------------*/
+* {
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
+	-webkit-overflow-scrolling: touch;
+}
+::selection {
+    background-color: rgba(102, 217, 239, 0.99);
+    opacity: 1;
+    color: black;
+}
+::-moz-selection {
+    background-color: rgba(102, 217, 239, 0.99);
+    opacity: 1;
+    color: black;
+}
+.found {
+	background-color: rgba(102, 217, 239, 0.99) !important;
+    color: black !important;
+}
+/*--------------- end Miscellaneous highlight styles ---------------*/
+
+.meta {
+	display: none;
+	position: absolute;
+}
+
+body {
+	/*opacity: 0.3;*/
+	background-color: #272822;
+	font-family: 'EncodeSansCondensed_Light', sans-serif;
+	color: White;
+	margin: 0 15vw 0 15vw;
+	overflow: hidden;
+}
+
+h1, h2, h3, h4 {
+	font-family: 'YanoneKaffeesatz', sans-serif;
+}
+
+h1 {
+	font-weight: normal;
+	margin: 0;
+}
+
+#name { 
+    display: block;
+    font-family: 'YanoneKaffeesatz_Light', sans-serif;
+    font-size: 1.75em;
+    margin: 0;
+    font-weight: normal;
+}
+
+.b {
+	font-family: 'EncodeSansCondensed', sans-serif;
+	color: #FD971F;
+}
+
+a {
+	color: white;
+}
+
+a.text {
+	text-decoration: none;
+	position: relative;
+    background: none;
+    border: none;
+    padding: 1px 1px;
+    color: white;
+    -webkit-transition: color 0.2s;
+    -o-transition: color 0.2s;
+    transition: color 0.2s;
+    /* Safari-flicker/shift-graphical-glitch hacky fix*/
+    -webkit-perspective: 1000;
+	-webkit-backface-visibility: hidden;
+}
+
+/* Before pseudoelements are usually used as hover styles */
+a.text:before {
+	position: absolute;
+	content: '';
+	background-color: #A6E22E;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	-webkit-transform: scaleY(0.07);
+	    -ms-transform: scaleY(0.07);
+	        transform: scaleY(0.07);
+	-webkit-transform-origin: bottom;
+	    -ms-transform-origin: bottom;
+	        transform-origin: bottom;
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: -webkit-transform 0.2s;
+    -o-transition: transform 0.2s;
+    transition: transform 0.2s;
+    transition: transform 0.2s, -webkit-transform 0.2s;
+}
+a.text:hover {
+	color: #272822;
+}
+
+a.text:hover:before {
+	-webkit-transform: scaleY(1);
+	    -ms-transform: scaleY(1);
+	        transform: scaleY(1);
+	border-radius: 2px;
+}
+
+a.text:active:before {
+	opacity: 0.75;
+	border: 1px solid #272822;
+}
+
+.faded {
+	color: rgba(255,255,255,0.45);
+}
+.hide {
+	display: none;
+}
+
+.center {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
+	max-height: 100vh;
+	height: 100vh;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
+
+.arrow {
+	border-top: 0;
+	border-left: 0;
+	border-right: 2px;
+	border-bottom: 2px;
+	border-style: solid;
+    padding: 2px;
+}
+
+.up {
+    -webkit-transform: rotate(-135deg);
+        -ms-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+}
+
+.accordion {
+	display: inline-block;
+	position: relative;
+	outline: none;
+    text-align: left;
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    padding-right: 1.75em;
+    padding-left: 0.6em;
+    margin-bottom: 4px;
+    font-size: 1rem;
+	font-family: 'EncodeSansCondensed_Light', sans-serif;
+    cursor: pointer;
+    /* Safari-flicker/shift-graphical-glitch hacky fix*/
+    -webkit-perspective: 1000;
+	-webkit-backface-visibility: hidden;
+}
+.accordion:before {
+	position: absolute;
+	content: '';
+	background-color: #FD971F;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	-webkit-transform: scaleY(0.05);
+	    -ms-transform: scaleY(0.05);
+	        transform: scaleY(0.05);
+	-webkit-transform-origin: bottom;
+	    -ms-transform-origin: bottom;
+	        transform-origin: bottom;
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: -webkit-transform 0.2s;
+    -o-transition: transform 0.2s;
+    transition: transform 0.2s;
+    transition: transform 0.2s, -webkit-transform 0.2s;
+}
+.accordion-active, .accordion:hover {
+	color: #272822;
+}
+.accordion-active:before, .accordion:hover:before {
+	-webkit-transform: scaleY(1);
+	    -ms-transform: scaleY(1);
+	        transform: scaleY(1);
+    border-radius: 4px;
+}
+.accordion-active:before {
+	border-bottom: 2px solid white;
+}
+.accordion:active:before {
+	opacity: 0.75;
+	border: 2px solid #272822;
+}
+.accordion:after {
+	position: absolute;
+	content: '\002B';
+	background-color: rgba(0,0,0,0);
+	right: 1rem;
+	height: 101%;
+	z-index: -1;
+    opacity: 0.7;
+    font-weight: bold;
+    float: right;
+}
+.accordion-active:after {
+    content: "\2212";
+}
+
+.accordion-active + .panel {
+	margin-top: 0.5em;
+	margin-bottom: 4px;
+}
+/* Panel represents content in accordion */
+.panel {
+	margin-top: 0;
+	margin-bottom: 0;
+    max-height: 0;
+    overflow-y: hidden;
+    opacity: 1;
+    -webkit-transition: max-height 0.3s, margin-top 0.3s, margin-bottom 0.3s;
+    -o-transition: max-height 0.3s, margin-top 0.3s, margin-bottom 0.3s;
+    transition: max-height 0.3s, margin-top 0.3s, margin-bottom 0.3s;
+    -webkit-transition-timing-function: ease-out;
+         -o-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+}
+
+.panel ul {
+	margin-bottom: 0.5em;
+	margin-top: 0;
+	padding-top: 0;
+	padding-left: 1.4em;
+	/* Safari-flicker/shift-graphical-glitch hacky fix*/
+    -webkit-perspective: 1000;
+	-webkit-backface-visibility: hidden;
+}
+
+.panel li {
+	width: 100%;
+}
+/* A course/panel with no additional content does not
+	expand, so it's not an accordion. */
+.panel li > span.notAccordion {
+	position: relative;
+	display: block;
+	padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    padding-right: 1.0em;
+    padding-left: 0.6em;
+    margin-bottom: 4px;
+}
+
+.panel > ul >li > span.notAccordion:before {
+	position: absolute;
+	content: '';
+	background-color: rgba(255,255,255,0.45);
+	left: 0;
+	right: 0;
+	width: 100%;
+	top: 94%;
+	bottom: 0;
+	z-index: -1;
+}
+
+.panel li > a {
+	line-height: 1.5em;
+}
+
+#center1 {
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: -webkit-transform 0.5s;
+	-o-transition: transform 0.5s;
+	transition: transform 0.5s;
+	transition: transform 0.5s, -webkit-transform 0.5s;
+	-webkit-transform: translateY(0vh);
+	    -ms-transform: translateY(0vh);
+	        transform: translateY(0vh);
+	animation: iniEnter 0.85s;
+}
+
+
+/* This refers to the radio buttons that are part of name="btn_c1". */
+#btn_c1 {
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	margin-top: 1.2rem;
+	width: 16em;
+	-webkit-transition-property: width;
+	-o-transition-property: width;
+	transition-property: width;
+	-webkit-transition-duration: 0.5s;
+	     -o-transition-duration: 0.5s;
+	        transition-duration: 0.5s;
+}
+#btn_c1 > div {
+	height: 2.4em;
+}
+#btn_c1_aboutL {
+	margin-left: 1em;
+}
+#btn_c1_coursesL {
+	margin-right: 1em;
+}
+
+#title {
+	position: relative;
+	display: block;
+	margin-left: 3.2rem;
+    cursor: pointer;
+}
+#title_bg {
+	position: absolute;
+	background-color: rgba(255,255,255,0.04);
+	margin-left: -4.2rem;
+	margin-top: -0.5rem;
+	padding-right: 5.2rem;
+	padding-top: 1rem;
+	height: 100%;
+	width: 100%;
+	border-radius: 8px;
+}
+#title_bg:before {
+	position: absolute;
+	content: '';
+	border: 5px solid;
+	transform: scale(1.05, 1.17);
+	border-color: rgba(255,255,255,0.07);
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: 8px;
+	animation: fadeEnlarge 6s ease-out infinite;
+}
+#title:hover > #title_bg {
+	background-color: rgba(255,255,255,0.09);
+}
+#title:hover > span.arrow {
+	opacity: 0.7;
+}
+
+#title:active > #title_bg {
+	background-color: rgba(255,255,255,0.06);
+}
+#title:active > span.arrow {
+	opacity: 0.6;
+}
+/* Arrow is toggled on when viewing webpage content;
+	this arrow indicates that the title is clickable to
+	return to initial state of webpage. */
+#title > span.arrow {
+	display: initial;
+	position: absolute;
+	margin-left: -3.8rem;
+	bottom: -0.4rem;
+	opacity: 0.3;
+	border-color: white;
+}
+
+input#btn_c1_4:checked ~ #center1 #title_bg:before {
+	opacity: 0;
+	animation: none;
+}
+input#btn_c1_4:checked ~ #center1 #title > span.arrow {
+	display: none;
+}
+
+#social {
+	position: absolute;
+	text-align: center;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	width: 16em;
+	left: 0;
+	top: 3.2em;
+	opacity: 0;
+	-webkit-transition: opacity 0.2s;
+	-o-transition: opacity 0.2s;
+	transition: opacity 0.2s;
+}
+#social_links {
+	text-align: center;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	width: 16em;
+}
+/* The social links can be unintentionally
+	clicked on without this div. */
+#social div.noClickField {
+	position: absolute;
+	padding: 0.5em;
+	margin-left: -0.5em;
+	margin-top: -0.5em;
+	height: 110%;
+	width: 100%;
+	z-index: 2;
+	display: initial;
+}
+
+input#btn_c1_4:checked ~ #center1 #social {
+	opacity: 0.85;
+}
+input#btn_c1_4:checked ~ #center1 #social div.noClickField {
+	display: none;
+}
+
+/* div wrapper for radio button labels */
+div.btn_c1_label {
+	text-align: center;
+}
+/* label tags toggle radio buttons; styled
+	to look like a better looking button with text.
+   This is a lil' HTML/CSS trick to avoid JS to 
+   	toggle classes/IDs. */
+#btn_c1 label {
+	display: inline-block;
+	position: relative;
+    width: 3em;
+    background: none;
+    border: none;
+    color: white;
+    padding: 0.4em 0.6em;
+    font-size: 1rem;
+	font-family: 'EncodeSansCondensed_Light', sans-serif;
+    cursor: pointer;
+    -webkit-transition: color 0.2s;
+    -o-transition: color 0.2s;
+    transition: color 0.2s;
+    /* Safari-flicker/shift-graphical-glitch hacky fix*/
+    -webkit-perspective: 1000;
+	-webkit-backface-visibility: hidden;
+}
+#btn_c1 label:before {
+	position: absolute;
+	content: '';
+	background-color: #FD971F;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	-webkit-transform: scaleY(0.07);
+	    -ms-transform: scaleY(0.07);
+	        transform: scaleY(0.07);
+	-webkit-transform-origin: bottom center;
+	    -ms-transform-origin: bottom center;
+	        transform-origin: bottom center;
+	z-index: -1;
+    border-radius: 4px;
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: -webkit-transform 0.2s;
+    -o-transition: transform 0.2s;
+    transition: transform 0.2s;
+    transition: transform 0.2s, -webkit-transform 0.2s;
+}
+#btn_c1 label:hover {
+	color: #272822;
+}
+#btn_c1 label:hover:before {
+	-webkit-transform: scaleY(1);
+	    -ms-transform: scaleY(1);
+	        transform: scaleY(1);
+}
+#btn_c1 label:active:before {
+	opacity: 0.75;
+	border: 1px solid #272822;
+}
+
+.content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	cursor: default;
+	margin-left: 15vw;
+	margin-right: 15vw;
+	padding-left: 1.2rem;
+	padding-right: 1.2rem;
+	word-wrap: break-word;
+	overflow-y: overlay;
+	overflow-x: hidden;
+	height: 60vh;
+	margin-top: 32vh;
+	opacity: 0;
+	transition: opacity 0.3s;
+	animation: shiftDown 0.5s;
+}
+#about li {
+	margin-bottom: 3px;
+}
+
+/*--------------- Radio button toggle style trick ---------------*/
+input#btn_c1_about:checked ~ #center1 #btn_c1 > div > #btn_c1_aboutL {
+	color: #272822;
+}
+input#btn_c1_courses:checked ~ #center1 #btn_c1 > div > #btn_c1_coursesL {
+	color: #272822;
+}
+input#btn_c1_3:checked ~ #center1 #btn_c1 > div > #btn_c1_3L {
+	color: #272822;
+}
+
+input#btn_c1_about:checked ~ #center1 #btn_c1 > div > #btn_c1_aboutL:before {
+	-webkit-transform: scaleY(1);
+	    -ms-transform: scaleY(1);
+	        transform: scaleY(1);
+}
+input#btn_c1_courses:checked ~ #center1 #btn_c1 > div > #btn_c1_coursesL:before {
+	-webkit-transform: scaleY(1);
+	    -ms-transform: scaleY(1);
+	        transform: scaleY(1);
+}
+input#btn_c1_3:checked ~ #center1 #btn_c1 > div > #btn_c1_3L:before {
+	-webkit-transform: scaleY(1);
+	    -ms-transform: scaleY(1);
+	        transform: scaleY(1);
+}
+
+input#btn_c1_about:checked ~ #center1,
+input#btn_c1_courses:checked ~ #center1,
+input#btn_c1_3:checked ~ #center1 {
+	-webkit-transform: translateY(-30vh);
+	    -ms-transform: translateY(-30vh);
+	        transform: translateY(-30vh);
+}
+
+input#btn_c1_about:checked ~ .content,
+input#btn_c1_courses:checked ~ .content {
+	animation: shiftUp 0.5s;
+}
+
+input#btn_c1_about:checked ~ #about,
+input#btn_c1_courses:checked ~ #courses {
+	-webkit-user-select: auto;
+	   -moz-user-select: auto;
+	    -ms-user-select: auto;
+	        user-select: auto;
+	cursor: auto;
+	opacity: 1;
+	transition: opacity 0.5s;
+	z-index: 1;
+}
+/*--------------- end radio button toggle style trick ---------------*/
+
+#bottom {
+	position: fixed;
+	font-size: 0.9em;
+	left: 0;
+	bottom: 0;
+	width: 100vw;
+	animation: iniEnter 2.25s;
+}
+
+#bottom > div {
+	position: absolute;
+	width: 100%;
+	margin-top: -1.75em;
+}
+
+/*--------------- Header info ---------------*/
+#top {
+	position: fixed;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	font-size: 0.9em;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	z-index: 10;
+}
+#top:before {
+	position: absolute;
+	content: '';
+	background-color: #FD971F;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 0;
+	-webkit-transform: scaleY(0);
+	    -ms-transform: scaleY(0);
+	        transform: scaleY(0);
+	-webkit-transform-origin: top center;
+	    -ms-transform-origin: top center;
+	        transform-origin: top center;
+    -webkit-transition: -webkit-transform 0.2s ease-out;
+    transition: -webkit-transform 0.2s ease-out;
+    -o-transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+}
+
+#info_ico {
+	z-index: 5;
+	padding-top: 8px;
+	/*padding-bottom: 8px;*/
+	padding-left: 8px;
+	-webkit-transition: padding-top 0.2s;
+	-o-transition: padding-top 0.2s;
+	transition: padding-top 0.2s;
+	animation: iniEnter 1.5s;
+}
+#info_ico svg {
+	height: 24px;
+	width: 24px;
+	fill: rgba(255,255,255,0.20);
+	-webkit-transition: fill 0.2s;
+	-o-transition: fill 0.2s;
+	transition: fill 0.2s;
+}
+#info_ico label {
+	display: inline-block;
+	position: relative;
+    background: none;
+    border: none;
+	font-family: 'EncodeSansCondensed_Light', sans-serif;
+    cursor: pointer;
+    -webkit-transition: color 0.2s;
+    -o-transition: color 0.2s;
+    transition: color 0.2s;
+}
+
+/* The space beneath header becomes a large
+	button to toggle the checkbox, returns
+	back to main content when clicked on. */
+#clickOff {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	display: none;
+	z-index: 2;
+	cursor: default;
+	background-color: #272822;
+	opacity: 0.6;
+}
+
+#info_content {
+	z-index: 2;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	padding: 0.6em 0.5em;
+	color: #272822;
+	opacity: 0;
+	display: none;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	cursor: default;
+	-webkit-transition: opacity 0.2s;
+	-o-transition: opacity 0.2s;
+	transition: opacity 0.2s;
+}
+#info_content > div {
+	padding-right: 0.75em;
+	padding-bottom: 0.15em;
+}
+#info_content div > span {
+	font-size: 80%;
+}
+#info_content a {
+	display: inline-block;
+	color: #272822;
+}
+#info_content a.text:before {
+	-webkit-transform: scaleY(0.09);
+	    -ms-transform: scaleY(0.09);
+	        transform: scaleY(0.09);
+	visibility: hidden;
+}
+#info_content a.text:hover:before {
+	-webkit-transform: scaleY(1);
+	    -ms-transform: scaleY(1);
+	        transform: scaleY(1);
+	border-radius: 2px;
+}
+#info_content a.text:after {
+	background-color: #FD971F;
+	visibility: hidden;
+}
+#info_ico label:hover svg {
+	fill: rgba(255,255,255,0.75) !important;
+}
+
+/* Checkbox button trick for header info */
+input#btn_c2_1:checked ~ #top #info_ico svg {
+	fill: #272822 !important;
+}
+input#btn_c2_1:checked ~ #top #info_ico {
+	padding-top: 16px;
+}
+input#btn_c2_1:checked ~ label #clickOff  {
+	display: block;
+}
+input#btn_c2_1:checked ~ #top #info_content {
+	opacity: 1;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-user-select: auto;
+	   -moz-user-select: auto;
+	    -ms-user-select: auto;
+	        user-select: auto;
+	cursor: auto;
+}
+input#btn_c2_1:checked ~ #top {
+	z-index: 10;
+}
+input#btn_c2_1:checked ~ #top:before {
+	-webkit-transform: scaleY(1);
+	    -ms-transform: scaleY(1);
+	        transform: scaleY(1);
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: -webkit-transform 0.3s;
+	-o-transition: transform 0.3s;
+	transition: transform 0.3s;
+	transition: transform 0.3s, -webkit-transform 0.3s;
+}
+input#btn_c2_1:checked ~ #top a.text:before {
+    -webkit-animation: displayDelay 0.01s 0.33s forwards;
+            animation: displayDelay 0.01s 0.33s forwards;
+}
+input#btn_c2_1:checked ~ #top a.text:after {
+    -webkit-animation: widthFill 0.5s 0.33s ease-out forwards;
+            animation: widthFill 0.5s 0.33s ease-out forwards;
+}
+input#btn_c2_1:not(:checked) ~ #top {
+	-webkit-animation: zdelay 0.40s;
+	        animation: zdelay 0.40s;
+}
+/*--------------- end header info ---------------*/
+
+#copyright {
+	margin: auto;
+	text-align: center;
+	opacity: 0;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	cursor: default;
+	-webkit-transition: opacity 0.2s;
+	-o-transition: opacity 0.2s;
+	transition: opacity 0.2s;
+}
+
+input#btn_c1_4:checked ~ #top #info_ico svg {
+	color: rgba(255,255,255,0.45);
+	fill: rgba(255,255,255,0.45);
+}
+input#btn_c1_4:checked ~ #bottom #copyright {
+	-webkit-user-select: auto;
+	   -moz-user-select: auto;
+	    -ms-user-select: auto;
+	        user-select: auto;
+	cursor: auto;
+	opacity: 1;
+}
+
+.imgCir {
+	height: 6rem;
+    border-radius: 50%;
+}
+
+/*--------------- Social icon/SVG styles ---------------*/
+#social svg {
+	position: relative;
+	height: 2em;
+	width: 2em;
+	background-color: white;
+	fill: #272822;
+	-webkit-transition: opacity 0.2s;
+	-o-transition: opacity 0.2s;
+	transition: opacity 0.2s;
+	border: 2.4px solid white;
+	border-radius: 25%;
+}
+
+#steamIco svg {
+	background-color: #272822 !important;
+	fill: white !important;
+}
+
+#steamIco g {
+	stroke: white;
+}
+
+#social svg:hover {
+	opacity: 1;
+}
+
+
+#social svg:active {
+	opacity: 0.75;
+	-webkit-transition: opacity 0s;
+	-o-transition: opacity 0s;
+	transition: opacity 0s;
+}
+
+#social_links:hover div:not(:hover) svg{
+	opacity: 0.45;
+}
+
+#social_links > div {
+	width: 3em;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-ms-flex-line-pack: center;
+	    align-content: center;
+	text-align: center;
+}
+
+#deviantIco .icoLabel {
+	margin-left: -0.5em;
+}
+
+.icoLabel {
+	color: white;
+	-webkit-transform: translateY(-1em);
+	    -ms-transform: translateY(-1em);
+	        transform: translateY(-1em);
+	z-index: -1;
+	opacity: 0;
+	-webkit-transition: opacity 0.2s, -webkit-transform 0.3s;
+	transition: opacity 0.2s, -webkit-transform 0.3s;
+	-o-transition: opacity 0.2s, transform 0.3s;
+	transition: opacity 0.2s, transform 0.3s;
+	transition: opacity 0.2s, transform 0.3s, -webkit-transform 0.3s;
+}
+
+.icoSVG:hover ~ .icoLabel {
+	-webkit-transform: translateY(0em);
+	    -ms-transform: translateY(0em);
+	        transform: translateY(0em);
+	opacity: 1;
+}
+/*--------------- end social icon/SVG styles ---------------*/
+
+/*--------------- Media queries ---------------*/
+@media screen and (max-width: 340px) {
+	.content {
+		margin-left: 7vw;
+		margin-right: 7vw;
+	}
+}
+@media screen and (max-width: 420px) {
+	#social svg {
+		height: 2.2em;
+		width: 2.2em;
+	}
+}
+@media screen and (max-width: 540px) {
+	.content {
+		margin-left: 8vw;
+		margin-right: 8vw;
+	}
+}
+@media screen and (min-width: 1280px) {
+	.content {
+		margin-left: 22vw;
+		margin-right: 22vw;
+	}
+}
+@media screen and (max-height: 640px) {
+	input#btn_c1_about:checked ~ #center1 {
+		-webkit-transform: translateY(-30vh);
+		    -ms-transform: translateY(-30vh);
+		        transform: translateY(-30vh);
+	}
+	input#btn_c1_courses:checked ~ #center1 {
+		-webkit-transform: translateY(-30vh);
+		    -ms-transform: translateY(-30vh);
+		        transform: translateY(-30vh);
+	}
+	input#btn_c1_3:checked ~ #center1 {
+		-webkit-transform: translateY(-30vh);
+		    -ms-transform: translateY(-30vh);
+		        transform: translateY(-30vh);
+	}
+	.content {
+		max-height: 60vh;
+		margin-top: 33vh;
+	}
+}
+@media screen and (max-height: 500px) {
+	#search input {
+		color: rgba(255,255,255,0) !important;
+	}
+	#search input ~ :after {
+		/*transform: scaleX(0.035);*/
+		background-color: rgba(255,255,255,0.1) !important;
+		width: 0.5em !important;
+		animation: searchFadeOut 0.6s 0.4s infinite alternate !important;
+	}
+	#search input:focus {
+		color: white !important;
+	}
+	#search input:focus ~ :after {
+		animation: none !important;
+	}
+	#search input::placeholder {
+		opacity: 0;
+	}
+	#search input:focus::placeholder {
+		opacity: 1;
+	}
+}
+@media screen and (max-height: 460px) {
+	.content {
+		margin-top: 35vh;
+	}
+}
+@media screen and (max-height: 400px) {
+	.content {
+		max-height: 54vh;
+		margin-top: 37vh;
+	}
+}
+@media screen and (max-height: 340px) {
+	input#btn_c1_about:checked ~ #center1 {
+		-webkit-transform: translateY(-25vh);
+		    -ms-transform: translateY(-25vh);
+		        transform: translateY(-25vh);
+	}
+	input#btn_c1_courses:checked ~ #center1 {
+		-webkit-transform: translateY(-25vh);
+		    -ms-transform: translateY(-25vh);
+		        transform: translateY(-25vh);
+	}
+	input#btn_c1_3:checked ~ #center1 {
+		-webkit-transform: translateY(-25vh);
+		    -ms-transform: translateY(-25vh);
+		        transform: translateY(-25vh);
+	}
+	.content {
+		max-height: 51vh;
+		margin-top: 45vh;
+	}
+}
+@media screen and (max-height: 280px) {
+	#copyright {
+		right: 0.3em;
+		text-align: right;
+	}
+}
+@media screen and (max-height: 250px) {
+	.content {
+		margin-top: 50vh;
+	}
+}
+@media screen and (max-height: 220px) {
+	body {
+		overflow: scroll;
+	}
+}
+/*--------------- media queries ---------------*/
+
+/*--------------- Animations ---------------*/
+@-webkit-keyframes widthFill {
+	0% {
+		width: 101%;
+		visibility: visible;
+		-webkit-transform-origin: right;
+		        transform-origin: right;
+		-webkit-transform: scaleX(1);
+		        transform: scaleX(1);
+	}
+	100% {
+		width: 101%;
+		visibility: visible;
+		-webkit-transform-origin: right;
+		        transform-origin: right;
+		-webkit-transform: scaleX(0);
+		        transform: scaleX(0);
+	}
+}
+
+@keyframes widthFill {
+	0% {
+		width: 101%;
+		visibility: visible;
+		-webkit-transform-origin: right;
+		        transform-origin: right;
+		-webkit-transform: scaleX(1);
+		        transform: scaleX(1);
+	}
+	100% {
+		width: 101%;
+		visibility: visible;
+		-webkit-transform-origin: right;
+		        transform-origin: right;
+		-webkit-transform: scaleX(0);
+		        transform: scaleX(0);
+	}
+}
+@-webkit-keyframes fadeEnlarge {
+	30%, 100% {
+		-webkit-transform: scale(1.09, 1.25);
+		        transform: scale(1.09, 1.25);
+		opacity: 0;
+	}
+}
+@keyframes fadeEnlarge {
+	30%, 100% {
+		-webkit-transform: scale(1.09, 1.25);
+		        transform: scale(1.09, 1.25);
+		opacity: 0;
+	}
+}
+@keyframes shiftUp {
+	0% {
+		transform: translateY(30vh);
+	}
+	100% {
+		transform: translateY(0vh);
+	}
+}
+@keyframes shiftDown {
+	0% {
+		transform: translateY(0vh);
+	}
+	100% {
+		transform: translateY(30vh);
+	}
+}
+@keyframes searchFadeOut {
+	0%, 49% {
+		opacity: 1;
+		background-color: rgba(255,255,255,0);
+	}
+	51%, 100% {
+		opacity: 0;
+		background-color: rgba(255,255,255,0);
+	}
+}
+/*--------------- end animations ---------------*/
+
+/*--------------- These are some hacky animations to time
+	when a certain element is clickable/visible
+	during another animation/transition. ---------------*/
+@-webkit-keyframes zdelay {
+	0%, 99% {
+		z-index: 10;
+	}
+	100% {
+		z-index: 0;
+	}
+}
+@keyframes zdelay {
+	0%, 99% {
+		z-index: 10;
+	}
+	100% {
+		z-index: 0;
+	}
+}
+@-webkit-keyframes displayDelay {
+	0% {
+		visibility: hidden;
+	}
+	100% {
+		visibility: visible;
+	}
+}
+@keyframes displayDelay {
+	0% {
+		visibility: hidden;
+	}
+	100% {
+		visibility: visible;
+	}
+}
+@keyframes iniEnter {
+	0%, 40% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+/*--------------- end hacky animations ---------------*/
+
+#logo {
+	position: absolute;
+	margin-left: -73px;
+	margin-top: -15px;
+}
+
+/*--------------- Search bar styles ---------------*/
+#searchContainer {
+	position: fixed;
+	z-index: 4;
+	top: 0;
+	left: 0;
+	width: 100%;
+	animation: iniEnter 1.5s;
+}
+#search {
+	position: relative;
+	margin-top: 8px;
+	margin-left: 40px;
+	margin-right: 52px;
+}
+#search input::placeholder {
+	color: rgba(255,255,255,0.5);
+}
+#search input {
+	position: relative;
+	z-index: 9;
+	width: 100%;
+	font-size: 12pt;
+	color: white;
+	opacity: 0.3;
+	font-family: "Courier New", Courier, monospace;
+	background-color: rgba(255,255,255,0);
+	left: 12px;
+	top: 0;
+	outline: 0;
+	padding: 3px 2px 3px 2px;
+	margin: 0;
+	border: 0;
+	transition: color 0.2s;
+}
+input#btn_c1_4:checked ~ #top #searchContainer #search input,
+input#btn_c1_4:checked ~ #top #searchContainer #search :before {
+	opacity: 0.5;
+}
+#search input:focus {
+	opacity: 1 !important;
+	width: 100%;
+	color: white;
+}
+#search input ~ :before {
+	position: absolute;
+	top: 4px;
+	left: 0;
+	content: '>';
+	font-size: 12pt;
+	color: white;
+	opacity: 0.3;
+	font-family: "Courier New", Courier, monospace;
+	transition: opacity 0.2s;
+}
+#search input:focus ~ :before {
+	opacity: 1;
+}
+#search input ~ :after {
+	position: absolute;
+	top: 0;
+	left: 12px;
+	width: 100%;
+	padding: 3px 2px 0 2px;
+	content: '#';
+	color: rgba(255,255,255,0);
+	background-color: rgba(255,255,255,0);
+	border-bottom: 3px solid;
+	border-color: rgba(255,255,255,0.15);
+	z-index: -1;
+    transition: width 0.4s, border-color 0.2s;
+}
+input#btn_c1_4:checked ~ #top #searchContainer #search :after {
+	border-color: rgba(255,255,255,0.2);
+}
+#search input:focus ~ :after {
+	background-color: rgba(255,255,255,0.075);
+	border-color: rgba(255,255,255,0.2);
+	width: 100% !important;
+}
+
+input#btn_c2_1:checked ~ #top #searchContainer {
+	z-index: -100;
+}
+/*--------------- end search bar styles ---------------*/

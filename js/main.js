@@ -1,233 +1,107 @@
 "use strict";
-main();
 
-let curInp = "";
-let articles = document.getElementsByTagName("article");
-let originalContent = [];
-originalContent.push(articles[0].innerHTML);
-originalContent.push(articles[1].innerHTML);
+var MY_COLOURS = {
+    orange: "#FD971F",
+    green: "#A6E22E",
+    white: "#FFFFFF",
+    pink: "#F92672",
+    blue: "#66D9EF"
+}
+var CABBAGE_FLY_COUNT = 3;
 
-function main() {
-	let len = document.lastModified.length;
-	let date = document.lastModified.substring(0,len-8).replace(/ /g,'').split('/');
-	let year = date[2];
-	date = date[2] + '-' + date[0] + '-' + date[1];
-	document.getElementById("lastModified").innerHTML = "<span>Last modified:</span><div>" + date + "</div>";
-	document.getElementById("year").innerHTML = year;
+var colours = Object.values(MY_COLOURS);
 
-	// Delayed to allow initial load animation to run.
-	setTimeout(setSearch, 850);
-	setAccordion();
+function randomNegative() {
+    return anime.random(0,1) == 1 ? -1 : 1;
 }
 
-function setSearch() {
-	let searchElem = document.getElementById("search");
-	searchElem = searchElem.childNodes[1];
+var headerDecorItems = document.querySelectorAll(".header-decor__item");
+headerDecorItems.forEach(function(item, i) {
+    scheduleRandomFlow(item, anime.random(0,2000));
+});
 
-	// Triggered on letters, numbers, and numpad numbers;
-	// 	does not trigger on ctrl/alt/meta key combos
-	window.onkeydown = function (e) {
-		if (!e) e = window.event;
-		if (!e.metaKey && !e.ctrlKey && !e.altKey) {
-			if((e.keyCode >= 65 && e.keyCode <= 90) || (e.keyCode >= 48 && 
-				e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105) || 
-				e.keyCode == 8 || e.keyCode == 46) {
-				searchElem.focus();
-			}
-		}
-	};
-	window.onkeyup = function (e) {
-		if (!e) e = window.event;
-		if (!e.metaKey && !e.ctrlKey && !e.altKey) {
-			if((e.keyCode >= 65 && e.keyCode <= 90) || (e.keyCode >= 48 && 
-				e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105) || 
-				e.keyCode == 8 || e.keyCode == 46) {
-				checkSearch(searchElem);
-			}
-			if (e.keyCode == 27) {
-				searchElem.blur();
-			}
-		}
-	};
+function scheduleRandomFlow(elem, delay) {
+    setTimeout(function() { randomFlow(elem)() }, delay);
 }
 
-function checkSearch(input) {
-	if (input.value == curInp) {
-		return;
-	} else {
-		curInp = input.value;
-	}
-
-	// Remove previously found tags
-	let elems = document.getElementsByClassName("found");
-	while (elems.length) {
-		let elem = elems[0];
-		let p = elem.parentNode;
-		while (elem.firstChild) {
-			p.insertBefore(elem.firstChild, elem);
-		}
-		elem.remove();
-	}
-
-	// Reset the courses HTML
-	articles[1].innerHTML = originalContent[1];
-
-	// Check if input is valid; search gets buggy with some punctuation
-	// 	so punctuation is invalid for input.
-	let value = input.value;
-	let regex = new RegExp('^[a-zA-Z0-9_ ]+$');
-	if (regex.test(value) == false) {
-		// Have to reapply event listeners to accordion due to DOM changes
-		setAccordion();
-		return;
-	}
-
-	for (let articleInd = 0; articleInd < articles.length; articleInd++) {
-		let content = articles[articleInd].innerHTML;
-		let words = value.split(' ');
-		let numWords = words.length;
-
-		// Check if input is in an HTML tag
-		if (numWords === 1) {
-			regex = new RegExp(value+'(?=[^>]*?(<|$))','gi');
-		} else {
-			// HTML tag can be in between words
-			regex = words[0]+'(?=[^>]*?(<|$))';
-			for (let i = 1; i < numWords; i++) {
-				 regex += '(?: ?)(?:<[^>]*?>)?(?: ?)' + words[i] + '(?=[^>]*?(<|$))';     
-			}
-			regex = new RegExp(regex,'gi');
-		}
-
-		let matches = null;
-		let positions = []
-		let found = []
-		let addFound = [];
-
-		while (matches = regex.exec(content)) {
-			let startTag = '<span class="found">';
-			let endTag = '</span>';
-			// If the match contains html tags there need to be a </span>
-			// 	before the html tag starts and a <span> if the html tags
-			// 	closes again
-			// abc <p>def => abc </span><p><span class="found">def</span>   
-			let match = matches[0].replace(/>/g,'>'+startTag);
-			match = match.replace(/<(?!span class="found">)/g,endTag+'<');
-
-			// Save how many chars have been added 
-			addFound.push(match.length-matches[0].length);
-
-			found.push(match); 
-			positions.push(matches.index); 
-		}
-
-		let numAdded = 0;
-		let newContent = content;
-		// Iterate through all positions and add a span tag to mark the query
-		for (let i = 0; i < positions.length; i++) {
-			let startTag = '<span class="found" id="found_'+i+'">';
-			let endTag = '</span>';
-
-			let contentBefore = newContent.substr(0, positions[i] + numAdded);
-			let foundTag = startTag + found[i] + endTag;
-			let contentAfter = newContent.substr(positions[i] + numAdded +
-					found[i].length - addFound[i]);
-
-			numAdded += startTag.length + endTag.length + addFound[i];
-			newContent = contentBefore + foundTag + contentAfter;
-		}
-		articles[articleInd].innerHTML = newContent;
-	}
-
-	// Traverse through found tags, specifically in courses.
-	// Expand the accordion that contains the found content.
-	elems = document.getElementsByClassName("found");
-	for (let i = 0; i < elems.length; i++) {
-		let elem = elems[i];
-		let arr;
-		while (elem.tagName != "ARTICLE") {
-			if (hasClass(elem, "accordion")) {
-			   arr = elem.className.split(" ");
-			    if (arr.indexOf("accordion-active") == -1) {
-			        elem.className += " accordion-active";
-			    }
-			} else if (hasClass(elem, "panel")) {
-				elem = elem.previousElementSibling;
-				arr = elem.className.split(" ");
-			    if (arr.indexOf("accordion-active") == -1) {
-			        elem.className += " accordion-active";
-			    }
-			}
-			elem = elem.parentNode;
-		}
-		// Toggle the radio button to the first article content that contains
-		// 	a found tag
-		if (i == 0) {
-			document.getElementById("btn_c1_" + elem.id).checked = true;
-		}
-	}
-
-	// setAccordion() re-adds event listener to each accordion due to
-	// 	DOM changes
-	checkAccordion(400);
-	setAccordion();
+// Randomized flowing lines animation in the header
+function randomFlow(elem) {
+    return function() {
+        var delay = anime.random(0, 400);
+        var duration = anime.random(3900, 8200);
+        var fadeDuration = 425;
+        var direction = randomNegative();
+        anime.set(elem, {
+            opacity: 0,
+            translateX: 0,
+            translateY: anime.random(3, 33),
+            scaleX: anime.random(7,16),
+            scaleY: anime.random(1,2),
+            background: colours[anime.random(0,colours.length)]
+        })
+        anime({
+            targets: elem,
+            keyframes: [
+                {opacity: anime.random(0.35, 0.65), delay: delay, duration: fadeDuration},
+                {opacity: 0, delay: duration - fadeDuration * 2, duration: fadeDuration}
+            ],
+            easing: 'linear'
+        });
+        anime({
+            targets: elem,
+            translateX: anime.random(Math.min(window.innerWidth / 3, 200),
+                Math.min(window.innerWidth / 2, 300)) * direction,
+            easing: 'linear',
+            duration: duration,
+            delay: delay,
+            complete: randomFlow(elem)
+        });
+    }
 }
 
-// Adds event listeners to accordion for toggling class.
-function setAccordion() {
-	let acc = document.getElementsByClassName("accordion");
-	let i;
-	for (i = 0; i < acc.length; i++) {
-		acc[i].addEventListener("click", function() {
-			toggleAccordion(this, true);
-		});
-	}
+var cabbage = document.querySelector(".cabbage.cabbage--centered");
+var header = document.querySelector(".header");
+for (var i = 0; i < CABBAGE_FLY_COUNT; i++) {
+    var newCabbage = cabbage.cloneNode(true);
+    newCabbage.setAttribute("class","hidden cabbage cabbage--fly cabbage--small");
+    header.appendChild(newCabbage);
+    newCabbage.style.left = (header.clientWidth / 2 - newCabbage.clientWidth / 2) + "px";
+    randomFly(newCabbage)();
 }
 
-// checkAccordion() called twice, with a slight delay, to allow
-// 	accordion panel to properly expand completely; used mainly
-// 	during search
-function checkAccordion(delay) {
-	if (delay > 0) {
-		setTimeout(function() {checkAccordion(0)}, delay);
-	}
-	let acc = document.getElementsByClassName("accordion");
-	for (let i = 0; i < acc.length; i++) {
-		toggleAccordion(acc[i]);
-	}
-}
-
-// Compute/toggle next height of panel depending on state of accordion
-function toggleAccordion(elem, toggle) {
-	if (toggle != true) {
-		toggle = false;
-	}
-	let parent;
-	let panel = elem.nextElementSibling;
-	let height;
-	let pheight;
-	if (hasClass(elem, "accordion-active") == toggle){
-		panel.style.maxHeight = null;
-	} else {
-		height = panel.scrollHeight * 1.2;
-		panel.style.maxHeight = height + "px";
-		parent = panel.parentNode;
-		while (parent != document) {
-			if (hasClass(parent, "panel")) {
-				height = (parent.scrollHeight + panel.scrollHeight) * 1.2;
-				pheight = parent.style.maxHeight.replace("px","");
-				if (+pheight < height) {
-					parent.style.maxHeight = height + "px";
-				}
-			}
-			parent = parent.parentNode;
-		}
-	}
-	if (toggle) {
-		elem.classList.toggle("accordion-active");
-	}
-}
-
-function hasClass(element, className) {
-	return (' ' + element.className + ' ').indexOf(' ' + className+ ' ') > -1;
+// Randomized 'flying' instances
+function randomFly(elem) {
+    return function() {
+        var delay = anime.random(18000, 52000);
+        var duration = anime.random(4800, 6200);
+        var fadeDuration = 300;
+        var opacity = anime.random(0.15, 0.35);
+        anime.set(elem, {
+            opacity: 0,
+            translateX: 0,
+            translateY: 0,
+            rotate: 0
+        })
+        anime({
+            targets: elem,
+            keyframes: [
+                {opacity: opacity, duration: fadeDuration},
+                {opacity: opacity, duration: duration - fadeDuration * 2},
+                {opacity: 0, duration: fadeDuration}
+            ],
+            delay: delay,
+            easing: 'linear'
+        });
+        anime({
+            targets: elem,
+            translateX: anime.random(Math.min(window.innerWidth / 3, 30),
+                Math.min(window.innerWidth / 2, 300)) * randomNegative(),
+            translateY: anime.random(-80,-130),
+            rotate: anime.random(230,450) * randomNegative(),
+            easing: 'linear',
+            duration: duration,
+            delay: delay,
+            complete: randomFly(elem)
+        });
+    }
 }
