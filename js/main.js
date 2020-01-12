@@ -42,7 +42,7 @@ function randomFlow(elem) {
         anime({
             targets: elem,
             keyframes: [
-                {opacity: anime.random(0.35, 0.65), delay: delay, duration: fadeDuration},
+                {opacity: anime.random(45, 75) / 100, delay: delay, duration: fadeDuration},
                 {opacity: 0, delay: duration - fadeDuration * 2, duration: fadeDuration}
             ],
             easing: 'linear'
@@ -75,7 +75,7 @@ function randomFly(elem) {
         var delay = anime.random(18000, 52000);
         var duration = anime.random(4800, 6200);
         var fadeDuration = 300;
-        var opacity = anime.random(0.15, 0.35);
+        var opacity = anime.random(15, 35) / 100;
         anime.set(elem, {
             opacity: 0,
             translateX: 0,
