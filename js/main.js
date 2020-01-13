@@ -12,6 +12,40 @@ var scrollEvents = [checkHeaderSticky, checkBioReveal];
 
 var colours = Object.values(MY_COLOURS);
 
+var canvas;
+var ctx;
+var render;
+
+function initializeLightMode() {
+    var toggle = document.querySelector(".light-toggle-checkbox");
+    var htmlElem = document.querySelector("html");
+    if (toggle.checked) { htmlElem.classList.add("light-toggle"); }
+    toggle.addEventListener("change", function() {
+        htmlElem.classList.toggle("light-toggle");
+    });
+}
+
+function initializeCanvas() {
+    canvas = document.querySelector(".header__canvas");
+    if (!canvas) {
+        return;
+    }
+    ctx = canvas.getContext('2d');
+    render = anime({
+        duration: Infinity,
+        update: function() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    });
+    window.addEventListener('resize', setCanvasSize, false);
+    setCanvasSize();
+}
+function setCanvasSize() {
+    var scale = 2;
+    canvas.width = canvas.clientWidth * scale;
+    canvas.height = canvas.clientHeight * scale;
+    ctx.scale(scale, scale);
+}
 
 function randomNegative() {
     return anime.random(0,1) == 1 ? -1 : 1;
@@ -30,7 +64,7 @@ function randomFlow(elem) {
             translateY: anime.random(3, 33),
             scaleX: anime.random(7,16),
             scaleY: anime.random(1,2),
-            background: colours[anime.random(0,colours.length)]
+            background: colours[anime.random(0, colours.length - 1)]
         })
         anime({
             targets: elem,
@@ -111,9 +145,22 @@ function checkBioReveal() {
     var threshold = 150;
     var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
     var content = document.querySelector(".about");
-    if (content.style.opacity < 1 || scrollTop <= threshold) {
-        var ratio = scrollTop / threshold;
-        document.querySelector(".about").style.opacity = Math.max(0.1, ratio);
+    var gradient = document.querySelector(".gradient");
+    if (content) {
+        if (content.style.opacity < 1 || scrollTop <= threshold) {
+            var ratio = scrollTop / threshold;
+            content.style.opacity = Math.max(0.1, ratio);
+        } else {
+            content.style.opacity = 1;
+        }
+    }
+    if (gradient) {
+        if (scrollTop <= threshold * 2) {
+            var ratio = scrollTop / (threshold * 2);
+            gradient.style.height = (40 - 40 * ratio) + "%";
+        } else {
+            gradient.style.height = "0%";
+        }
     }
 }
 
@@ -131,6 +178,9 @@ function scrollToTop() {
 }
 
 function main() {
+    initializeLightMode();
+    initializeCanvas();
+    // render.play();
     document.querySelector("html").classList.remove("hidden");
     checkScrollEvents();
     window.onscroll = checkScrollEvents;

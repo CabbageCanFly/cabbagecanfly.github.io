@@ -34,14 +34,12 @@ rgba(255, 255, 255, 1)  rgba(249, 38, 114, 1)   rgba(102, 217, 239, 1)
     -webkit-overflow-scrolling: touch;
 }
 ::selection {
-    background-color: rgba(102, 217, 239, 0.99);
+    background-color: rgba(249, 38, 114, 0.5);
     opacity: 1;
-    color: black;
 }
 ::-moz-selection {
-    background-color: rgba(102, 217, 239, 0.99);
+    background-color: rgba(249, 38, 114, 0.5);
     opacity: 1;
-    color: black;
 }
 /*--------------- end Miscellaneous highlight styles ---------------*/
 
@@ -51,21 +49,30 @@ html {
     font-family: 'Roboto Condensed Light', sans-serif;
     color: white;
     font-size: 16px;
-    transition: opacity 700ms;
-    transition-delay: 350ms;
+    transition: opacity 700ms 350ms, background-color 500ms, color 500ms;
+}
+html.light-toggle {
+    background-color: #FFE7D4;
+    color: black;
+    font-weight: 600;
 }
 body {
-    margin: 0 1.5em 1.5em 1.5em;
+    margin: 0 1.3em;
     min-width: 200px;
 }
 
 h1, h2, h3, h4 {
+    position: relative;
     font-family: 'Yanone Kaffeesatz Light', sans-serif;
 }
 
 a {
     color: #66D9EF;
     text-decoration: none;
+    transition: color 500ms;
+}
+.light-toggle a {
+    color: #006FB1;
 }
 a:hover, a:focus {
     text-decoration: underline;
@@ -76,6 +83,99 @@ a:active {
 b {
     color: #FD971F;
     font-weight: normal;
+}
+.light-toggle b {
+    color: #A52F00;
+    font-weight: 600;
+}
+
+.light-toggle-checkbox {
+    display: none;
+}
+.light-toggle-checkbox + .light-toggle-button {
+    transform: rotate(-90deg) translateX(4px);
+    outline: 0;
+    opacity: 0.5;
+    display: inline-block;
+    width: 2em;
+    height: 1em;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    background: #f0f0f0;
+    border-radius: 2em;
+    padding: 2px;
+    margin-right: -4px;
+    transition: all .4s ease;
+}
+.light-toggle-checkbox + .light-toggle-button:after, .light-toggle-checkbox + .light-toggle-button:before {
+    position: relative;
+    display: block;
+    content: "";
+    width: 50%;
+    height: 100%;
+}
+.light-toggle-checkbox + .light-toggle-button:after {
+    left: 0;
+    border-radius: 50%;
+    background: #F92672;
+    transition: all .2s ease;
+}
+.light-toggle-checkbox + .light-toggle-button:before {
+    display: none;
+}
+.light-toggle-checkbox:checked + .light-toggle-button {
+    background: #3BC360;
+}
+.light-toggle-checkbox:checked + .light-toggle-button:after {
+    background: rgba(0,0,0,0.3);
+    left: 50%;
+}
+.light-toggle-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1.3em;
+}
+.light-toggle-container__label {
+    opacity: 0.55;
+    cursor: pointer;
+    text-align: right;
+    display: inline-block;
+}
+
+.anchor {
+    position: relative;
+    top: -150px;
+    visibility: hidden;
+}
+
+.anchor-link {
+    color: white;
+}
+.light-toggle .anchor-link {
+    color: black;
+}
+.anchor-hash {
+    display: none;
+    opacity: 0.08;
+    border-bottom: 0px;
+    position: absolute;
+    padding-right: 4px;
+    left: -18px;
+    top: -7px;
+    font-size: 140%;
+}
+
+.anchor-link:hover .anchor-hash {
+    opacity: 0.8;
+}
+.anchor-link:hover {
+    text-decoration: none;
+}
+
+.anchor-link:active {
+    opacity: 0.5;
 }
 
 .hidden {
@@ -88,6 +188,9 @@ b {
 }
 .cabbage svg {
     fill: #A6E22E;
+}
+.light-toggle .cabbage svg {
+    fill: #4F7504;
 }
 .cabbage--centered {
     z-index: 1;
@@ -103,6 +206,12 @@ b {
     width: 18px;
 }
 
+.text--margin-top-xl {
+    margin-top: 42px;
+}
+.text--margin-top-l {
+    margin-top: 26px;
+}
 .text--margin-top-md {
     margin-top: 12px;
 }
@@ -143,6 +252,8 @@ b {
     transform: translate(0, -8px);
 }
 .header--can-shrink {
+    position: relative;
+    height: 100%;
     transform: scale(1);
     transition: transform 200ms;
 }
@@ -151,24 +262,39 @@ b {
 }
 .header__bg {
     position: absolute;
-    height: 100%;
+    height: 103%;
     width: 100vw;
     left: 50%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    margin-top: -8px;
-    transition: background 200ms;
+    background: linear-gradient(to bottom, rgba(20, 20, 20, 0.9) 0 75%, rgba(0, 0, 0, 0) 100%);
+    opacity: 0;
+    transition: opacity 200ms, background 500ms;
 }
 .header__bg--active {
-    background: rgba(16, 16, 16, 0.9);
+    opacity: 1;
 }
+.light-toggle .header__bg {
+    background: linear-gradient(to bottom, rgba(255, 243, 233, 0.9) 0 75%, rgba(0, 0, 0, 0) 100%);
+}
+
 .header--can-shrink-active, .header__bg--active {
     cursor: pointer;
 }
 
 .header-decor__wrapper {
-    position: relative;
+}
+.header__canvas {
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    margin-top: -3em;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    z-index: -1;
 }
 .header-decor {
     position: absolute;
@@ -183,26 +309,76 @@ b {
 
 .social-nav {
     position: absolute;
+    bottom: -48px;
+    width: 100%;
     text-align: center;
-    bottom: -16px;
-    left: 50%;
-    width: 100vw;
-    margin-left: -50vw;
-    opacity: 0.8;
+    /*margin-top: -48px;*/
+    opacity: 0.75;
+}
+.social-nav__wrapper {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
 }
 .social-nav ul {
-    padding: 0;
+    display: inline-block;
+    margin-top: -1em;
+    padding: 2em;
 }
 .social-nav svg {
     background-color: white;
     border: 2.4px solid white;
     border-radius: 25%;
+    transition: opacity 150ms, fill 500ms, background 500ms, background-color 500ms;
+}
+.light-toggle .social-nav svg {
+    background-color: black;
+    border-color: black;
+    fill: #FFE7D4;
 }
 .social-nav li {
     list-style-type: none;
     display: inline-block;
     width: 32px;
     height: 32px;
+    margin: 0 2px;
+}
+.social-nav ul:hover li:not(:hover) svg {
+    opacity: 0.45;
+}
+svg.steam-svg {
+    fill: white;
+    background: none;
+}
+svg.steam-svg g {
+    stroke: white;
+    fill: none;
+    transition: stroke 500ms, fill 500ms;
+}
+.light-toggle svg.steam-svg {
+    fill: black;
+    background: none;
+}
+.light-toggle svg.steam-svg g {
+    stroke: black;
+}
+
+.gradient {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 40%;
+    /*margin-left: -1.5em;*/
+    /*padding-right: 3em;*/
+    /*max-width: inherit;*/
+    z-index: 1;
+    background: linear-gradient(to top, #181A1B, rgba(0, 0, 0, 0));
+    pointer-events: none;
+    transition: background 500ms;
+}
+.light-toggle .gradient {
+    background: linear-gradient(to top, #FFE7D4, rgba(0, 0, 0, 0));
 }
 
 .about {
@@ -210,18 +386,44 @@ b {
     transition: opacity 50ms;
 }
 
+.resumes {
+    width: 100%;
+}
+.resume-thumbnail {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 1em 1.5em;
+    width: 50%;
+}
+.resume-thumbnail img {
+    width: 100%;
+}
+.resume-thumbnail a {
+    opacity: 0.7;
+}
+.resume-thumbnail a:hover, .resume-thumbnail a:focus {
+    opacity: 0.9;
+}
+
 .version-nav {
-    position: fixed;
-    padding: 1.5em;
+    position: absolute;
+    /*background: linear-gradient(to top, #181A1B, rgba(0, 0, 0, 0));*/
+    padding: 1.3em;
     left: 0;
-    bottom: 0;
+    top: 0;
+    z-index: 2;
+    /*transition: background 500ms;*/
+}
+.light-toggle .version-nav {
+    /*background: linear-gradient(to top, #FFE7D4, rgba(0, 0, 0, 0));*/
 }
 .version-nav ul {
     margin: 0;
     padding: 0;
 }
 .version-nav li {
-    margin-top: 5px;
+    display: inline-block;
+    margin-right: 5px;
     list-style-type: none;
 }
 .version-nav li:first-child {
@@ -236,15 +438,37 @@ b {
     z-index: -1;
     fill: none;
 }
+.version-nav__link {
+    opacity: 0.5;
+}
+.version-nav__link--current {
+    opacity: 1;
+}
+
+.profile-pic {
+    width: 100px;
+    border-radius: 50%;
+}
 
 .footer {
+    background: linear-gradient(to top, rgba(253, 151, 31, 0.08), rgba(0, 0, 0, 0));
     font-size: 14px;
+    transition: background: 500ms;
+}
+.light-toggle .footer {
+    background: linear-gradient(to top, rgba(48, 138, 165, 0.38), rgba(0, 0, 0, 0));
 }
 .footer--centered {
-    margin-top: 5em;
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: 4em;
+    padding-top: 1em;
     text-align: center;
-    margin-bottom: 1.5em;
-    width: 100%;
+    padding-bottom: 1em;
 }
 
 @media (min-width: 700px) {
@@ -252,10 +476,16 @@ b {
         margin: 0 auto;
         max-width: 650px;
     }
-    .footer--centered {
-        margin-bottom: 1em;
-    }
     .version-nav {
+        padding: 1em;
+    }
+    .resume-thumbnail {
+        padding: 1em 3em;
+    }
+    .anchor-hash {
+        display: inline;
+    }
+    .light-toggle-container {
         padding: 1em;
     }
 }
