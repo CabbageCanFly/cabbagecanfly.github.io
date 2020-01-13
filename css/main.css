@@ -82,10 +82,6 @@ b {
     opacity: 0;
 }
 
-.clickable {
-    cursor: pointer;
-}
-
 .cabbage {
     position: relative;
     width: 54px;
@@ -129,7 +125,9 @@ b {
 }
 
 .header {
+    position: relative;
     margin-top: 50vh;
+    margin-bottom: 32px;
 }
 .header--centered {
     position: relative;
@@ -164,6 +162,10 @@ b {
 .header__bg--active {
     background: rgba(16, 16, 16, 0.85);
 }
+.header--can-shrink-active, .header__bg--active {
+    cursor: pointer;
+}
+
 .header-decor__wrapper {
     position: relative;
 }
@@ -176,6 +178,30 @@ b {
     position: absolute;
     width: 1px;
     height: 1px;
+}
+
+.social-nav {
+    position: absolute;
+    text-align: center;
+    bottom: -16px;
+    left: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    opacity: 0.8;
+}
+.social-nav ul {
+    padding: 0;
+}
+.social-nav svg {
+    background-color: white;
+    border: 2.4px solid white;
+    border-radius: 25%;
+}
+.social-nav li {
+    list-style-type: none;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
 }
 
 .about {
