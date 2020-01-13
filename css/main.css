@@ -57,8 +57,11 @@ html.light-toggle {
     font-weight: 600;
 }
 body {
-    margin: 0 1.3em;
+    margin: 0 0;
     min-width: 200px;
+}
+body > * {
+    margin: 0 1.3rem;
 }
 
 h1, h2, h3, h4 {
@@ -263,7 +266,7 @@ b {
 .header__bg {
     position: absolute;
     height: 103%;
-    width: 100vw;
+    width: 100%;
     left: 50%;
     right: 50%;
     margin-left: -50vw;
@@ -367,6 +370,7 @@ svg.steam-svg g {
     position: fixed;
     bottom: 0;
     left: 0;
+    max-width: none;
     width: 100vw;
     height: 40%;
     /*margin-left: -1.5em;*/
@@ -459,12 +463,8 @@ svg.steam-svg g {
     background: linear-gradient(to top, rgba(48, 138, 165, 0.38), rgba(0, 0, 0, 0));
 }
 .footer--centered {
-    position: relative;
-    width: 100vw;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+    width: 100%;
+    max-width: none;
     margin-top: 4em;
     padding-top: 1em;
     text-align: center;
@@ -472,7 +472,7 @@ svg.steam-svg g {
 }
 
 @media (min-width: 700px) {
-    body {
+    body > * {
         margin: 0 auto;
         max-width: 650px;
     }
