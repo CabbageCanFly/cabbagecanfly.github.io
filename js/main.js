@@ -53,7 +53,7 @@ function randomFlow(elem) {
 }
 
 // Randomized 'flying' instances
-function randomFly(elem) {
+function randomFly(elem, options={}) {
     return function() {
         var delay = anime.random(18000, 52000);
         var duration = anime.random(4800, 6200);
@@ -61,8 +61,8 @@ function randomFly(elem) {
         var opacity = anime.random(15, 35) / 100;
         anime.set(elem, {
             opacity: 0,
-            translateX: 0,
-            translateY: 0,
+            translateX: options.x || 0,
+            translateY: options.y || 0,
             rotate: 0
         })
         anime({
@@ -78,13 +78,13 @@ function randomFly(elem) {
         anime({
             targets: elem,
             translateX: anime.random(Math.min(window.innerWidth / 3, 30),
-                Math.min(window.innerWidth / 2, 300)) * randomNegative(),
+                Math.min(window.innerWidth / 2, 300)) * randomNegative() + "px",
             translateY: anime.random(-80,-130),
             rotate: anime.random(230,450) * randomNegative(),
             easing: 'linear',
             duration: duration,
             delay: delay,
-            complete: randomFly(elem)
+            complete: randomFly(elem, options)
         });
     }
 }
@@ -148,13 +148,12 @@ function main() {
     }
 
     var cabbage = document.querySelector(".cabbage.cabbage--centered");
-    var header = document.querySelector(".header--centered");
+    var header = document.querySelector(".header--can-shrink");
     for (var i = 0; i < CABBAGE_FLY_COUNT; i++) {
         var newCabbage = cabbage.cloneNode(true);
         newCabbage.setAttribute("class","hidden cabbage cabbage--fly cabbage--small");
         header.appendChild(newCabbage);
-        newCabbage.style.left = (header.clientWidth / 2 - newCabbage.clientWidth / 2) + "px";
-        randomFly(newCabbage)();
+        randomFly(newCabbage, {x: (-1 * newCabbage.clientWidth / 2) + "px"})();
     }
 }
 

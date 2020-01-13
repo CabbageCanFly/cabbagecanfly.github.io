@@ -97,6 +97,7 @@ b {
 .cabbage--fly {
     position: absolute;
     top: 0;
+    left: 50%;
 }
 .cabbage--small {
     width: 18px;
@@ -127,7 +128,7 @@ b {
 .header {
     position: relative;
     margin-top: 50vh;
-    margin-bottom: 32px;
+    margin-bottom: 48px;
 }
 .header--centered {
     position: relative;
@@ -160,7 +161,7 @@ b {
     transition: background 200ms;
 }
 .header__bg--active {
-    background: rgba(16, 16, 16, 0.85);
+    background: rgba(16, 16, 16, 0.9);
 }
 .header--can-shrink-active, .header__bg--active {
     cursor: pointer;
