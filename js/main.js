@@ -143,7 +143,7 @@ function checkHeaderSticky() {
 }
 
 function checkBioReveal() {
-    var threshold = 400;
+    var threshold = 500;
     var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
     var gradient = document.querySelector(".gradient");
     if (gradient) {
@@ -178,7 +178,15 @@ function runAll(functions) {
     };
 }
 
+function setCopyright() {
+    var len = document.lastModified.length;
+    var date = document.lastModified.substring(0,len-8).replace(/ /g,'').split('/');
+    var year = date[2];
+    document.querySelector(".copyright__year").innerHTML = year;
+}
+
 function main() {
+    setCopyright();
     initializeLightMode();
     initializeCanvas();
     // render.play();

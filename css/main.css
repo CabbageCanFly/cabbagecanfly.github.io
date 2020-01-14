@@ -65,7 +65,8 @@ body {
     min-height: 75vh;
 }
 body > *:not(.header):not(.gradient):not(.footer--gradient):not(.version-nav):not(.light-toggle-container) {
-    margin: 0 1.3rem;
+    margin-left: 1.3rem;
+    margin-right: 1.3rem;
 }
 
 h1, h2, h3, h4 {
@@ -81,6 +82,7 @@ a {
 .light-toggle a {
     color: #006FB1;
 }
+
 a:hover, a:focus {
     text-decoration: underline;
 }
@@ -157,41 +159,6 @@ b {
     opacity: 0.8;
 }
 
-.anchor {
-    position: relative;
-    top: -150px;
-    visibility: hidden;
-}
-
-.anchor-link {
-    color: white;
-    text-decoration: none;
-}
-.light-toggle .anchor-link {
-    color: black;
-}
-.anchor-hash {
-    display: none;
-    opacity: 0.08;
-    border-bottom: 0px;
-    position: absolute;
-    padding-right: 4px;
-    left: -18px;
-    top: -7px;
-    font-size: 140%;
-}
-
-.anchor-link:hover .anchor-hash {
-    opacity: 0.8;
-}
-.anchor-link:hover, .anchor-link:focus {
-    text-decoration: none;
-}
-
-.anchor-link:active {
-    opacity: 0.5;
-}
-
 .hidden {
     opacity: 0;
 }
@@ -247,6 +214,11 @@ b {
 .text--no-wrap {
     white-space: nowrap;
 }
+.text--sup {
+    font-size: 0.65em;
+    vertical-align: super;
+    line-height: 0;
+}
 
 .header {
     position: relative;
@@ -285,7 +257,7 @@ b {
     height: 125%;
     width: 100%;
     left: 0;
-    background: linear-gradient(to bottom, rgba(20, 20, 20, 0.9) 0 75%, rgba(24, 26, 27, 0) 100%);
+    background: linear-gradient(to bottom, rgba(23, 28, 32, 0.95) 0 75%, rgba(24, 26, 27, 0) 100%);
     opacity: 0;
     transition: opacity 200ms, background 500ms;
 }
@@ -383,6 +355,99 @@ svg.steam-svg g {
     stroke: black;
 }
 
+.toc {
+    padding: 0;
+    list-style-type: none;
+}
+.toc li {
+    position: relative;
+}
+.toc li:before {
+    content: '#';
+    position: absolute;
+    left: -0.63em;
+    top: 0;
+    opacity: 0.1;
+    transform: scale(0.9);
+}
+.toc__link {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid white;
+    transition: border-bottom-color 500ms;
+}
+.light-toggle .toc__link {
+    color: inherit;
+    border-bottom: 1px solid black;
+}
+.toc a:hover, .toc a:focus {
+    text-decoration: none;
+}
+
+.content {
+    line-height: 1.5rem;
+    margin-bottom: 10rem;
+}
+.content hr {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.2;
+}
+.content p {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.content ul {
+    margin-top: -0.5rem;
+}
+.content h2 {
+    margin-bottom: 1.5rem;
+}
+.content article {
+    margin-bottom: 3rem;
+}
+.content pre {
+    font-size: 0.9em;
+}
+
+.anchor {
+    position: relative;
+    top: -150px;
+    visibility: hidden;
+}
+
+.anchor-link {
+    color: white;
+    text-decoration: none;
+}
+.light-toggle .anchor-link {
+    color: black;
+}
+.anchor-hash {
+    display: none;
+    opacity: 0.08;
+    border-bottom: 0px;
+    position: absolute;
+    padding-right: 4px;
+    left: -18px;
+    top: -7px;
+    font-size: 140%;
+}
+.content .anchor-hash {
+    top: 0;
+}
+
+.anchor-link:hover .anchor-hash {
+    opacity: 0.8;
+}
+.anchor-link:hover, .anchor-link:focus {
+    text-decoration: none;
+}
+
+.anchor-link:active {
+    opacity: 0.5;
+}
+
 .gradient {
     position: fixed;
     bottom: 0;
@@ -390,13 +455,9 @@ svg.steam-svg g {
     width: 100%;
     height: 40%;
     z-index: 1;
-    background: linear-gradient(to top, #181A1B, rgba(24, 26, 27, 0.5) 70%, rgba(24, 26, 27, 0) 100%);
+    background: linear-gradient(to top, #181A1B, rgba(24, 26, 27, 0.5) 75%, rgba(24, 26, 27, 0) 100%);
     pointer-events: none;
-    /*transform: translateY(0%);*/
     transition: background 500ms;
-}
-.gradient--unveil {
-    transform: translateY(100%);
 }
 .light-toggle .gradient {
     background: linear-gradient(to top, #FFE7D4, rgba(255, 231, 212, 0.4) 80%, rgba(255, 231, 212, 0) 100%);
@@ -490,7 +551,8 @@ svg.steam-svg g {
 
 @media (min-width: 700px) {
     body > *:not(.header):not(.gradient):not(.footer--gradient):not(.version-nav):not(.light-toggle-container) {
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
         max-width: 650px;
     }
     .version-nav {
