@@ -464,12 +464,12 @@ svg.steam-svg g {
     transition: background 500ms;
 }
 .light-toggle .show-more:before {
-    background: linear-gradient(to top, #FFE7D4, rgba(255, 231, 212, 0.4) 80%, rgba(255, 231, 212, 0) 100%);
+    background: linear-gradient(to top, #FFE7D4, rgba(255, 231, 212, 0.65) 80%, rgba(255, 231, 212, 0) 100%);
 }
 .show-more--active {
     max-height: 100%;
 }
-.show-more--active:before {
+.show-more--active:before, .light-toggle .show-more--active:before {
     background: none;
 }
 .show-more--active > .show-more__button > .show-more__button__label:before {
