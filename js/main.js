@@ -175,7 +175,6 @@ function scrollToTop() {
 
 function runAll(functions) {
     return function() {
-        console.log("run all")
         functions.forEach(function(fn) {
             fn();
         });
