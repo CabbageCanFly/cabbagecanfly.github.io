@@ -219,6 +219,41 @@ b {
     vertical-align: super;
     line-height: 0;
 }
+.text--orange {
+    color: #FD971F;
+}
+.text--green {
+    color: #A6E22E;
+    padding: 2px;
+}
+.light-toggle .text--green {
+    background: rgba(0, 0, 0, 0.3);
+}
+.text--black {
+    color: #181A1B;
+    padding: 2px;
+    background: rgba(255, 255, 255, 0.3);
+}
+.light-toggle .text--black {
+    background: none;
+}
+.text--white {
+    color: #FFFFFF;
+    padding: 2px;
+}
+.light-toggle .text--white {
+    background: rgba(0, 0, 0, 0.3);
+}
+.text--pink {
+    color: #F92672;
+}
+.text--blue {
+    color: #66D9EF;
+    padding: 2px;
+}
+.light-toggle .text--blue {
+    background: rgba(0, 0, 0, 0.3);
+}
 
 .header {
     position: relative;
