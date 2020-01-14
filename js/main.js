@@ -9,6 +9,7 @@ var MY_COLOURS = {
 }
 var CABBAGE_FLY_COUNT = 3;
 var scrollEvents = [checkHeaderSticky, checkBioReveal];
+var resizeEvents = [setCanvasSize];
 
 var colours = Object.values(MY_COLOURS);
 
@@ -37,7 +38,7 @@ function initializeCanvas() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
         }
     });
-    window.addEventListener('resize', setCanvasSize, false);
+    window.addEventListener('resize', runAll(resizeEvents), false);
     setCanvasSize();
 }
 function setCanvasSize() {
@@ -129,17 +130,17 @@ function checkHeaderSticky() {
     var headerBg = document.querySelector(".header__bg");
     var rect = header.getBoundingClientRect();
     var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-    if (rect.y <= 2 && !header.classList.contains("header--sticky-active")) {
+    if (rect.y <= 2 && !header.classList.contains("header--sticky-active") && window.innerHeight > rect.height * 3) {
         header.classList.add("header--sticky-active");
         headerShrink.classList.add("header--can-shrink-active");
         headerBg.classList.add("header__bg--active");
         header.parentElement.style.height = rect.height + "px";
-    } else if (scrollTop + 2 <= window.innerHeight / 2 - rect.height / 2) {
+    } else if (scrollTop + 2 <= window.innerHeight / 2 - rect.height / 2 || window.innerHeight <= rect.height * 3) {
         header.classList.remove("header--sticky-active");
         headerShrink.classList.remove("header--can-shrink-active");
         headerBg.classList.remove("header__bg--active");
     }
-};
+}
 
 function checkBioReveal() {
     var threshold = 150;
@@ -164,11 +165,6 @@ function checkBioReveal() {
     }
 }
 
-function checkScrollEvents() {
-    scrollEvents.forEach(function(fn) {
-        fn();
-    });
-}
 function scrollToTop() {
     var position = document.body.scrollTop || document.documentElement.scrollTop;
     if (position) {
@@ -177,13 +173,22 @@ function scrollToTop() {
     }
 }
 
+function runAll(functions) {
+    return function() {
+        console.log("run all")
+        functions.forEach(function(fn) {
+            fn();
+        });
+    };
+}
+
 function main() {
     initializeLightMode();
     initializeCanvas();
     // render.play();
     document.querySelector("html").classList.remove("hidden");
-    checkScrollEvents();
-    window.onscroll = checkScrollEvents;
+    runAll(scrollEvents)();
+    window.onscroll = runAll(scrollEvents);
 
     document.querySelector(".header__bg").addEventListener("click", scrollToTop);
     document.querySelector(".header--can-shrink").addEventListener("click", scrollToTop);

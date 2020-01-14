@@ -57,10 +57,12 @@ html.light-toggle {
     font-weight: 600;
 }
 body {
+    position: relative;
+    padding-top: 50vh;
     margin: 0 0;
-    min-width: 200px;
+    min-width: 250px;
 }
-body > * {
+body > *:not(.header):not(.gradient):not(.footer--centered):not(.version-nav):not(.light-toggle-container) {
     margin: 0 1.3rem;
 }
 
@@ -108,10 +110,11 @@ b {
     background: #f0f0f0;
     border-radius: 2em;
     padding: 2px;
-    margin-right: -4px;
+    margin-right: -5px;
     transition: all .4s ease;
 }
-.light-toggle-checkbox + .light-toggle-button:after, .light-toggle-checkbox + .light-toggle-button:before {
+.light-toggle-checkbox + .light-toggle-button:after,
+.light-toggle-checkbox + .light-toggle-button:before {
     position: relative;
     display: block;
     content: "";
@@ -135,16 +138,22 @@ b {
     left: 50%;
 }
 .light-toggle-container {
-    position: absolute;
-    top: 0;
-    right: 0;
+    display: inline-block;
     padding: 1.3em;
-}
-.light-toggle-container__label {
-    opacity: 0.55;
     cursor: pointer;
     text-align: right;
+    flex: 50%;
+}
+.light-toggle-container__label {
+    opacity: 0.1;
+    margin-right: -8px;
+    transform: scale(0.75);
+    text-align: right;
     display: inline-block;
+    transition: opacity 150ms;
+}
+.light-toggle-container:hover .light-toggle-container__label {
+    opacity: 0.8;
 }
 
 .anchor {
@@ -238,10 +247,15 @@ b {
 }
 
 .header {
-    max-width: none;
     position: relative;
-    margin-top: 50vh;
     margin-bottom: 48px;
+}
+.header--absolute {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    top: 0;
 }
 .header--centered {
     position: relative;
@@ -268,10 +282,7 @@ b {
     position: absolute;
     height: 103%;
     width: 100%;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+    left: 0;
     background: linear-gradient(to bottom, rgba(20, 20, 20, 0.9) 0 75%, rgba(0, 0, 0, 0) 100%);
     opacity: 0;
     transition: opacity 200ms, background 500ms;
@@ -309,6 +320,9 @@ b {
     position: absolute;
     width: 1px;
     height: 1px;
+}
+.light-toggle .header-decor__item {
+    background: black !important;
 }
 
 .social-nav {
@@ -371,12 +385,8 @@ svg.steam-svg g {
     position: fixed;
     bottom: 0;
     left: 0;
-    max-width: none;
-    width: 100vw;
+    width: 100%;
     height: 40%;
-    /*margin-left: -1.5em;*/
-    /*padding-right: 3em;*/
-    /*max-width: inherit;*/
     z-index: 1;
     background: linear-gradient(to top, #181A1B, rgba(0, 0, 0, 0));
     pointer-events: none;
@@ -411,16 +421,14 @@ svg.steam-svg g {
 }
 
 .version-nav {
-    position: absolute;
-    /*background: linear-gradient(to top, #181A1B, rgba(0, 0, 0, 0));*/
+    display: inline-block;
     padding: 1.3em;
-    left: 0;
-    top: 0;
-    z-index: 2;
-    /*transition: background 500ms;*/
+    flex: 50%;
+    opacity: 0.6;
+    transition: opacity 150ms;
 }
-.light-toggle .version-nav {
-    /*background: linear-gradient(to top, #FFE7D4, rgba(0, 0, 0, 0));*/
+.version-nav:hover {
+    opacity: 1;
 }
 .version-nav ul {
     margin: 0;
@@ -428,7 +436,7 @@ svg.steam-svg g {
 }
 .version-nav li {
     display: inline-block;
-    margin-right: 5px;
+    margin-right: 1px;
     list-style-type: none;
 }
 .version-nav li:first-child {
@@ -444,6 +452,7 @@ svg.steam-svg g {
     fill: none;
 }
 .version-nav__link {
+    padding: 3px;
     opacity: 0.5;
 }
 .version-nav__link--current {
@@ -465,7 +474,6 @@ svg.steam-svg g {
 }
 .footer--centered {
     width: 100%;
-    max-width: none;
     margin-top: 4em;
     padding-top: 1em;
     text-align: center;
@@ -473,7 +481,7 @@ svg.steam-svg g {
 }
 
 @media (min-width: 700px) {
-    body > * {
+    body > *:not(.header):not(.gradient):not(.footer--centered):not(.version-nav):not(.light-toggle-container) {
         margin: 0 auto;
         max-width: 650px;
     }
@@ -488,5 +496,11 @@ svg.steam-svg g {
     }
     .light-toggle-container {
         padding: 1em;
+    }
+}
+
+@media (max-height: 350px) {
+    .gradient {
+        display: none;
     }
 }

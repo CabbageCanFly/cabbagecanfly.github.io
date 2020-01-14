@@ -7,7 +7,7 @@
     <meta name="description" content="This is my personal website, which serves as my portfolio. And yes, cabbages can fly.">
     <meta name="keywords" content="portfolio, toronto, student, University of Toronto, uoft, software, engineering, computer science">
     <meta name="theme-color" content="#272822">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -92,22 +92,22 @@
         </nav>
     </header>
 
-    <nav class="version-nav">
-        <ul>
-            <li><a class="version-nav__link" href="v1">v1</a></li>
-            <li><a class="version-nav__link" href="v2">v2</a></li>
-            <li><a class="version-nav__link version-nav__link--current" href="/">v3</a></li>
-        </ul>
-    </nav>
-    <div class="light-toggle-container">
-        <label class="light-toggle-container__label" for="light-toggle">
-            Toggle
-            <br>
-            Lights
+    <header class="header header--absolute">
+        <nav class="version-nav">
+            <ul>
+                <li><a class="version-nav__link" href="v1">v1</a></li><li><a class="version-nav__link" href="v2">v2</a></li><li><a class="version-nav__link version-nav__link--current" href="/">v3</a></li>
+            </ul>
+        </nav>
+        <label class="light-toggle-container" for="light-toggle">
+            <span class="light-toggle-container__label">
+                Toggle
+                <br>
+                Lights
+            </span>
+            <input class="light-toggle-checkbox" id="light-toggle" type="checkbox"/>
+            <label class="light-toggle-button" for="light-toggle"></label>
         </label>
-        <input class="light-toggle-checkbox" id="light-toggle" type="checkbox"/>
-        <label class="light-toggle-button" for="light-toggle"></label>
-    </div>
+    </header>
 
     <div class="gradient"></div>
     <div class="about">
