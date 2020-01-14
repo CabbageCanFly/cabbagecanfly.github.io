@@ -93,7 +93,6 @@ b {
 }
 .light-toggle b {
     color: #A52F00;
-    font-weight: 600;
 }
 
 .light-toggle-checkbox {
@@ -166,6 +165,7 @@ b {
 
 .anchor-link {
     color: white;
+    text-decoration: none;
 }
 .light-toggle .anchor-link {
     color: black;
@@ -184,7 +184,7 @@ b {
 .anchor-link:hover .anchor-hash {
     opacity: 0.8;
 }
-.anchor-link:hover {
+.anchor-link:hover, .anchor-link:focus {
     text-decoration: none;
 }
 
@@ -470,6 +470,7 @@ svg.steam-svg g {
 }
 .footer--gradient {
     position: absolute;
+    z-index: -1;
     bottom: 0;
     width: 100%;
     height: 100px;
