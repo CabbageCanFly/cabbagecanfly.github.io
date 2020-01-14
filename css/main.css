@@ -424,6 +424,10 @@ svg.steam-svg g {
     overflow-x: scroll;
     font-size: 0.9em;
     padding: 1em;
+    transition: background 500ms;
+}
+.light-toggle .content pre {
+    background: rgba(0, 0, 0, 0.05);
 }
 
 .show-more {
@@ -457,6 +461,10 @@ svg.steam-svg g {
     height: 50%;
     width: 100%;
     pointer-events: none;
+    transition: background 500ms;
+}
+.light-toggle .show-more:before {
+    background: linear-gradient(to top, #FFE7D4, rgba(255, 231, 212, 0.4) 80%, rgba(255, 231, 212, 0) 100%);
 }
 .show-more--active {
     max-height: 100%;
