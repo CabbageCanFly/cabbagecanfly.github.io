@@ -41,6 +41,14 @@ rgba(255, 255, 255, 1)  rgba(249, 38, 114, 1)   rgba(102, 217, 239, 1)
     background-color: rgba(249, 38, 114, 0.5);
     opacity: 1;
 }
+.light-toggle ::selection {
+    background-color: rgba(253, 151, 31, 0.5);
+    opacity: 1;
+}
+.light-toggle ::-moz-selection {
+    background-color: rgba(253, 151, 31, 0.5);
+    opacity: 1;
+}
 /*--------------- end Miscellaneous highlight styles ---------------*/
 
 html {
@@ -94,7 +102,7 @@ b {
     font-weight: normal;
 }
 .light-toggle b {
-    color: #A52F00;
+    color: #F92672;
 }
 
 .light-toggle-checkbox {
