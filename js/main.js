@@ -151,7 +151,7 @@ function checkBioReveal() {
             var ratio = scrollTop / (threshold);
             // gradient.classList.remove("gradient--unveil");
             // gradient.style.transform = "scaleY(" + (1 - ratio) + ")";
-            gradient.style.transform = "translateY(" + (100 * ratio) + "%)";
+            gradient.style.transform = "translateY(" + Math.max(0,(100 * ratio)) + "%)";
             gradient.style.display = 'block';
         } else {
             // gradient.classList.add("gradient--unveil");
