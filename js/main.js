@@ -15,7 +15,6 @@ var colours = Object.values(MY_COLOURS);
 
 var canvas;
 var ctx;
-var render;
 
 function initializeLightMode() {
     var toggle = document.querySelector(".light-toggle-checkbox");
@@ -32,12 +31,13 @@ function initializeCanvas() {
         return;
     }
     ctx = canvas.getContext('2d');
-    render = anime({
-        duration: Infinity,
-        update: function() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-        }
-    });
+    // anime({
+    //     duration: Infinity,
+    //     update: function() {
+    //         p.draw();
+    //         ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //     }
+    // });
     window.addEventListener('resize', runAll(resizeEvents), false);
     setCanvasSize();
 }
@@ -143,24 +143,21 @@ function checkHeaderSticky() {
 }
 
 function checkBioReveal() {
-    var threshold = 150;
+    var threshold = 400;
     var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-    var content = document.querySelector(".about");
     var gradient = document.querySelector(".gradient");
-    if (content) {
-        if (content.style.opacity < 1 || scrollTop <= threshold) {
-            var ratio = scrollTop / threshold;
-            content.style.opacity = Math.max(0.1, ratio);
-        } else {
-            content.style.opacity = 1;
-        }
-    }
     if (gradient) {
-        if (scrollTop <= threshold * 2) {
-            var ratio = scrollTop / (threshold * 2);
-            gradient.style.height = (40 - 40 * ratio) + "%";
+        if (scrollTop <= threshold) {
+            var ratio = scrollTop / (threshold);
+            // gradient.classList.remove("gradient--unveil");
+            // gradient.style.transform = "scaleY(" + (1 - ratio) + ")";
+            gradient.style.transform = "translateY(" + (100 * ratio) + "%)";
+            gradient.style.display = 'block';
         } else {
-            gradient.style.height = "0%";
+            // gradient.classList.add("gradient--unveil");
+            // gradient.style.transform = "scaleY(0)";
+            gradient.style.transform = "translateY(100%)";
+            gradient.style.display = 'none';
         }
     }
 }
