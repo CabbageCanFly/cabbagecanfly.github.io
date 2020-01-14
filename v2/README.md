@@ -2,7 +2,7 @@
 My personal website! And yes, cabbages can fly.
 
 ## Built With
-Your usual HTML + CSS + JS. Tried using some [anime.js](https://github.com/juliangarnier/anime/).
+HTML + CSS + A tiny bit of JS; focused on as much CSS as I could!
 
 ## Author
 * **James Huynh**
