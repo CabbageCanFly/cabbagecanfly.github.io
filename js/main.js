@@ -187,6 +187,11 @@ function setCopyright() {
 
 function main() {
     setCopyright();
+    document.querySelectorAll(".show-more__button").forEach(function(e) {
+        e.addEventListener("click", function() {
+            e.parentElement.classList.toggle("show-more--active");
+        });
+    });
     initializeLightMode();
     initializeCanvas();
     // render.play();
