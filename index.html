@@ -9,13 +9,13 @@
     <meta name="theme-color" content="#181A1B">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#f92672">
+    <link rel="apple-touch-icon" sizes="180x180" href="resources/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="resources/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="resources/icons/favicon-16x16.png">
+    <link rel="manifest" href="resources/icons/site.webmanifest">
+    <link rel="mask-icon" href="resources/icons/safari-pinned-tab.svg" color="#f92672">
     <meta name="msapplication-TileColor" content="#b91d47">
-    <meta name="msapplication-TileImage" content="mstile-144x144.png">
+    <meta name="msapplication-TileImage" content="resources/icons/mstile-144x144.png">
 
     <link rel="stylesheet" href="css/main.css">
     <script src="lib/anime.min.js"></script>
@@ -227,7 +227,10 @@ rgba(255, 255, 255, 1)  rgba(249, 38, 114, 1)   rgba(102, 217, 239, 1)</pre>
         .show-more {
             max-height: 100%;
         }
-        .show-more__button__label:before {
+        .show-more:before {
+            display: none;
+        }
+        .show-more > .show-more__button > .show-more__button__label:before {
             content: '';
         }
     </style>
