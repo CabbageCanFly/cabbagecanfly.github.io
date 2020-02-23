@@ -170,6 +170,18 @@ function scrollToTop() {
     }
 }
 
+// Hyperlinks within show-more elements can mess up the overflow
+//  when user focuses on the hyperlink by pressing tab; so, scroll back to top.
+function disableTabShift() {
+    document.querySelectorAll(".show-more").fosrEach(function(showMore) {
+        showMore.querySelectorAll("a").forEach(function(link) {
+            link.addEventListener("focus", function() {
+                showMore.scrollTop = 0;
+            });
+        })
+    });
+}
+
 function runAll(functions) {
     return function() {
         functions.forEach(function(fn) {
