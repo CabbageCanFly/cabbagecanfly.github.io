@@ -465,7 +465,7 @@ svg.steam-svg g {
 }
 .content pre {
     background: rgba(255, 255, 255, 0.03);
-    overflow-x: scroll;
+    overflow-x: auto;
     font-size: 0.9em;
     padding: 1em;
     transition: background 500ms;
