@@ -57,7 +57,7 @@ html {
     font-family: 'Roboto Condensed Light', sans-serif;
     color: white;
     font-size: 16px;
-    transition: opacity 700ms 350ms, background-color 500ms, color 500ms;
+    transition: background-color 500ms, color 500ms;
 }
 html.light-toggle {
     background-color: #FFE7D4;
@@ -71,10 +71,14 @@ body {
     margin: 0 0;
     min-width: 250px;
     min-height: 75vh;
+    transition: opacity 700ms 350ms;
 }
 body > *:not(.header):not(.gradient):not(.footer--gradient):not(.version-nav):not(.light-toggle-container) {
     margin-left: 1.3rem;
     margin-right: 1.3rem;
+}
+.hidden body {
+    opacity: 0;
 }
 
 h1, h2, h3, h4 {
@@ -165,10 +169,6 @@ b {
 }
 .light-toggle-container:hover .light-toggle-container__label {
     opacity: 0.8;
-}
-
-.hidden {
-    opacity: 0;
 }
 
 .cabbage {
