@@ -455,6 +455,9 @@ svg.steam-svg g {
 .last-updated {
     opacity: 0.35;
 }
+.last-updated span {
+    opacity: 0.5;
+}
 
 .container--relative {
     position: relative;

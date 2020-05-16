@@ -201,10 +201,12 @@ function setCopyright() {
 
 function setLastUpdated() {
     var createDateElem = function(date, url, label, parentElem) {
-        var link = document.createElement('a');
+        var link = document.createElement(url ? 'a' : 'span');
         link.innerHTML = date.substring(0,10).replace(/-/g,'');
-        link.href = url;
-        link.target = "_blank";
+        if (url) {
+            link.href = url;
+            link.target = "_blank";
+        }
         parentElem.innerHTML = label + ": ";
         parentElem.appendChild(link);
     }
@@ -219,7 +221,7 @@ function setLastUpdated() {
     paths = ['resources/resume'];
     getLatestCommitDate(paths, function(latestDate, latestCommit) {
         if (latestDate) {
-            createDateElem(latestDate, latestCommit.html_url, 'résumé',
+            createDateElem(latestDate, null, 'résumé',
                 document.querySelector(".last-updated__resume"));
         }
     });
