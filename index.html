@@ -111,15 +111,23 @@
 
     <div class="gradient"></div>
     <div class="content">
-        <div class="toc__container">
-            <ul class="toc">
-                <li><a class="toc__link" href="#about">About</a></li>
+        <div class="container--relative">
+            <div class="toc__container">
                 <ul class="toc">
-                    <li><a class="toc__link" href="#leisure">Leisure</a></li>
+                    <li><a class="toc__link" href="#about">About</a></li>
+                    <ul class="toc">
+                        <li><a class="toc__link" href="#leisure">Leisure</a></li>
+                    </ul>
+                    <li><a class="toc__link" href="#resume">Résumé</a></li>
+                    <li><a class="toc__link" href="#credits">Credits</a></li>
                 </ul>
-                <li><a class="toc__link" href="#resume">Résumé</a></li>
-                <li><a class="toc__link" href="#credits">Credits</a></li>
-            </ul>
+            </div>
+            <div class="last-updated__container">
+                <div class="last-updated">
+                    <div class="last-updated__site"></div>
+                    <div class="last-updated__resume"></div>
+                </div>
+            </div>
         </div>
         <hr>
         <article>
@@ -177,9 +185,9 @@
             </p>
             <div class="resumes">
                 <div class="resume-thumbnail">
-                    <a target="_blank" href="resources/James-Huynh-Resume.pdf"><img src="resources/images/James-Huynh-Resume-thumb.png"></a>
+                    <a target="_blank" href="resources/resume/James-Huynh-Resume.pdf"><img src="resources/images/James-Huynh-Resume-thumb.png"></a>
                 </div><div class="resume-thumbnail">
-                    <a target="_blank" href="resources/James-Huynh-Resume-Dark.pdf"><img src="resources/images/James-Huynh-Resume-Dark-thumb.png"></a>
+                    <a target="_blank" href="resources/resume/James-Huynh-Resume-Dark.pdf"><img src="resources/images/James-Huynh-Resume-Dark-thumb.png"></a>
                 </div>
             </div>
         </article>
@@ -232,6 +240,9 @@ rgba(255, 255, 255, 1)  rgba(249, 38, 114, 1)   rgba(102, 217, 239, 1)</pre>
         }
         .show-more > .show-more__button > .show-more__button__label:before {
             content: '';
+        }
+        .last-updated__container {
+            display: none;
         }
     </style>
 </noscript>

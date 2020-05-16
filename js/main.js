@@ -1,5 +1,7 @@
 "use strict";
 
+var COMMIT_PATH = 'https://api.github.com/repos/cabbagecanfly/cabbagecanfly.github.io/commits?per_page=1&'
+
 var MY_COLOURS = {
     orange: "#FD971F",
     green: "#A6E22E",
@@ -197,7 +199,73 @@ function setCopyright() {
     document.querySelector(".copyright__year").innerHTML = year;
 }
 
+function setLastUpdated() {
+    var createDateElem = function(date, url, label, parentElem) {
+        var link = document.createElement('a');
+        link.innerHTML = date.substring(0,10).replace(/-/g,'');
+        link.href = url;
+        link.target = "_blank";
+        parentElem.innerHTML = label + ": ";
+        parentElem.appendChild(link);
+    }
+
+    var paths = ['css', 'js', 'index.html'];
+    getLatestCommitDate(paths, function(latestDate, latestCommit) {
+        if (latestDate) {
+            createDateElem(latestDate, latestCommit.html_url, 'site',
+                document.querySelector(".last-updated__site"));
+        }
+    });
+    paths = ['resources/resume'];
+    getLatestCommitDate(paths, function(latestDate, latestCommit) {
+        if (latestDate) {
+            createDateElem(latestDate, latestCommit.html_url, 'résumé',
+                document.querySelector(".last-updated__resume"));
+        }
+    });
+}
+
+// Get latest commit date for given path(s)
+function getLatestCommitDate(paths, callback) {
+    var latestDate = null;
+    var latestCommit = null;
+    var returned = 0;
+
+    if (paths.length == 0) {
+        callback(latestDate, latestCommit);
+    }
+
+    paths.forEach(function(e) {
+        var url = COMMIT_PATH + "path=" + e;
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4) {
+                returned += 1;
+                if (this.status == 200) {
+                    var res = JSON.parse(xhr.responseText);
+                    if (res[0]) {
+                        var cDate = res[0].commit.author.date;
+                        if (latestDate) {
+                            latestDate = latestDate < cDate ? cDate : latestDate;
+                            latestCommit = latestDate < cDate ? res[0] : latestCommit;
+                        } else {
+                            latestDate = cDate;
+                            latestCommit = res[0];
+                        }
+                    }
+                }
+                if (returned >= paths.length) {
+                    callback(latestDate, latestCommit);
+                }
+            }
+        };
+        xhr.send();
+    });
+}
+
 function main() {
+    setLastUpdated();
     setCopyright();
     document.querySelectorAll(".show-more__button").forEach(function(e) {
         e.addEventListener("click", function() {

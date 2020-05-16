@@ -400,10 +400,10 @@ svg.steam-svg g {
 }
 
 .toc {
-    /*padding-left: 8.2px;*/
     padding-left: 1.3em;
     list-style-type: none;
     font-size: 14px;
+    margin: 0;
 }
 .toc li {
     position: relative;
@@ -415,6 +415,9 @@ svg.steam-svg g {
     top: 0;
     opacity: 0.1;
     transform: scale(0.9);
+}
+.toc__container {
+    display: inline-block;
 }
 .toc__container > .toc {
     font-size: 16px;
@@ -439,6 +442,22 @@ svg.steam-svg g {
 }
 .toc a:hover, .toc a:focus {
     text-decoration: none;
+}
+
+.last-updated__container {
+    display: inline-block;
+    text-align: right;
+    float: right;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.last-updated {
+    opacity: 0.35;
+}
+
+.container--relative {
+    position: relative;
 }
 
 .content {
