@@ -128,10 +128,13 @@ h1 {
 }
 
 #lastModified {
+    position: absolute;
+    bottom: 0;
+    right: 0;
     font-family: "Yanone Kaffeesatz Light";
     font-weight: normal;
     padding-top: 1.23em;
-    font-size: 0.45em;
+    font-size: 1.125rem;
     float: right;
     color: rgb(125, 125, 125);
 }
@@ -621,6 +624,7 @@ Also, this state accounts for larger containers, hence the larger "max-height".*
 
 @media screen and (max-width: 500px) {
     #lastModified {
+        position: relative;
         padding-top: 0;
         float: none;
     }
