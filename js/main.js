@@ -202,7 +202,9 @@ function setCopyright() {
 function setLastUpdated() {
     var createDateElem = function(date, url, label, parentElem) {
         var link = document.createElement(url ? 'a' : 'span');
-        link.innerHTML = date.substring(0,10).replace(/-/g,'');
+        var tzOffset = new Date().getTimezoneOffset() * 60000;
+        var localDate = new Date(Date.parse(date) - tzOffset).toISOString();
+        link.innerHTML = localDate.substring(0,10).replace(/-/g,'');
         if (url) {
             link.href = url;
             link.target = "_blank";
@@ -249,8 +251,10 @@ function getLatestCommitDate(paths, callback) {
                     if (res[0]) {
                         var cDate = res[0].commit.author.date;
                         if (latestDate) {
-                            latestDate = latestDate < cDate ? cDate : latestDate;
-                            latestCommit = latestDate < cDate ? res[0] : latestCommit;
+                            if (latestDate < cDate) {
+                                latestCommit = res[0];
+                                latestDate = cDate;
+                            }
                         } else {
                             latestDate = cDate;
                             latestCommit = res[0];
