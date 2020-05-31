@@ -2,6 +2,8 @@
 
 var COMMIT_PATH = 'https://api.github.com/repos/cabbagecanfly/cabbagecanfly.github.io/commits?per_page=1&'
 
+var rateExceeded = false;
+
 var MY_COLOURS = {
     orange: "#FD971F",
     green: "#A6E22E",
@@ -215,14 +217,14 @@ function setLastUpdated() {
 
     var paths = ['css', 'js', 'index.html'];
     getLatestCommitDate(paths, function(latestDate, latestCommit) {
-        if (latestDate) {
+        if (latestDate && !rateExceeded) {
             createDateElem(latestDate, latestCommit.html_url, 'site',
                 document.querySelector(".last-updated__site"));
         }
     });
     paths = ['resources/resume'];
     getLatestCommitDate(paths, function(latestDate, latestCommit) {
-        if (latestDate) {
+        if (latestDate && !rateExceeded) {
             createDateElem(latestDate, null, 'résumé',
                 document.querySelector(".last-updated__resume"));
         }
@@ -260,13 +262,18 @@ function getLatestCommitDate(paths, callback) {
                             latestCommit = res[0];
                         }
                     }
+                } else {
+                    rateExceeded = true;
+                    return;
                 }
                 if (returned >= paths.length) {
                     callback(latestDate, latestCommit);
                 }
             }
         };
-        xhr.send();
+        if (!rateExceeded) {
+            xhr.send();
+        }
     });
 }
 

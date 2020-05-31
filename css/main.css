@@ -453,7 +453,22 @@ svg.steam-svg g {
     bottom: 0;
 }
 .last-updated {
+    position: relative;
     opacity: 0.35;
+    transition: opacity 150ms;
+}
+.last-updated:before {
+    content: '';
+    position: absolute;
+    left: -25px;
+    top: -25px;
+    z-index: -100;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+}
+.last-updated:hover {
+    opacity: 0.9;
 }
 .last-updated span {
     opacity: 0.5;
