@@ -728,3 +728,12 @@ svg.steam-svg g {
         display: none;
     }
 }
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-track {
+    background: rgba(36, 38, 41, 0.34);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(60, 62, 69, 0.34);
+}
