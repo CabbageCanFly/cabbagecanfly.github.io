@@ -496,6 +496,9 @@ svg.steam-svg g {
 .content h2 {
     margin-bottom: 1.5rem;
 }
+.content h3 {
+    font-size: 1.25em;
+}
 .content article {
     margin-bottom: 3rem;
 }
