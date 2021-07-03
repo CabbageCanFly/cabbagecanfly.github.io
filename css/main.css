@@ -361,6 +361,7 @@ b {
     padding: 2em;
 }
 .social-nav svg {
+    width: 32px;
     box-sizing: border-box;
     fill: #181A1B;
     background-color: white;
