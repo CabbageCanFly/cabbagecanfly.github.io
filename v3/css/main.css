@@ -9,27 +9,22 @@ white                   pink                    blue
 rgba(255, 255, 255, 1)  rgba(249, 38, 114, 1)   rgba(102, 217, 239, 1)
 */
 
-/* BEM naming convention for classes. */
-
-/* This is lazy,
-   but for the 0.00000001% case where JS is disabled,
-   this will work. */
-.last-updated--text:after {
-    content: '2023-02-10';
-}
-
 /*--------------- Fonts ---------------*/
+@font-face {
+    font-family: 'Yanone Kaffeesatz';
+    src: url('../resources/fonts/YanoneKaffeesatz-Regular.ttf');
+}
 @font-face {
     font-family: 'Yanone Kaffeesatz Light';
     src: url('../resources/fonts/YanoneKaffeesatz-Light.ttf');
 }
 @font-face {
-    font-family: 'Fira Sans';
-    src: url('../resources/fonts/FiraSansCondensed-Regular.ttf');
+    font-family: 'Roboto Condensed';
+    src: url('../resources/fonts/RobotoCondensed-Regular.ttf');
 }
 @font-face {
-    font-family: 'Fira Sans Light';
-    src: url('../resources/fonts/FiraSansCondensed-Light.ttf');
+    font-family: 'Roboto Condensed Light';
+    src: url('../resources/fonts/RobotoCondensed-Light.ttf');
 }
 /*--------------- end Fonts ---------------*/
 
@@ -57,59 +52,44 @@ rgba(255, 255, 255, 1)  rgba(249, 38, 114, 1)   rgba(102, 217, 239, 1)
 /*--------------- end Miscellaneous highlight styles ---------------*/
 
 html {
+    /*background-color: #272822;*/
     background-color: #181A1B;
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Roboto Condensed Light', sans-serif;
     color: white;
     font-size: 16px;
-    transition: background-color 500ms;
+    transition: background-color 500ms, color 500ms;
 }
 html.light-toggle {
     background-color: #FFE7D4;
     color: black;
-}
-.hidden body {
-    opacity: 0 !important;
+    /*font-weight: 600;*/
+    font-family: 'Roboto Condensed';
 }
 body {
     position: relative;
-    padding-top: 25vh;
+    padding-top: 50vh;
     margin: 0 0;
     min-width: 250px;
     min-height: 75vh;
-    transition: opacity 750ms 350ms;
+    transition: opacity 700ms 350ms;
 }
-body > *:not(.header--absolute):not(.gradient):not(.footer--gradient):not(.version-nav):not(.light-toggle-container) {
-    margin-left: 1.75rem;
-    margin-right: 1.75rem;
+body > *:not(.header):not(.gradient):not(.footer--gradient):not(.version-nav):not(.light-toggle-container) {
+    margin-left: 1.3rem;
+    margin-right: 1.3rem;
+}
+.hidden body {
+    opacity: 0;
 }
 
 h1, h2, h3, h4 {
     position: relative;
-    font-family: 'Fira Sans', sans-serif;
-}
-h1 {
-    font-size: 42px;
     font-family: 'Yanone Kaffeesatz Light', sans-serif;
-}
-h2 {
-    font-size: 26px;
-}
-
-.content h1,
-.content h2,
-.content h3,
-.content h4 {
-    opacity: 0.3;
-}
-.content h2:hover,
-.content h3:hover,
-.content h4:hover {
-    opacity: 0.8;
 }
 
 a {
     color: #66D9EF;
     text-decoration: none;
+    transition: color 500ms;
 }
 .light-toggle a {
     color: #006FB1;
@@ -185,16 +165,15 @@ b {
     transform: scale(0.75);
     text-align: right;
     display: inline-block;
+    transition: opacity 150ms;
 }
 .light-toggle-container:hover .light-toggle-container__label {
     opacity: 0.8;
 }
 
 .cabbage {
-    display: inline-block;
     position: relative;
-    width: 52px;
-    transform: translate(0, -8px);
+    width: 54px;
 }
 .cabbage svg {
     fill: #A6E22E;
@@ -207,24 +186,23 @@ b {
     margin-left: auto;
     margin-right: auto;
 }
+.cabbage--fly {
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
 .cabbage--small {
     width: 18px;
 }
 
-.copyright__symbol {
-    display: inline-block;
-    font-size: 14px;
-    transform: translate(1px, 1px);
+.text--margin-top-xl {
+    margin-top: 42px;
 }
-
 .text--margin-top-l {
-    margin-top: 38px;
+    margin-top: 26px;
 }
 .text--margin-top-md {
     margin-top: 12px;
-}
-.text--margin-top-sm {
-    margin-top: 6px;
 }
 .text--no-margin-top {
     margin-top: 0;
@@ -232,11 +210,11 @@ b {
 .text--no-margin-bottom {
     margin-bottom: 0;
 }
-.text--light-font {
-    font-family: 'Fira Sans Light';
+.text--roboto {
+    font-family: 'Roboto Condensed Light'
 }
-.text--body-font {
-    font-family: 'Fira Sans';
+.text--lighter {
+    font-weight: lighter;
 }
 .text--centered {
     text-align: center;
@@ -284,17 +262,10 @@ b {
 .light-toggle .text--blue {
     background: rgba(0, 0, 0, 0.3);
 }
-.text--inline-block {
-    display: inline-block;
-}
-.text--small {
-    font-size: 14px;
-    line-height: 20px;
-}
 
 .header {
     position: relative;
-    z-index: 10;
+    margin-bottom: 48px;
 }
 .header--absolute {
     position: absolute;
@@ -306,38 +277,202 @@ b {
 .header--centered {
     position: relative;
     width: 100%;
+    transform: translate(0, -50%);
 }
-.header__name {
-    margin-left: 0.5em;
+.header--sticky-active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: translate(0, -8px);
 }
-
-.socials {
+.header--can-shrink {
     position: relative;
-    opacity: 0.5;
+    height: 100%;
+    transform: scale(1);
+    transition: transform 200ms;
 }
-.socials:not(:hover) * {
-    color: inherit;
+.header--can-shrink-active {
+    transform: scale(0.75) translateY(8px);
 }
-.socials span {
-    display: inline-block;
-    margin-left: 1px;
+.header__bg {
+    position: absolute;
+    height: 125%;
+    width: 100%;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(23, 28, 32, 0.95) 0 75%, rgba(24, 26, 27, 0) 100%);
+    opacity: 0;
+    transition: opacity 200ms, background 500ms;
 }
-.socials:hover {
+.header__bg--active {
     opacity: 1;
 }
-.socials:after {
+.light-toggle .header__bg {
+    background: linear-gradient(to bottom, rgba(255, 243, 233, 0.9) 0 75%, rgba(255, 243, 233, 0) 100%);
+}
+
+.header--can-shrink-active, .header__bg--active {
+    cursor: pointer;
+}
+
+.header-decor__wrapper {
+}
+.header__canvas {
     position: absolute;
-    display: block;
-    content: '';
-    z-index: -100;
-    top: -15px;
-    height: 65px;
+    height: 100%;
+    width: 100vw;
+    margin-top: -3em;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    z-index: -1;
+}
+.header-decor {
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+.header-decor__item {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+}
+.light-toggle .header-decor__item {
+    background: black !important;
+}
+
+.social-nav {
+    position: absolute;
+    bottom: -48px;
     width: 100%;
+    text-align: center;
+    /*margin-top: -48px;*/
+    opacity: 0.75;
+}
+.social-nav__wrapper {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+.social-nav ul {
+    display: inline-block;
+    margin-top: -1em;
+    padding: 2em;
+}
+.social-nav svg {
+    width: 32px;
+    box-sizing: border-box;
+    fill: #181A1B;
+    background-color: white;
+    border: 2.4px solid white;
+    border-radius: 25%;
+    transition: opacity 150ms, fill 500ms, background 500ms, background-color 500ms;
+}
+.light-toggle .social-nav svg {
+    background-color: black;
+    border-color: black;
+    fill: #FFE7D4;
+}
+.social-nav li {
+    list-style-type: none;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin: 0 2px;
+}
+.social-nav ul:hover li:not(:hover) svg {
+    opacity: 0.45;
+}
+svg.steam-svg {
+    fill: white;
+    background: none;
+}
+svg.steam-svg g {
+    stroke: white;
+    fill: none;
+    transition: stroke 500ms, fill 500ms;
+}
+.light-toggle svg.steam-svg {
+    fill: black;
+    background: none;
+}
+.light-toggle svg.steam-svg g {
+    stroke: black;
+}
+
+.toc {
+    padding-left: 1.3em;
+    list-style-type: none;
+    font-size: 14px;
+    margin: 0;
+}
+.toc li {
+    position: relative;
+}
+.toc li:before {
+    content: '•';
+    position: absolute;
+    left: -0.63em;
+    top: 0;
+    opacity: 0.1;
+    transform: scale(0.9);
+}
+.toc__container {
+    display: inline-block;
+}
+.toc__container > .toc {
+    font-size: 16px;
+    padding: 0;
+}
+.toc__container > .toc > li:before {
+    content: '#';
+}
+.toc__container > .toc > .toc > li:before {
+    left: -1rem;
+    content: "↳";
+}
+.toc__link {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid white;
+    transition: border-bottom-color 500ms;
+}
+.light-toggle .toc__link {
+    color: inherit;
+    border-bottom: 1px solid black;
+}
+.toc a:hover, .toc a:focus {
+    text-decoration: none;
 }
 
 .last-updated__container {
-    display: none;
-    z-index: 10;
+    display: inline-block;
+    text-align: right;
+    float: right;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.last-updated {
+    position: relative;
+    opacity: 0.35;
+    transition: opacity 150ms;
+}
+.last-updated:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -100;
+    width: 100%;
+    height: 100%;
+}
+.last-updated:hover {
+    opacity: 0.9;
+}
+.last-updated span {
+    opacity: 0.5;
 }
 
 .container--relative {
@@ -349,21 +484,25 @@ b {
     margin-bottom: 10rem;
 }
 .content hr {
-    margin-top: 9px;
-    margin-bottom: 9px;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
     opacity: 0.2;
 }
 .content p {
+    margin-top: 1.5rem;
     margin-bottom: 1.5rem;
 }
 .content article ul {
     margin-top: -0.5rem;
 }
 .content h2 {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 .content h3 {
     font-size: 1.25em;
+}
+.content article {
+    margin-bottom: 3rem;
 }
 .content pre {
     background: rgba(255, 255, 255, 0.03);
@@ -375,13 +514,59 @@ b {
 .light-toggle .content pre {
     background: rgba(0, 0, 0, 0.05);
 }
-.content .uoft-text:hover:after {
-    content: ', St. George campus';
+
+.show-more {
+    position: relative;
+    max-height: 200px;
+    overflow: hidden;
+}
+.show-more__button {
+    opacity: 0.5;
+    font-size: 50%;
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    cursor: pointer;
+}
+.show-more__button__label {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.show-more > .show-more__button > .show-more__button__label:before {
+    content: 'Show More';
+}
+.show-more:before {
+    content: '';
+    position: absolute;
+    background: linear-gradient(to top, #181A1B, rgba(24, 26, 27, 0.5) 75%, rgba(24, 26, 27, 0) 100%);
+    bottom: 0;
+    height: 50%;
+    width: 100%;
+    pointer-events: none;
+    transition: background 500ms;
+}
+.light-toggle .show-more:before {
+    background: linear-gradient(to top, #FFE7D4, rgba(255, 231, 212, 0.65) 80%, rgba(255, 231, 212, 0) 100%);
+}
+.show-more--active {
+    max-height: 100%;
+}
+.show-more--active:before, .light-toggle .show-more--active:before {
+    background: none;
+}
+.show-more--active > .show-more__button > .show-more__button__label:before {
+    content: 'Show Less';
+}
+.show-more > p:nth-child(2) {
+    margin-top: 0;
 }
 
 .anchor {
     position: relative;
-    top: -30px;
+    top: -150px;
     visibility: hidden;
 }
 
@@ -393,17 +578,21 @@ b {
     color: black;
 }
 .anchor-hash {
-    font-family: "Yanone Kaffeesatz Light";
     display: none;
     opacity: 0.08;
     border-bottom: 0px;
     position: absolute;
     padding-right: 4px;
+    left: -18px;
+    top: -7px;
     font-size: 140%;
 }
 .content .anchor-hash {
-    left: -18px;
-    top: -3px;
+    top: 0;
+}
+.anchor-hash-2 {
+    top: -1px;
+    left: -25px;
 }
 
 .anchor-link:hover .anchor-hash {
@@ -415,6 +604,21 @@ b {
 
 .anchor-link:active {
     opacity: 0.5;
+}
+
+.gradient {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    z-index: 1;
+    background: linear-gradient(to top, #181A1B, rgba(24, 26, 27, 0.5) 75%, rgba(24, 26, 27, 0) 100%);
+    pointer-events: none;
+    transition: background 500ms;
+}
+.light-toggle .gradient {
+    background: linear-gradient(to top, #FFE7D4, rgba(255, 231, 212, 0.4) 80%, rgba(255, 231, 212, 0) 100%);
 }
 
 .resumes {
@@ -443,7 +647,7 @@ b {
     padding: 1.3em;
     flex: 50%;
     opacity: 0.6;
-    transition: opacity 100ms;
+    transition: opacity 150ms;
 }
 .version-nav:hover {
     opacity: 1;
@@ -505,7 +709,7 @@ b {
 }
 
 @media (min-width: 700px) {
-    body > *:not(.header--absolute):not(.gradient):not(.footer--gradient):not(.version-nav):not(.light-toggle-container) {
+    body > *:not(.header):not(.gradient):not(.footer--gradient):not(.version-nav):not(.light-toggle-container) {
         margin-left: auto;
         margin-right: auto;
         max-width: 650px;
@@ -521,23 +725,6 @@ b {
     }
     .light-toggle-container {
         padding: 1em;
-    }
-    .last-updated__container {
-        display: inline-block;
-        text-align: right;
-        float: right;
-        position: absolute;
-        right: 0;
-        bottom: 9px;
-    }
-    .last-updated {
-        opacity: 0.35;
-    }
-    .last-updated:hover {
-        opacity: 0.9;
-    }
-    .remarks .last-updated--text {
-        display: none;
     }
 }
 

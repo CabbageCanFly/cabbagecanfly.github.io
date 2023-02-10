@@ -1,0 +1,19 @@
+{
+    "name": "James Huynh",
+    "short_name": "James H",
+    "icons": [
+        {
+            "src": "/resources/icons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/resources/icons/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#272822",
+    "background_color": "#272822",
+    "display": "standalone"
+}
