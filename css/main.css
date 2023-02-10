@@ -20,6 +20,10 @@ rgba(255, 255, 255, 1)  rgba(249, 38, 114, 1)   rgba(102, 217, 239, 1)
 
 /*--------------- Fonts ---------------*/
 @font-face {
+    font-family: 'Yanone Kaffeesatz';
+    src: url('../resources/fonts/YanoneKaffeesatz-Regular.ttf');
+}
+@font-face {
     font-family: 'Yanone Kaffeesatz Light';
     src: url('../resources/fonts/YanoneKaffeesatz-Light.ttf');
 }
@@ -86,10 +90,12 @@ body > *:not(.header--absolute):not(.gradient):not(.footer--gradient):not(.versi
 h1, h2, h3, h4 {
     position: relative;
     font-family: 'Fira Sans', sans-serif;
+    font-weight: 400;
 }
 h1 {
     font-size: 42px;
-    font-family: 'Yanone Kaffeesatz Light', sans-serif;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 400;
 }
 h2 {
     font-size: 26px;
@@ -234,6 +240,7 @@ b {
 }
 .text--light-font {
     font-family: 'Fira Sans Light';
+    font-weight: 300;
 }
 .text--body-font {
     font-family: 'Fira Sans';
