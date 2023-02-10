@@ -1,6 +1,6 @@
 # cabbagecanfly.github.io
 
-My personal website! And yes, cabbages can fly.
+My personal website. And yes, cabbages can fly.
 
 ## Built With
 

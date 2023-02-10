@@ -9,11 +9,16 @@ white                   pink                    blue
 rgba(255, 255, 255, 1)  rgba(249, 38, 114, 1)   rgba(102, 217, 239, 1)
 */
 
-/*--------------- Fonts ---------------*/
-@font-face {
-    font-family: 'Yanone Kaffeesatz';
-    src: url('../resources/fonts/YanoneKaffeesatz-Regular.ttf');
+/* BEM naming convention for classes. */
+
+/* This is lazy,
+   but for the 0.00000001% case where JS is disabled,
+   this will work. */
+.last-updated--text:after {
+    content: '2023-02-10';
 }
+
+/*--------------- Fonts ---------------*/
 @font-face {
     font-family: 'Yanone Kaffeesatz Light';
     src: url('../resources/fonts/YanoneKaffeesatz-Light.ttf');
@@ -25,10 +30,6 @@ rgba(255, 255, 255, 1)  rgba(249, 38, 114, 1)   rgba(102, 217, 239, 1)
 @font-face {
     font-family: 'Fira Sans Light';
     src: url('../resources/fonts/FiraSansCondensed-Light.ttf');
-}
-@font-face {
-    font-family: 'Fira Sans Medium';
-    src: url('../resources/fonts/FiraSansCondensed-Medium.ttf.ttf');
 }
 /*--------------- end Fonts ---------------*/
 
@@ -56,7 +57,6 @@ rgba(255, 255, 255, 1)  rgba(249, 38, 114, 1)   rgba(102, 217, 239, 1)
 /*--------------- end Miscellaneous highlight styles ---------------*/
 
 html {
-    /*background-color: #272822;*/
     background-color: #181A1B;
     font-family: 'Fira Sans', sans-serif;
     color: white;
@@ -207,11 +207,6 @@ b {
     margin-left: auto;
     margin-right: auto;
 }
-.cabbage--fly {
-    position: absolute;
-    top: 0;
-    left: 50%;
-}
 .cabbage--small {
     width: 18px;
 }
@@ -325,6 +320,7 @@ b {
 }
 .socials span {
     display: inline-block;
+    margin-left: 1px;
 }
 .socials:hover {
     opacity: 1;
@@ -337,56 +333,6 @@ b {
     top: -15px;
     height: 65px;
     width: 100%;
-}
-
-
-.toc {
-/*    padding-left: 1.3em;*/
-    list-style-type: none;
-    font-size: 14px;
-    margin: 0;
-    opacity: 0.6;
-}
-.toc:hover {
-    opacity: 1;
-}
-.toc li {
-    opacity: 0.5;
-    position: relative;
-    display: inline-block;
-    margin-right: 2px;
-    list-style-type: none;
-}
-.toc li:hover {
-    opacity: 0.9;
-}
-.toc__container {
-    display: inline-block;
-    display: none;
-    text-align: right;
-/*    top: -60px;*/
-/*    left: -60px;*/
-}
-.toc__container > .toc {
-    font-size: 16px;
-    padding: 0;
-}
-.toc__link {
-    text-decoration: none;
-    color: inherit;
-/*    border-bottom: 1px solid white;*/
-    transition: border-bottom-color 500ms;
-}
-.light-toggle .toc__link {
-    color: inherit;
-    border-bottom: 1px solid black;
-}
-.toc a:hover, .toc a:focus {
-    text-decoration: none;
-}
-
-.last-updated--text:after {
-    content: '2023-02-09';
 }
 
 .last-updated__container {
@@ -403,13 +349,11 @@ b {
     margin-bottom: 10rem;
 }
 .content hr {
-/*    margin-top: 1.5rem;*/
     margin-top: 9px;
     margin-bottom: 9px;
     opacity: 0.2;
 }
 .content p {
-/*    margin-top: 1.5rem;*/
     margin-bottom: 1.5rem;
 }
 .content article ul {
@@ -420,9 +364,6 @@ b {
 }
 .content h3 {
     font-size: 1.25em;
-}
-.content article {
-/*    margin-bottom: 3rem;*/
 }
 .content pre {
     background: rgba(255, 255, 255, 0.03);
@@ -437,58 +378,10 @@ b {
 .content .uoft-text:hover:after {
     content: ', St. George campus';
 }
-.show-more {
-    position: relative;
-    max-height: 200px;
-    overflow: hidden;
-}
-.show-more__button {
-    opacity: 0.5;
-    font-size: 50%;
-    position: absolute;
-    height: 30px;
-    width: 100%;
-    bottom: 0;
-    text-align: center;
-    cursor: pointer;
-}
-.show-more__button__label {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-.show-more > .show-more__button > .show-more__button__label:before {
-    content: 'Show More';
-}
-.show-more:before {
-    content: '';
-    position: absolute;
-    background: linear-gradient(to top, #181A1B, rgba(24, 26, 27, 0.5) 75%, rgba(24, 26, 27, 0) 100%);
-    bottom: 0;
-    height: 50%;
-    width: 100%;
-    pointer-events: none;
-    transition: background 500ms;
-}
-.light-toggle .show-more:before {
-    background: linear-gradient(to top, #FFE7D4, rgba(255, 231, 212, 0.65) 80%, rgba(255, 231, 212, 0) 100%);
-}
-.show-more--active {
-    max-height: 100%;
-}
-.show-more--active:before, .light-toggle .show-more--active:before {
-    background: none;
-}
-.show-more--active > .show-more__button > .show-more__button__label:before {
-    content: 'Show Less';
-}
-.show-more > p:nth-child(2) {
-    margin-top: 0;
-}
 
 .anchor {
     position: relative;
-    top: -150px;
+    top: -30px;
     visibility: hidden;
 }
 
@@ -639,8 +532,6 @@ b {
     }
     .last-updated {
         opacity: 0.35;
-        font-size: 80%;
-        line-height: 120%;
     }
     .last-updated:hover {
         opacity: 0.9;
