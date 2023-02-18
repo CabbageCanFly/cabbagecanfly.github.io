@@ -242,7 +242,7 @@ function getLatestCommitDate(paths, callback) {
     }
 
     paths.forEach(function(e) {
-        var url = COMMIT_PATH + "path=" + e;
+        var url = COMMIT_PATH + "path=v3/" + e;
         var xhr = new XMLHttpRequest();
         xhr.open("GET", url, true);
         xhr.onreadystatechange = function() {
