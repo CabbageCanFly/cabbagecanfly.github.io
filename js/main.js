@@ -9,12 +9,6 @@ function initializeLightMode() {
     });
 }
 
-function runAll(functions) {
-    functions.forEach(function(fn) {
-        fn();
-    });
-}
-
 function main() {
     initializeLightMode();
     document.querySelector("html").classList.remove("hidden");

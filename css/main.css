@@ -11,11 +11,9 @@ rgba(255, 255, 255, 1)  rgba(249, 38, 114, 1)   rgba(102, 217, 239, 1)
 
 /* BEM naming convention for classes. */
 
-/* This is lazy,
-   but for the 0.00000001% case where JS is disabled,
-   this will work. */
+/* I'm sorry this is lazy. */
 .last-updated--text:after {
-    content: '2023-02-18';
+    content: '2023-06-07';
 }
 
 /*--------------- Fonts ---------------*/
