@@ -13,7 +13,7 @@ rgba(255, 255, 255, 1)  rgba(249, 38, 114, 1)   rgba(102, 217, 239, 1)
 
 /* I'm sorry this is lazy. */
 .last-updated--text:after {
-    content: '2023-06-07';
+    content: '2023-06-10';
 }
 
 /*--------------- Fonts ---------------*/
@@ -429,9 +429,6 @@ b {
 }
 .light-toggle .content pre {
     background: rgba(0, 0, 0, 0.05);
-}
-.content .uoft-text:hover:after {
-    content: ', St. George campus';
 }
 
 .anchor {
