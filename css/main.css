@@ -580,22 +580,85 @@ img {
 .msxp .project-summary h3:hover span {
     color: var(--pink);
 }
-/*.msxp__feature {
+.project .msxp__feature {
+    display: inline-flex;
+    align-items: center;
+    /*gap: 9px;*/
+    /*margin: 0 -2px 0 -2px;*/
+    margin-left: -4px;
+    padding: 0 4px;
+    color: var(--green);
+    border: 1px solid color-mix(in srgb, var(--green) 40%, transparent);
+    border-radius: 6px;
+    /*background: linear-gradient(110deg, color-mix(in srgb, var(--green) 12%, transparent), color-mix(in srgb, var(--link) 6%, transparent));*/
+    /*text-decoration: none;*/
+}
+.light-toggle .project .msxp__feature {
+    color: var(--pink);
+    border: 1px solid color-mix(in srgb, var(--pink) 40%, transparent);
+}
+.msxp__feature::before {
+    position: absolute;
+    left: -12px;
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--green) 12%, transparent);
+}
+.project .msxp__feature:hover,
+.project .msxp__feature:focus-visible {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--green) 10%, transparent);
+    text-decoration-thickness: 2px;
+}
+.msxp header ul {
+    align-items: center;
+}
+
+.project-image > a {
+    display: block;
     position: relative;
 }
-.msxp__feature:before {
-    content: '';
+.project-image > a > img {
+    display: block;
+}
+.project-image > a::after {
+    content: attr(href);
     position: absolute;
-    border-radius: 4px;
-    padding: 5px;
-    top: -5px;
-    left: -5px;
-    z-index: -20;
-    opacity: 50%;
-    width: 100%;
-    height: 100%;
-    background: var(--pink);
-}*/
+    /*bottom: calc(100% + 10px);*/
+    bottom: 5px;
+    left: 5px;
+    z-index: 5;
+    width: max-content;
+    max-width: calc(100% - 24px);
+    padding: 8px 12px;
+    border: 1px solid color-mix(in srgb, var(--text) 20%, transparent);
+    border-radius: 6px;
+    background: var(--background);
+    color: var(--text);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    font: 12px/1.5 Consolas, monospace;
+    overflow-wrap: anywhere;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+}
+.project-image > a:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 4px;
+}
+.project-image > a:focus-visible::after {
+    visibility: visible;
+    opacity: 1;
+}
+@media (hover: hover) {
+    .project-image > a:hover::after {
+        visibility: visible;
+        opacity: 1;
+    }
+}
 
 .project-summary summary {
     color: var(--link);
