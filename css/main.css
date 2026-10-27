@@ -879,17 +879,22 @@ img {
     .project__meta {
         display: inline;
     }
-    .project__meta + .project__meta::before {
-        content: " · ";
+    .project__meta:not(.msxp__feature):before {
+        content: " • ";
         color: white;
-        opacity: ;
+        opacity: 1;
+        position: absolute;
+        left: -14px;
+    }
+    .msxp__feature:before {
+        content: '';
     }
     .project header ul {
         display: flex;
         flex-wrap: wrap;
         gap: 4px 24px;
         list-style: none;
-        padding: 0.5em 1em;
+        padding: 0.5em 1.5em;
         background: rgba(255, 255, 255, 0.07);
     }
     .project header li {
@@ -897,11 +902,6 @@ img {
     }
     .project header li:before {
         content: '';
-    }
-    .project header li + li:before {
-        content: "·";
-        position: absolute;
-        left: -14px;
     }
 }
 
