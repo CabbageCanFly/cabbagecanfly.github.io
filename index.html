@@ -49,7 +49,7 @@
     <header class="header--absolute">
         <nav class="version-nav">
             <ul>
-                <li><a class="version-nav__link" href="v1">v1</a></li><li><a class="version-nav__link" href="v2">v2</a></li><li><a class="version-nav__link" href="v3">v3</a></li><li><a class="version-nav__link version-nav__link--current" href="/">v4</a></li>
+                <li><a class="version-nav__link" href="v1">v1</a></li><li><a class="version-nav__link" href="v2">v2</a></li><li><a class="version-nav__link" href="v3">v3</a></li><li><a class="version-nav__link" href="v4">v4</a><a class="version-nav__link version-nav__link--current" href="/">v5</a></li>
             </ul>
         </nav>
         <label class="light-toggle-container" for="light-toggle">
@@ -71,33 +71,78 @@
                 </div>
             </div>
         </div>
-        <hr>
+        <hr class="hr--thick">
         <section>
             <div class="text--small socials">
-                <b>@cabbagecanfly</b> everywhere: <span><a target="_blank" href="https://github.com/CabbageCanFly">github</a> • <a target="_blank" href="https://www.linkedin.com/in/cabbagecanfly">linkedin</a> • <a target="_blank" href="https://www.instagram.com/cabbagecanfly">instagram</a> • <a target="_blank" href="http://steamcommunity.com/id/cabbagecanfly">steam</a> • <a target="_blank" href="http://cabbagecanfly.deviantart.com">deviantart</a> • <label class="discord-toggle__label" for="discord">discord</label></span>
+                <b>@cabbagecanfly</b> everywhere: <span><a target="_blank" href="https://github.com/cabbagecanfly">github</a> • <a target="_blank" href="https://www.linkedin.com/in/cabbagecanfly">linkedin</a> • <a target="_blank" href="https://www.instagram.com/cabbagecanfly">instagram</a> • <a target="_blank" href="http://steamcommunity.com/id/cabbagecanfly">steam</a> • <a target="_blank" href="http://cabbagecanfly.deviantart.com">deviantart</a> • <label class="discord-toggle__label" for="discord">discord</label></span>
             </div>
         </section>
+        <section class="summary text--margin-top-md">
+            <div>
+                Focused on work across software development, data, and healthcare.
+            </div>
+        </section>
+        <section class="projects">
+            <div class="anchor" id="projects"></div>
+            <h2 class=""><a class="anchor-link" href="#projects"><span class="anchor-hash">#</span>things i worked on</a></h2>
+            <article class="project msxp">
+                <header>
+                    <div class="anchor" id="msxp"></div>
+                    <h3 class=""><a class="anchor-link" href="#msxp"><span class="anchor-hash">#</span>msxp</a></h3>
+                    <ul>
+                        <li><a class="project__meta msxp__feature" target="_blank" href="https://msxp.pages.dev/">Live site</a></li>
+                        <li><a class="project__meta" target="_blank" href="https://github.com/cabbagecanfly/msxp">Source</a></li>
+                        <li><a class="project__meta" target="_blank" href="https://www.youtube.com/watch?v=K_PUYS978gM">1-minute demo</a></li>
+                    </ul>
+                </header>
+                <div class="project-summary">
+                    <h3>MapleStory Classic EXP tracker for players on Twitch</h3>
+                    <p>I built <b>msxp</b> to read <a target="_blank" href="http://maplestory.nexon.net/">MapleStory Classic</a> players' EXP bar from public <a target="_blank" href="https://en.wikipedia.org/wiki/Twitch_(service)">Twitch</a> livestreams and turn those readings into a live leaderboard. You can follow EXP per hour, recent history, and estimates for the next level. Streamers can use an overlay for viewers to see, with no download required.</p>
+                    <figure class="project-image">
+                        <a target="_blank" href="https://msxp.pages.dev/"><img src="resources/images/projects/msxp-leaderboard.jpg" alt="msxp's leaderboard: character levels, green EXP bars, recent EXP per hour, and next-level estimates."></a>
+                    </figure>
+                </div>
+            </article>
+            <article class="project">
+                <header>
+                    <div class="anchor" id="hi4temr"></div>
+                    <h3 class=""><a class="anchor-link" href="#hi4temr"><span class="anchor-hash">#</span>HiT4EMR</a></h3>
+                    <ul>
+                        <li><a class="project__meta" target="_blank" href="https://mgfhc.github.io/">Team showcase</a></li>
+                        <li><a class="project__meta" target="_blank" href="https://github.com/cabbagecanfly/maple-grove-openemr-education-module/">Module</a></li>
+                    </ul>
+                </header>
+                <div class="project-summary">
+                    <h3>An OpenEMR learning environment for a fictional Toronto clinic</h3>
+                    <p>
+                        <b>HiT4EMR</b> was a collaborative Health Informatics capstone project at George Brown Polytechnic, focused on configuring and deploying OpenEMR for a simulated clinic called Maple Grove.
+                    </p>
+                    <p>
+                        I took on project management and infrastructure deployment responsibilities, while also contributing to analytics and documentation. I helped develop an education module that uses OpenEMR's audit logs to give instructors and students visibility in learning activity.
+                    </p>
+                    <details>
+                        <summary>See the education dashboard module</summary>
+                        <figure class="project-image text--margin-top-md">
+                            <a target="_blank" href="https://github.com/cabbagecanfly/maple-grove-openemr-education-module/"><img src="resources/images/projects/maple-grove-education.jpg" width="1440" height="510" alt="OpenEMR education dashboard showing student activity, logins, chart sessions, and record changes." loading="lazy"></a>
+                        </figure>
+                    </details>
+                </div>
+            </article>
+        </section>
+
         <article>
-            <div class="anchor" id="about"></div>
-            <h2 class="text--margin-top-l"><a class="anchor-link" href="#about"><span class="anchor-hash">#</span>about</a></h2>
+            <div class="anchor" id="about-me"></div>
+            <h2 class="text--margin-top-md"><a class="anchor-link" href="#about-me"><span class="anchor-hash">#</span>about me</a></h2>
             <p>
-                Currently focused on technical work across software development, data, and healthcare.
+                I was born in <b>Toronto, Canada</b>, but I can only remember growing up in Mississauga. I completed my <b>Computer Science</b> undergrad at the University of Toronto in May 2023.
             </p>
             <p>
-                I did a 16-month co-op as a full stack developer at an AI analytics fintech company called <a target="_blank" href="https://en.wikipedia.org/wiki/Overbond">Overbond</a>.
-            </p>
-            <p>
-                I was born in <b>Toronto, Canada</b>, but I can only remember growing up in <b>Mississauga</b>.
-                <br>
-                I completed my <b>Computer Science</b> undergrad at the <b class="uoft-text">University of Toronto</b> in May 2023.
-            </p>
-            <p>
-                More recently, I completed a <b>Health Informatics</b> graduate certificate at <b>George Brown</b> in August 2026, including some work with <a target="_blank" href="https://mgfhc.github.io/">OpenEMR</a>.
+                I did a 16-month co-op as a full stack developer at <a target="_blank" href="https://en.wikipedia.org/wiki/Overbond">Overbond</a>, an AI analytics fintech company. More recently, I completed a <b>Health Informatics</b> graduate certificate at George Brown in August 2026.
             </p>
             <div class="anchor" id="leisure"></div>
-            <h2 class="text--margin-top-l"><a class="anchor-link" href="#leisure"><span class="anchor-hash">#</span>leisure</a></h2>
+            <h3 class="text--margin-top-l"><a class="anchor-link" href="#leisure"><span class="anchor-hash">#</span>leisure</a></h3>
             <p>
-                I enjoy running and biking. I hope to get back into swimming, so that I can complete a triathlon at some point. :)
+                I enjoy <a target="_blank" href="https://marathonguide.com/races/run/toronto-waterfront-marathon-19/2019/results/10860642/">running</a> and biking. I hope to get back into swimming, so that I can complete a triathlon at some point. :)
             </p>
             <p>
                 I enjoy gaming in my free time. I've recently been playing:
@@ -105,17 +150,18 @@
             <ul>
                 <li><a target="_blank" href="https://osu.ppy.sh/home">osu!</a></li>
                 <li><a target="_blank" href="https://www.minecraft.net/en-us/">Minecraft</a></li>
-                <li><a target="_blank" href="https://www.callofduty.com/modernwarfare/">Call of Duty: Modern Warfare</a></li>
             </ul>
             <p>I used to play these a fair bit:</p>
             <ul>
                 <li><a target="_blank" href="http://maplestory.nexon.net/">MapleStory</a></li>
+                <li><a target="_blank" href="https://www.callofduty.com/modernwarfare/">Call of Duty: Modern Warfare</a></li>
                 <li><a target="_blank" href="https://www.ea.com/games/titanfall/titanfall-2/">Titanfall 2</a></li>
                 <li><a target="_blank" href="http://store.steampowered.com/app/252950/Rocket_League/">Rocket League</a></li>
                 <li><a target="_blank" href="https://www.bungie.net/7/en/Destiny/Buy">Destiny 2</a></li>
                 <li><a target="_blank" href="https://playoverwatch.com/en-us/">Overwatch</a></li>
             </ul>
         </article>
+
         <article>
             <div class="anchor" id="resume"></div>
             <h2 class="text--margin-top-l"><a class="anchor-link" href="#resume"><span class="anchor-hash">#</span>resume</a></h2>

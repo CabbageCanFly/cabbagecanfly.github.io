@@ -13,7 +13,7 @@ rgba(255, 255, 255, 1)  rgba(249, 38, 114, 1)   rgba(102, 217, 239, 1)
 
 /* I'm sorry this is lazy. */
 .last-updated--text:after {
-    content: '2026-09-28';
+    content: '2026-10-27';
 }
 
 /*--------------- Fonts ---------------*/
@@ -58,17 +58,31 @@ rgba(255, 255, 255, 1)  rgba(249, 38, 114, 1)   rgba(102, 217, 239, 1)
 }
 /*--------------- end Miscellaneous highlight styles ---------------*/
 
+:root {
+    --background: #181A1B;
+    --text: #FFFFFF;
+    --muted: #445;
+    --link: #66D9EF;
+    --green: #A6E22E;
+    --pink: #F92672;
+}
+:root.light-toggle {
+    --background: #FFE7D4;
+    --text: #292724;
+    --muted: #686057;
+    --line: #BAA38F;
+    --link: #00647D;
+    --green: #4F7504;
+}
+
 html {
-    background-color: #181A1B;
+    background-color: var(--background);
     font-family: 'Fira Sans', sans-serif;
-    color: white;
+    color: var(--text);
     font-size: 16px;
     transition: background-color 500ms;
 }
-html.light-toggle {
-    background-color: #FFE7D4;
-    color: black;
-}
+
 .hidden body {
     opacity: 0 !important;
 }
@@ -98,29 +112,37 @@ h1 {
 h2 {
     font-size: 26px;
 }
+h2, h3, h4 {
+    letter-spacing: -0.01em;
+}
 
 .content h1,
-.content h2,
+.content h2 {
+    opacity: 0.3;
+}
 .content h3,
 .content h4 {
-    opacity: 0.3;
+    opacity: 0.7;
 }
 .content h2:hover,
 .content h3:hover,
 .content h4:hover {
-    opacity: 0.8;
+    opacity: 0.95;
 }
 
+figure {
+    margin: 0;
+}
 a {
     color: #66D9EF;
-    text-decoration: none;
+    text-underline-offset: 4px;
 }
 .light-toggle a {
     color: #006FB1;
 }
 
 a:hover, a:focus {
-    text-decoration: underline;
+    text-decoration-thickness: 3px;
 }
 a:active {
     opacity: 0.75;
@@ -351,6 +373,13 @@ b {
 .socials:hover {
     opacity: 1;
 }
+.socials a {
+    text-decoration: none;
+}
+.socials a:hover {
+    text-decoration: underline;
+    text-underline-offset: auto;
+}
 
 .discord-toggle__checkbox {
     display: none;
@@ -399,6 +428,20 @@ b {
     position: relative;
 }
 
+
+.summary {
+    letter-spacing: 0.01em;
+    padding: 1em;
+    background: rgba(255, 255, 255, 0.07);
+    opacity: 0.7;
+}
+.summary:hover {
+    opacity: 1;
+}
+.light-toggle .summary {
+    background: rgba(0, 0, 0, 0.08);
+}
+
 .content {
     line-height: 1.5rem;
     margin-bottom: 10rem;
@@ -406,7 +449,12 @@ b {
 .content hr {
     margin-top: 9px;
     margin-bottom: 9px;
-    opacity: 0.2;
+}
+hr.hr--thick {
+    height: 2px;
+    background: var(--text);
+    opacity: 0.3;
+    color: var(--text);
 }
 .content p {
     margin-bottom: 1.5rem;
@@ -415,11 +463,23 @@ b {
     margin-top: -0.5rem;
 }
 .content h2 {
-    margin-bottom: 1rem;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--text);
 }
-.content h3 {
-    font-size: 1.25em;
+.content h3,
+.content h3 .anchor-link {
+    color: var(--green);
+    font-size: 21px;
 }
+.light-toggle .content h3,
+.light-toggle .content h3 .anchor-link {
+    color: var(--green);
+}
+.light-toggle .content h2,
+.light-toggle .content h3 {
+    opacity: 0.8;
+}
+
 .content pre {
     background: rgba(255, 255, 255, 0.03);
     overflow-x: auto;
@@ -445,13 +505,13 @@ b {
     color: black;
 }
 .anchor-hash {
-    font-family: "Yanone Kaffeesatz Light";
+    font-family: "Yanone Kaffeesatz";
     display: none;
     opacity: 0.08;
     border-bottom: 0px;
     position: absolute;
     padding-right: 4px;
-    font-size: 140%;
+    font-size: 135%;
 }
 .content .anchor-hash {
     left: -18px;
@@ -459,7 +519,7 @@ b {
 }
 
 .anchor-link:hover .anchor-hash {
-    opacity: 0.8;
+    opacity: 0.95;
 }
 .anchor-link:hover, .anchor-link:focus {
     text-decoration: none;
@@ -467,6 +527,81 @@ b {
 
 .anchor-link:active {
     opacity: 0.5;
+}
+.projects h2 {
+    margin-bottom: 0;
+}
+.projects h3 {
+    margin-top: 0;
+}
+.projects hr,
+.projects h3 {
+    margin-bottom: 16px;
+}
+.project {
+    position: relative;
+    display: grid;
+    grid-template-columns: 160px minmax(0, 1fr);
+    gap: 22px;
+    padding-block: 22px;
+}
+.project:before {
+    position: absolute;
+    top: 2%;
+    left: -3%;
+    z-index: -20;
+    content: '';
+    width: 106%;
+    height: 96%;
+}
+.project:hover:before {
+    background: rgba(255, 255, 255, 0.03);
+}
+.light-toggle .project:hover:before {
+    background: rgba(0, 0, 0, 0.05);
+}
+.project header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.project-summary p {
+    margin-bottom: 1em;
+}
+.project + .project {
+    border-top: 1px solid var(--muted);
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+.msxp .project-summary h3:hover span {
+    color: var(--pink);
+}
+/*.msxp__feature {
+    position: relative;
+}
+.msxp__feature:before {
+    content: '';
+    position: absolute;
+    border-radius: 4px;
+    padding: 5px;
+    top: -5px;
+    left: -5px;
+    z-index: -20;
+    opacity: 50%;
+    width: 100%;
+    height: 100%;
+    background: var(--pink);
+}*/
+
+.project-summary summary {
+    color: var(--link);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    cursor: pointer;
 }
 
 .resumes {
@@ -524,6 +659,10 @@ b {
 .version-nav__link {
     padding: 3px;
     opacity: 0.5;
+    text-decoration: none;
+}
+.version-nav__link:hover {
+    text-decoration: underline;
 }
 .version-nav__link--current {
     opacity: 1;
@@ -556,11 +695,11 @@ b {
     padding-bottom: 1em;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 950px) {
     body > *:not(.header--absolute):not(.gradient):not(.footer--gradient):not(.version-nav):not(.light-toggle-container) {
         margin-left: auto;
         margin-right: auto;
-        max-width: 650px;
+        max-width: 850px;
     }
     .version-nav {
         padding: 1em;
@@ -620,6 +759,39 @@ b {
 @media (max-height: 350px) {
     .gradient {
         display: none;
+    }
+}
+
+@media (max-width: 700px) {
+    .project {
+        grid-template-columns: 1fr;
+    }
+    .project__meta {
+        display: inline;
+    }
+    .project__meta + .project__meta::before {
+        content: " · ";
+        color: white;
+        opacity: ;
+    }
+    .project header ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 24px;
+        list-style: none;
+        padding: 0.5em 1em;
+        background: rgba(255, 255, 255, 0.07);
+    }
+    .project header li {
+        position: relative;
+    }
+    .project header li:before {
+        content: '';
+    }
+    .project header li + li:before {
+        content: "·";
+        position: absolute;
+        left: -14px;
     }
 }
 

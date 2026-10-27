@@ -1,0 +1,633 @@
+/*
+Colours:
+orange                  green                   black
+#FD971F                 #A6E22E                 #181A1B
+rgba(253, 151, 31, 1)   rgba(166, 226, 46, 1)   rgba(24, 26, 27, 1)
+
+white                   pink                    blue
+#FFFFFF                 #F92672                 #66D9EF
+rgba(255, 255, 255, 1)  rgba(249, 38, 114, 1)   rgba(102, 217, 239, 1)
+*/
+
+/* BEM naming convention for classes. */
+
+/* I'm sorry this is lazy. */
+.last-updated--text:after {
+    content: '2026-09-28';
+}
+
+/*--------------- Fonts ---------------*/
+@font-face {
+    font-family: 'Yanone Kaffeesatz';
+    src: url('../resources/fonts/YanoneKaffeesatz-Regular.ttf');
+}
+@font-face {
+    font-family: 'Yanone Kaffeesatz Light';
+    src: url('../resources/fonts/YanoneKaffeesatz-Light.ttf');
+}
+@font-face {
+    font-family: 'Fira Sans';
+    src: url('../resources/fonts/FiraSansCondensed-Regular.ttf');
+}
+@font-face {
+    font-family: 'Fira Sans Light';
+    src: url('../resources/fonts/FiraSansCondensed-Light.ttf');
+}
+/*--------------- end Fonts ---------------*/
+
+/*--------------- Miscellaneous highlight styles ---------------*/
+* {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
+    -webkit-overflow-scrolling: touch;
+}
+::selection {
+    background-color: rgba(249, 38, 114, 0.5);
+    opacity: 1;
+}
+::-moz-selection {
+    background-color: rgba(249, 38, 114, 0.5);
+    opacity: 1;
+}
+.light-toggle ::selection {
+    background-color: rgba(253, 151, 31, 0.5);
+    opacity: 1;
+}
+.light-toggle ::-moz-selection {
+    background-color: rgba(253, 151, 31, 0.5);
+    opacity: 1;
+}
+/*--------------- end Miscellaneous highlight styles ---------------*/
+
+html {
+    background-color: #181A1B;
+    font-family: 'Fira Sans', sans-serif;
+    color: white;
+    font-size: 16px;
+    transition: background-color 500ms;
+}
+html.light-toggle {
+    background-color: #FFE7D4;
+    color: black;
+}
+.hidden body {
+    opacity: 0 !important;
+}
+body {
+    position: relative;
+    padding-top: 25vh;
+    margin: 0 0;
+    min-width: 250px;
+    min-height: 75vh;
+    transition: opacity 750ms 350ms;
+}
+body > *:not(.header--absolute):not(.gradient):not(.footer--gradient):not(.version-nav):not(.light-toggle-container) {
+    margin-left: 1.75rem;
+    margin-right: 1.75rem;
+}
+
+h1, h2, h3, h4 {
+    position: relative;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 400;
+}
+h1 {
+    font-size: 42px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 400;
+}
+h2 {
+    font-size: 26px;
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4 {
+    opacity: 0.3;
+}
+.content h2:hover,
+.content h3:hover,
+.content h4:hover {
+    opacity: 0.8;
+}
+
+a {
+    color: #66D9EF;
+    text-decoration: none;
+}
+.light-toggle a {
+    color: #006FB1;
+}
+
+a:hover, a:focus {
+    text-decoration: underline;
+}
+a:active {
+    opacity: 0.75;
+}
+b {
+    color: #FD971F;
+    font-weight: normal;
+}
+.light-toggle b {
+    color: #F92672;
+}
+
+.light-toggle-checkbox {
+    display: none;
+}
+.light-toggle-checkbox + .light-toggle-button {
+    transform: rotate(-90deg) translateX(4px);
+    outline: 0;
+    opacity: 0.5;
+    display: inline-block;
+    width: 2em;
+    height: 1em;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    background: #f0f0f0;
+    border-radius: 2em;
+    padding: 2px;
+    margin-right: -5px;
+    transition: all .4s ease;
+}
+.light-toggle-checkbox + .light-toggle-button:after,
+.light-toggle-checkbox + .light-toggle-button:before {
+    position: relative;
+    display: block;
+    content: "";
+    width: 50%;
+    height: 100%;
+}
+.light-toggle-checkbox + .light-toggle-button:after {
+    left: 0;
+    border-radius: 50%;
+    background: #F92672;
+    transition: all .2s ease;
+}
+.light-toggle-checkbox + .light-toggle-button:before {
+    display: none;
+}
+.light-toggle-checkbox:checked + .light-toggle-button {
+    background: #3BC360;
+}
+.light-toggle-checkbox:checked + .light-toggle-button:after {
+    background: rgba(0,0,0,0.3);
+    left: 50%;
+}
+.light-toggle-container {
+    display: inline-block;
+    padding: 1.3em;
+    cursor: pointer;
+    text-align: right;
+    flex: 50%;
+}
+.light-toggle-container__label {
+    opacity: 0.1;
+    margin-right: -8px;
+    transform: scale(0.75);
+    text-align: right;
+    display: inline-block;
+}
+.light-toggle-container:hover .light-toggle-container__label {
+    opacity: 0.8;
+}
+
+.cabbage {
+    display: inline-block;
+    position: relative;
+    width: 52px;
+    height: 42px;
+    transform: translate(0, -8px);
+}
+.cabbage svg.cabbage__svg {
+    fill: #A6E22E;
+}
+.light-toggle .cabbage svg.cabbage__svg {
+    fill: #4F7504;
+}
+.cabbage svg.cabbage__discord {
+    display: none;
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    top: 0;
+    right: 0;
+    margin-top: -14px;
+    margin-right: -8px;
+    opacity: 0.6;
+    padding: 4px;
+    border-radius: 4px;
+    background: #5865F2;
+}
+.cabbage--centered {
+    z-index: 1;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cabbage--small {
+    width: 18px;
+}
+
+.copyright__symbol {
+    display: inline-block;
+    font-size: 14px;
+    transform: translate(1px, 1px);
+}
+
+.text--margin-top-l {
+    margin-top: 38px;
+}
+.text--margin-top-md {
+    margin-top: 12px;
+}
+.text--margin-top-sm {
+    margin-top: 6px;
+}
+.text--no-margin-top {
+    margin-top: 0;
+}
+.text--no-margin-bottom {
+    margin-bottom: 0;
+}
+.text--light-font {
+    font-family: 'Fira Sans Light';
+    font-weight: 300;
+}
+.text--body-font {
+    font-family: 'Fira Sans';
+}
+.text--centered {
+    text-align: center;
+}
+.text--no-wrap {
+    white-space: nowrap;
+}
+.text--sup {
+    font-size: 0.65em;
+    vertical-align: super;
+    line-height: 0;
+}
+.text--orange {
+    color: #FD971F;
+}
+.text--green {
+    color: #A6E22E;
+    padding: 2px;
+}
+.light-toggle .text--green {
+    background: rgba(0, 0, 0, 0.3);
+}
+.text--black {
+    color: #181A1B;
+    padding: 2px;
+    background: rgba(255, 255, 255, 0.3);
+}
+.light-toggle .text--black {
+    background: none;
+}
+.text--white {
+    color: #FFFFFF;
+    padding: 2px;
+}
+.light-toggle .text--white {
+    background: rgba(0, 0, 0, 0.3);
+}
+.text--pink {
+    color: #F92672;
+}
+.text--blue {
+    color: #66D9EF;
+    padding: 2px;
+}
+.light-toggle .text--blue {
+    background: rgba(0, 0, 0, 0.3);
+}
+.text--inline-block {
+    display: inline-block;
+}
+.text--small {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.header {
+    position: relative;
+    z-index: 10;
+}
+.header--absolute {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    top: 0;
+}
+.header--centered {
+    position: relative;
+    width: 100%;
+}
+.header__container {
+    margin-left: 0.5em;
+}
+.header__name-container {
+    position: relative;
+    height: 50px;
+}
+.header__name-container h1 {
+    margin-top: 0;
+}
+
+.socials {
+    opacity: 0.5;
+    line-height: 1.4rem;
+    padding-bottom: 20px;
+    margin-bottom: -20px;
+}
+.socials > span {
+    display: inline-block;
+    margin-left: 1px;
+}
+.socials:hover {
+    opacity: 1;
+}
+
+.discord-toggle__checkbox {
+    display: none;
+}
+
+.discord-toggle__label {
+    color: #66D9EF;
+    cursor: pointer;
+}
+.light-toggle .discord-toggle__label {
+    color: #006FB1;
+}
+
+.socials:not(:hover) *,
+.socials:not(:hover) .light-toggle .discord-toggle__label {
+    color: inherit;
+}
+
+.discord-toggle__text {
+    display: none;
+}
+.discord-toggle__text > span {
+    font-size: 20px;
+}
+
+.discord-toggle__checkbox:checked ~ .content .discord-toggle__label {
+    text-decoration: underline;
+}
+.discord-toggle__checkbox:checked ~ .header .discord-toggle__text {
+    display: block;
+}
+.discord-toggle__checkbox:checked ~ .header .header__name {
+    display: none;
+}
+
+.discord-toggle__checkbox:checked ~ .header .cabbage svg.cabbage__discord {
+    display: block;
+}
+
+.last-updated__container {
+    display: none;
+    z-index: 10;
+}
+
+.container--relative {
+    position: relative;
+}
+
+.content {
+    line-height: 1.5rem;
+    margin-bottom: 10rem;
+}
+.content hr {
+    margin-top: 9px;
+    margin-bottom: 9px;
+    opacity: 0.2;
+}
+.content p {
+    margin-bottom: 1.5rem;
+}
+.content article ul {
+    margin-top: -0.5rem;
+}
+.content h2 {
+    margin-bottom: 1rem;
+}
+.content h3 {
+    font-size: 1.25em;
+}
+.content pre {
+    background: rgba(255, 255, 255, 0.03);
+    overflow-x: auto;
+    font-size: 0.9em;
+    padding: 1em;
+    transition: background 500ms;
+}
+.light-toggle .content pre {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.anchor {
+    position: relative;
+    top: -30px;
+    visibility: hidden;
+}
+
+.anchor-link {
+    color: white;
+    text-decoration: none;
+}
+.light-toggle .anchor-link {
+    color: black;
+}
+.anchor-hash {
+    font-family: "Yanone Kaffeesatz Light";
+    display: none;
+    opacity: 0.08;
+    border-bottom: 0px;
+    position: absolute;
+    padding-right: 4px;
+    font-size: 140%;
+}
+.content .anchor-hash {
+    left: -18px;
+    top: -3px;
+}
+
+.anchor-link:hover .anchor-hash {
+    opacity: 0.8;
+}
+.anchor-link:hover, .anchor-link:focus {
+    text-decoration: none;
+}
+
+.anchor-link:active {
+    opacity: 0.5;
+}
+
+.resumes {
+    width: 100%;
+}
+.resume-thumbnail {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 1em 1.5em;
+    width: 50%;
+}
+.resume-thumbnail img {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid white;
+}
+.resume-thumbnail a {
+    opacity: 0.7;
+}
+.resume-thumbnail a:hover, .resume-thumbnail a:focus {
+    opacity: 0.9;
+}
+
+.version-nav {
+    display: inline-block;
+    padding: 1.3em;
+    flex: 50%;
+    opacity: 0.6;
+    transition: opacity 100ms;
+}
+.version-nav:hover {
+    opacity: 1;
+}
+.version-nav ul {
+    margin: 0;
+    padding: 0;
+}
+.version-nav li {
+    display: inline-block;
+    margin-right: 1px;
+    list-style-type: none;
+}
+.version-nav li:first-child {
+    margin-top: 0;
+}
+.version-nav svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    fill: none;
+}
+.version-nav__link {
+    padding: 3px;
+    opacity: 0.5;
+}
+.version-nav__link--current {
+    opacity: 1;
+}
+
+.profile-pic {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.footer {
+    font-size: 14px;
+}
+.footer--gradient {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, rgba(253, 151, 31, 0.08), rgba(0, 0, 0, 0));
+    transition: background 500ms;
+}
+.light-toggle .footer--gradient {
+    background: linear-gradient(to top, rgba(48, 138, 165, 0.38), rgba(0, 0, 0, 0));
+}
+.footer--centered {
+    margin-top: 4em;
+    padding-top: 1em;
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+@media (min-width: 700px) {
+    body > *:not(.header--absolute):not(.gradient):not(.footer--gradient):not(.version-nav):not(.light-toggle-container) {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 650px;
+    }
+    .version-nav {
+        padding: 1em;
+    }
+    .resume-thumbnail {
+        padding: 1em 3em;
+    }
+    .anchor-hash {
+        display: inline;
+    }
+    .light-toggle-container {
+        padding: 1em;
+    }
+    .last-updated__container {
+        display: inline-block;
+        text-align: right;
+        float: right;
+        position: absolute;
+        right: 0;
+        bottom: 9px;
+    }
+    .last-updated {
+        opacity: 0.35;
+    }
+    .last-updated:hover {
+        opacity: 0.9;
+    }
+    .remarks .last-updated--text {
+        display: none;
+    }
+}
+
+@media (max-width : 380px) {
+    .header__name-container {
+        height: 40px;
+    }
+    .header__name-container h1 {
+        font-size: 32px;
+    }
+    .discord-toggle__text > span {
+        font-size: 16px;
+    }
+}
+
+@media (max-width : 300px) {
+    .header__name-container {
+        height: 34px;
+    }
+    .header__name-container h1 {
+        font-size: 26px;
+    }
+    .discord-toggle__text > span {
+        font-size: 14px;
+    }
+}
+
+@media (max-height: 350px) {
+    .gradient {
+        display: none;
+    }
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-track {
+    background: rgba(36, 38, 41, 0.34);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(60, 62, 69, 0.34);
+}
