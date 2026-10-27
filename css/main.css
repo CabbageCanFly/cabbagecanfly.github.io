@@ -429,6 +429,21 @@ b {
 }
 
 
+/* Alternate summary style */
+/*.summary {
+    opacity: 0.8;
+    padding: 14px 16px;
+    border-left: 2px solid color-mix(in srgb, var(--green) 50%, transparent);
+    background: linear-gradient(90deg, color-mix(in srgb, var(--green) 5%, transparent), transparent);
+    color: color-mix(in srgb, var(--text) 70%, transparent);
+}
+.summary__emphasis {
+    color: var(--text);
+}
+.summary:hover {
+    opacity: 1;
+}*/
+
 .summary {
     letter-spacing: 0.01em;
     padding: 1em;
