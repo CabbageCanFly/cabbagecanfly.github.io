@@ -551,7 +551,28 @@ hr.hr--thick {
 }
 .projects hr,
 .projects h3 {
+    position: relative;
     margin-bottom: 16px;
+}
+.project header h3 .anchor-link {
+    display: block;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 0.01em;
+}
+.project .anchor-hash {
+    font-weight: normal;
+}
+.project header h3:before {
+    content: '';
+    z-index: -20;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.07);
 }
 .project {
     position: relative;
@@ -599,15 +620,11 @@ img {
     position: relative;
     display: inline-flex;
     align-items: center;
-    /*gap: 9px;*/
-    /*margin: 0 -2px 0 -2px;*/
     margin-left: -4px;
     padding: 0 4px;
     color: var(--green);
     border: 1px solid color-mix(in srgb, var(--green) 40%, transparent);
     border-radius: 6px;
-    /*background: linear-gradient(110deg, color-mix(in srgb, var(--green) 12%, transparent), color-mix(in srgb, var(--link) 6%, transparent));*/
-    /*text-decoration: none;*/
 }
 .light-toggle .project .msxp__feature {
     color: var(--pink);
@@ -879,12 +896,15 @@ img {
     .project__meta {
         display: inline;
     }
-    .project__meta:not(.msxp__feature):before {
+    .project header ul li + li:before {
         content: " • ";
         color: white;
         opacity: 1;
         position: absolute;
         left: -14px;
+    }
+    .project .msxp__feature {
+        margin-left: 0px;
     }
     .msxp__feature:before {
         content: '';
@@ -894,8 +914,8 @@ img {
         flex-wrap: wrap;
         gap: 4px 24px;
         list-style: none;
-        padding: 0.5em 1.5em;
-        background: rgba(255, 255, 255, 0.07);
+        padding: 0.5em 0;
+        /*background: rgba(255, 255, 255, 0.07);*/
     }
     .project header li {
         position: relative;
