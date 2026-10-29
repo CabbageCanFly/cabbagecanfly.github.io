@@ -72,7 +72,8 @@ rgba(255, 255, 255, 1)  rgba(249, 38, 114, 1)   rgba(102, 217, 239, 1)
     --muted: #686057;
     --line: #BAA38F;
     --link: #00647D;
-    --green: #4F7504;
+    --green: #236B45;
+    --pink: #F92672;
 }
 
 html {
@@ -121,8 +122,12 @@ h2, h3, h4 {
     opacity: 0.3;
 }
 .content h3,
-.content h4 {
+.content h4,
+.light-toggle .content h2 {
     opacity: 0.7;
+}
+.light-toggle .content h3 {
+    opacity: 0.9;
 }
 .content h2:hover,
 .content h3:hover,
@@ -152,7 +157,7 @@ b {
     font-weight: normal;
 }
 .light-toggle b {
-    color: #F92672;
+    color: var(--pink);
 }
 
 .light-toggle-checkbox {
@@ -224,10 +229,7 @@ b {
     transform: translate(0, -8px);
 }
 .cabbage svg.cabbage__svg {
-    fill: #A6E22E;
-}
-.light-toggle .cabbage svg.cabbage__svg {
-    fill: #4F7504;
+    fill: var(--green);
 }
 .cabbage svg.cabbage__discord {
     display: none;
@@ -293,18 +295,22 @@ b {
 }
 .text--orange {
     color: #FD971F;
+    padding: 2px;
 }
 .text--green {
     color: #A6E22E;
     padding: 2px;
 }
-.light-toggle .text--green {
-    background: rgba(0, 0, 0, 0.3);
+.light-toggle .text--green,
+.light-toggle .text--orange,
+.light-toggle .text--white,
+.light-toggle .text--blue {
+    background: rgba(0, 0, 0, 0.75);
 }
 .text--black {
     color: #181A1B;
     padding: 2px;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.85);
 }
 .light-toggle .text--black {
     background: none;
@@ -313,18 +319,18 @@ b {
     color: #FFFFFF;
     padding: 2px;
 }
-.light-toggle .text--white {
-    background: rgba(0, 0, 0, 0.3);
-}
 .text--pink {
     color: #F92672;
+    padding: 2px;
 }
 .text--blue {
     color: #66D9EF;
     padding: 2px;
 }
-.light-toggle .text--blue {
-    background: rgba(0, 0, 0, 0.3);
+.text--forest-green {
+    color: #236B45;
+    padding: 2px;
+    background: rgba(255, 255, 255, 0.85);
 }
 .text--inline-block {
     display: inline-block;
@@ -490,10 +496,6 @@ hr.hr--thick {
 .light-toggle .content h3 .anchor-link {
     color: var(--green);
 }
-.light-toggle .content h2,
-.light-toggle .content h3 {
-    opacity: 0.8;
-}
 
 .content pre {
     background: rgba(255, 255, 255, 0.03);
@@ -501,6 +503,11 @@ hr.hr--thick {
     font-size: 0.9em;
     padding: 1em;
     transition: background 500ms;
+}
+pre span {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
 }
 .light-toggle .content pre {
     background: rgba(0, 0, 0, 0.05);
@@ -553,6 +560,9 @@ hr.hr--thick {
 .projects h3 {
     position: relative;
     margin-bottom: 16px;
+}
+.project header h3 {
+    opacity: 0.95;
 }
 .project header h3 .anchor-link {
     display: block;
