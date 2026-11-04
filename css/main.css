@@ -13,7 +13,7 @@ rgba(255, 255, 255, 1)  rgba(249, 38, 114, 1)   rgba(102, 217, 239, 1)
 
 /* I'm sorry this is lazy. */
 .last-updated--text:after {
-    content: '2026-10-31';
+    content: '2026-11-03';
 }
 
 /*--------------- Fonts ---------------*/
@@ -231,19 +231,51 @@ b {
 .cabbage svg.cabbage__svg {
     fill: var(--green);
 }
-.cabbage svg.cabbage__discord {
+.discord-profile {
     display: none;
     position: absolute;
-    width: 13px;
-    height: 13px;
     top: 0;
     right: 0;
     margin-top: -14px;
     margin-right: -8px;
-    opacity: 0.6;
+    color: var(--link);
+    text-decoration: none;
+}
+.cabbage svg.cabbage__discord {
+    display: block;
+    width: 13px;
+    height: 13px;
     padding: 4px;
     border-radius: 4px;
     background: #5865F2;
+}
+.discord-profile::before {
+    content: '';
+    position: absolute;
+    inset: -5px;
+}
+.discord-profile__hint {
+    position: absolute;
+    left: calc(100% + 4px);
+    top: -18px;
+    font-size: 12px;
+    line-height: 18px;
+    white-space: nowrap;
+    transform: rotate(-16deg);
+    transform-origin: left center;
+    opacity: 0.7;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+.discord-profile:hover .discord-profile__hint,
+.discord-profile:focus-visible .discord-profile__hint {
+    opacity: 1;
+    text-decoration-thickness: 3px;
+}
+.discord-profile:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 4px;
+    border-radius: 4px;
 }
 .cabbage--centered {
     z-index: 1;
@@ -376,7 +408,8 @@ b {
     display: inline-block;
     margin-left: 1px;
 }
-.socials:hover {
+.socials:hover,
+.socials:focus-within {
     opacity: 1;
 }
 .socials a {
@@ -388,7 +421,13 @@ b {
 }
 
 .discord-toggle__checkbox {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
 }
 
 .discord-toggle__label {
@@ -399,7 +438,7 @@ b {
     color: #006FB1;
 }
 
-.socials:not(:hover) *,
+.socials:not(:hover):not(:focus-within) *,
 .socials:not(:hover) .light-toggle .discord-toggle__label {
     color: inherit;
 }
@@ -414,6 +453,14 @@ b {
 .discord-toggle__checkbox:checked ~ .content .discord-toggle__label {
     text-decoration: underline;
 }
+.discord-toggle__checkbox:focus-visible ~ .content .discord-toggle__label {
+    outline: 2px solid var(--link);
+    outline-offset: 4px;
+}
+.discord-toggle__checkbox:focus-visible ~ .content .socials {
+    opacity: 1;
+}
+
 .discord-toggle__checkbox:checked ~ .header .discord-toggle__text {
     display: block;
 }
@@ -421,7 +468,7 @@ b {
     display: none;
 }
 
-.discord-toggle__checkbox:checked ~ .header .cabbage svg.cabbage__discord {
+.discord-toggle__checkbox:checked ~ .header .discord-profile {
     display: block;
 }
 
